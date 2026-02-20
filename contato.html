@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SP Rad | Contato</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <style>
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <!-- HERO -->
+    <section class="contact-hero">
+        <div class="container">
+            <span class="page-eyebrow">Fale conosco</span>
+            <h1 class="page-title">Entre em Contato</h1>
+            <p class="page-subtitle">Tire suas dúvidas, solicite um orçamento. Nossa equipe está pronta para atendê-lo.</p>
+        </div>
+    </section>
+
+    <!-- CONTATO PRINCIPAL -->
+    <section class="contact-main">
+        <div class="container">
+
+            <div class="contact-grid">
+
+                <!-- Formulário -->
+                <div class="contact-form-wrapper">
+                    <h2>Envie uma Mensagem</h2>
+                    <p class="form-subtitle">Preencha o formulário abaixo e entraremos em contato.</p>
+
+                    <form id="contactForm" class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nome completo *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefone *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Assunto *</label>
+                            <input type="text" id="subject" name="subject" placeholder="Ex: Solicitar orçamento para controle de qualidade" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensagem *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+
+                        <!-- reCAPTCHA v2 -->
+                        <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+
+                        <button type="submit" class="btn-submit">
+                            <span class="btn-text">ENVIAR MENSAGEM</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+
+                        <div id="formStatus" class="form-status"></div>
+
+                    </form>
+                </div>
+
+                <!-- Informações de contato direto -->
+                <div class="contact-info-wrapper">
+                    
+                    <div class="contact-info-card">
+                        <h3>Contato Direto</h3>
+                        <p>Prefere falar conosco diretamente? Entre em contato clicando em uma das opções abaixo.</p>
+
+                        <div class="info-items">
+
+                            <a href="https://wa.me/5516982000886" class="info-item whatsapp-item" target="_blank">
+                                <div class="info-icon whatsapp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </div>
+                                <div class="info-content">
+                                    <span class="info-label">WhatsApp</span>
+                                    <span class="info-value">(16) 98200-0886</span>
+                                </div>
+                            </a>
+
+                            <a href="mailto:sprad@sprad.com.br" class="info-item">
+                                <div class="info-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="info-content">
+                                    <span class="info-label">E-mail</span>
+                                    <span class="info-value">sprad@sprad.com.br</span>
+                                </div>
+                            </a>
+
+                            <a href="tel:+551634193804" class="info-item">
+                                <div class="info-icon">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div class="info-content">
+                                    <span class="info-label">Telefone</span>
+                                    <span class="info-value">(16) 3419-3804</span>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card location-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Endereço</span>
+                            <span class="info-value">Rua Rui Barbosa, 2495<br>São Carlos - SP</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card hours-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Horário de Atendimento</span>
+                            <span class="info-value">Segunda a Sexta<br>08:00 - 18:00</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script src="components.js"></script>
+    <script src="contact.js"></script>
+</body>
+</html>
