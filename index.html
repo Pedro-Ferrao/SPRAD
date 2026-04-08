@@ -25,13 +25,30 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Proteção Radiológica com <span class="cyan-text">Segurança,</span> <span class="cyan-text">Precisão</span> e <span class="teal-text">Conformidade Legal.</span></h1>
+                <div class="hero-text hero-text-panel">
+                    <h1>Proteção Radiológica com <span class="cyan-text">Segurança,</span> <span class="cyan-text">Credibilidade</span> e <span class="teal-text">Qualidade.</span></h1>
                     <p class="hero-subtitle">Soluções completas em radioproteção.</p>
                     <a href="#servicos" class="btn-main">CONFIRA NOSSOS SERVIÇOS</a>
                 </div>
-                <div class="hero-image">
-                    <img src="Imagens/radiação.jpg" alt="Proteção Radiológica SP Rad">
+
+                <div class="hero-banner hero-slider" data-slider="hero-banner" aria-label="Slider principal">
+                    <div class="hero-slides" aria-live="polite">
+                        <div class="hero-slide is-active">
+                            <img src="slider/pexels-shvetsa-4225883.jpg" alt="Proteção radiológica em ambiente clínico" loading="eager" decoding="async">
+                        </div>
+                        <div class="hero-slide">
+                            <img src="slider/pexels-cottonbro-6502161.jpg" alt="Procedimentos e segurança em radiologia" loading="lazy" decoding="async">
+                        </div>
+                        <div class="hero-slide">
+                            <img src="slider/pexels-mart-production-7089032.jpg" alt="Treinamento e conformidade em radioproteção" loading="lazy" decoding="async">
+                        </div>
+                    </div>
+
+                    <div class="hero-dots" role="tablist" aria-label="Navegação do slider principal">
+                        <button class="hero-dot is-active" type="button" aria-label="Ver imagem 1" data-slide="0"></button>
+                        <button class="hero-dot" type="button" aria-label="Ver imagem 2" data-slide="1"></button>
+                        <button class="hero-dot" type="button" aria-label="Ver imagem 3" data-slide="2"></button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,6 +162,85 @@
         </div>
     </section>
 
+
+<section id="downloads" class="downloads-section">
+    <div class="container">
+        <div class="downloads-header">
+            <span class="downloads-badge">Materiais Gratuitos</span>
+            <h2 class="downloads-title">Central de Downloads</h2>
+            <p class="downloads-subtitle">Acesse gratuitamente sinalizações e normas regulamentadoras para sua instituição.</p>
+        </div>
+
+        <div class="downloads-cards">
+
+            <!-- Card: Sinalizações -->
+            <a href="downloads.html" class="download-circle-card">
+                <div class="circle-outer">
+                    <div class="circle-inner">
+                        <div class="circle-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <span class="circle-label">Sinalizações</span>
+                    </div>
+                    <div class="circle-ring ring-1"></div>
+                    <div class="circle-ring ring-2"></div>
+                </div>
+                <p class="circle-desc">Sinalizações obrigatórias de proteção radiológica prontas para uso.</p>
+                <span class="circle-cta">ACESSAR DOWNLOADS →</span>
+            </a>
+
+            <!-- Card: Portarias e Normas -->
+            <a href="downloads.html#normas" class="download-circle-card">
+                <div class="circle-outer">
+                    <div class="circle-inner">
+                        <div class="circle-icon">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </div>
+                        <span class="circle-label">Portarias e Normas</span>
+                    </div>
+                    <div class="circle-ring ring-1"></div>
+                    <div class="circle-ring ring-2"></div>
+                </div>
+                <p class="circle-desc">RDC Nº 611 e <br>Instruções Normativas</p>
+                <span class="circle-cta"><br>ACESSAR DOWNLOADS →</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<!-- CURSO OBRIGATÓRIO -->
+<section id="cursos" class="courses-section">
+    <div class="container">
+        <div class="courses-header">
+            <span class="courses-badge">Nosso Curso</span>
+            <h2 class="courses-title">Curso de Proteção Radiológica (SP Rad)</h2>
+            <p class="courses-subtitle">Treinamento obrigatório fornecido pela SPRad. Acesse a plataforma do curso para adquirir e iniciar.</p>
+        </div>
+
+        <div class="courses-grid">
+            <a class="course-player-card" href="https://cursos.sprad.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar plataforma do curso de proteção radiológica">
+                <div class="course-player-media" aria-hidden="true">
+                    <span class="course-episode">Curso</span>
+                    <div class="course-play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="course-media-title">SP Rad</div>
+                </div>
+
+                <div class="course-player-body">
+                    <h3 class="course-player-title">Proteção Radiológica — treinamento obrigatório</h3>
+                    <p class="course-player-desc">Conteúdo objetivo para capacitar a equipe e atender às exigências de segurança em conformidade legal.</p>
+                    <div class="course-player-meta">
+                        <span class="course-tag"><u>Pago</u></span>
+                        <span class="course-cta">ACESSAR PLATAFORMA →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
     <!-- SOLUÇÕES -->
     <section class="solutions">
         <div class="solutions-inner">
@@ -179,6 +275,7 @@
 
     <!-- components.js -->
     <script src="components.js"></script>
-
+    <script src="slider.js"></script>
+    
 </body>
 </html>
