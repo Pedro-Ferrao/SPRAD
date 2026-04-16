@@ -29,8 +29,10 @@ contactForm.addEventListener('submit', async (e) => {
     if (!recaptchaResponse) {
         formStatus.textContent = '✕ Por favor, complete a verificação reCAPTCHA.';
         formStatus.className = 'form-status error';
-        return;
+        return; // Para o envio se não marcou o box
     }
+
+
     
 
     // Estado de carregamento
