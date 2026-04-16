@@ -22,6 +22,8 @@ contactForm.addEventListener('submit', async (e) => {
     const btnText = submitBtn.querySelector('.btn-text');
     const btnIcon = submitBtn.querySelector('i');
 
+
+    
     // Verifica reCAPTCHA
     const recaptchaResponse = grecaptcha.getResponse();
     if (!recaptchaResponse) {
@@ -29,6 +31,7 @@ contactForm.addEventListener('submit', async (e) => {
         formStatus.className = 'form-status error';
         return;
     }
+    
 
     // Estado de carregamento
     submitBtn.disabled = true;
@@ -36,6 +39,9 @@ contactForm.addEventListener('submit', async (e) => {
     btnIcon.className = 'fa-solid fa-spinner fa-spin';
     formStatus.textContent = '';
     formStatus.className = 'form-status';
+    // Dentro do submit, mude a verificação para:
+
+
 
     // Coleta os dados
     const formData = new FormData(contactForm);

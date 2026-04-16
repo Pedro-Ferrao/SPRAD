@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="style.css">
     <style>
         html { scroll-behavior: smooth; }
@@ -22,37 +23,48 @@
     <div id="header"></div>
 
     <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text hero-text-panel">
-                    <h1>Proteção Radiológica com <span class="cyan-text">Segurança,</span> <span class="cyan-text">Credibilidade</span> e <span class="teal-text">Qualidade.</span></h1>
-                    <p class="hero-subtitle">Soluções completas em radioproteção.</p>
-                    <a href="#servicos" class="btn-main">CONFIRA NOSSOS SERVIÇOS</a>
-                </div>
+<section id="home" class="hero">
+  <div class="container">
+    <div class="hero-content">
 
-                <div class="hero-banner hero-slider" data-slider="hero-banner" aria-label="Slider principal">
-                    <div class="hero-slides" aria-live="polite">
-                        <div class="hero-slide is-active">
-                            <img src="slider/pexels-shvetsa-4225883.jpg" alt="Proteção radiológica em ambiente clínico" loading="eager" decoding="async">
-                        </div>
-                        <div class="hero-slide">
-                            <img src="slider/pexels-cottonbro-6502161.jpg" alt="Procedimentos e segurança em radiologia" loading="lazy" decoding="async">
-                        </div>
-                        <div class="hero-slide">
-                            <img src="slider/pexels-mart-production-7089032.jpg" alt="Treinamento e conformidade em radioproteção" loading="lazy" decoding="async">
-                        </div>
-                    </div>
 
-                    <div class="hero-dots" role="tablist" aria-label="Navegação do slider principal">
-                        <button class="hero-dot is-active" type="button" aria-label="Ver imagem 1" data-slide="0"></button>
-                        <button class="hero-dot" type="button" aria-label="Ver imagem 2" data-slide="1"></button>
-                        <button class="hero-dot" type="button" aria-label="Ver imagem 3" data-slide="2"></button>
-                    </div>
-                </div>
-            </div>
+      <div class="hero-banner hero-slider" data-slider="hero-banner" aria-label="Slider principal">
+        <div class="hero-slides" aria-live="polite">
+          <div class="hero-slide is-active">
+            <img src="slider/pexels-shvetsa-4225883.jpg" alt="Proteção radiológica em ambiente clínico" loading="eager" decoding="async">
+          </div>
+          <div class="hero-slide">
+            <img src="slider/xray_dog.jpg" alt="Raio-X veterinário e proteção" loading="lazy" decoding="async">
+          </div>
+          <div class="hero-slide">
+            <img src="slider/pexels-cottonbro-6502161.jpg" alt="Procedimentos e segurança em radiologia" loading="lazy" decoding="async">
+          </div>
+          <div class="hero-slide">
+            <img src="slider/pexels-mart-production-7089032.jpg" alt="Treinamento e conformidade em radioproteção" loading="lazy" decoding="async">
+          </div>
         </div>
-    </section>
+
+        <div class="hero-nav">
+          <div class="hero-nav-arrows">
+            <button class="hero-arrow" data-prev aria-label="Slide anterior">&#8592;</button>
+            <button class="hero-arrow" data-next aria-label="Próximo slide">&#8594;</button>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div class="hero-progress" role="tablist" aria-label="Navegação do slider"></div>
+            <span class="hero-count"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-text hero-text-panel">
+        <h1>Proteção Radiológica com <span class="cyan-text">Segurança,</span> <span class="cyan-text">Credibilidade</span> e <span class="teal-text">Qualidade.</span></h1>
+        <p class="hero-subtitle">Soluções completas em radioproteção.</p>
+        <a href="#servicos" class="btn-main">CONFIRA NOSSOS SERVIÇOS</a>
+      </div>
+
+    </div>
+  </div>
+</section>
 
     <!-- A EMPRESA -->
     <section id="empresa" class="about">

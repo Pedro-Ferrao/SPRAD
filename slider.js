@@ -1,66 +1,73 @@
 function initSlider(container, options = {}) {
-  const slideSelector = options.slideSelector ?? ".hero-slide";
-  const dotSelector = options.dotSelector ?? ".hero-dot";
-  const activeSlideClass = options.activeSlideClass ?? "is-active";
-  const activeDotClass = options.activeDotClass ?? "is-active";
-  const intervalMs = options.intervalMs ?? 5200;
+  const slideSelector  = options.slideSelector  ?? ".hero-slide";
+  const activeClass    = options.activeClass    ?? "is-active";
+  const intervalMs     = options.intervalMs     ?? 5200;
 
-  const slides = Array.from(container.querySelectorAll(slideSelector));
-  const dots = Array.from(container.querySelectorAll(dotSelector));
-  if (slides.length === 0) return;
+  const slides    = Array.from(container.querySelectorAll(slideSelector));
+  const navEl     = container.querySelector(".hero-progress");
+  const countEl   = container.querySelector(".hero-count");
+  const btnPrev   = container.querySelector("[data-prev]");
+  const btnNext   = container.querySelector("[data-next]");
 
-  let current = Math.max(
-    0,
-    slides.findIndex((s) => s.classList.contains(activeSlideClass))
-  );
+  if (!slides.length) return;
+
+  let current = slides.findIndex(s => s.classList.contains(activeClass));
   if (current === -1) current = 0;
+  let timer = null;
+
+  // cria barras de progresso dinamicamente
+  const bars = slides.map((_, i) => {
+    const bar = document.createElement("button");
+    bar.className = "hero-bar" + (i === current ? " is-active" : "");
+    bar.setAttribute("role", "tab");
+    bar.setAttribute("aria-label", "Ver slide " + (i + 1));
+    bar.addEventListener("click", () => goTo(i));
+    navEl && navEl.appendChild(bar);
+    return bar;
+  });
+
+  function updateCount() {
+    if (countEl) countEl.textContent = (current + 1) + "/" + slides.length;
+  }
 
   function goTo(n) {
     const next = (n + slides.length) % slides.length;
-    slides[current].classList.remove(activeSlideClass);
-    if (dots.length) dots[current]?.classList.remove(activeDotClass);
-
+    slides[current].classList.remove(activeClass);
+    bars[current].classList.remove("is-active");
     current = next;
-    slides[current].classList.add(activeSlideClass);
-    if (dots.length) dots[current]?.classList.add(activeDotClass);
+    slides[current].classList.add(activeClass);
+    bars[current].classList.add("is-active");
+    updateCount();
+    resetTimer();
   }
 
-  if (dots.length) {
-    dots.forEach((dot) => {
-      dot.addEventListener("click", () => {
-        const idx = Number(dot.getAttribute("data-slide"));
-        if (!Number.isNaN(idx)) goTo(idx);
-      });
-    });
-  }
+  if (btnPrev) btnPrev.addEventListener("click", () => goTo(current - 1));
+  if (btnNext) btnNext.addEventListener("click", () => goTo(current + 1));
 
-  let timer = null;
-  function start() {
-    if (timer) return;
-    timer = window.setInterval(() => goTo(current + 1), intervalMs);
-  }
-  function stop() {
-    if (!timer) return;
-    window.clearInterval(timer);
-    timer = null;
-  }
+  // suporte a swipe no mobile
+  let touchStartX = 0;
+  container.addEventListener("touchstart", e => { touchStartX = e.changedTouches[0].screenX; }, { passive: true });
+  container.addEventListener("touchend", e => {
+    const diff = touchStartX - e.changedTouches[0].screenX;
+    if (Math.abs(diff) > 40) goTo(diff > 0 ? current + 1 : current - 1);
+  }, { passive: true });
 
   container.addEventListener("mouseenter", stop);
   container.addEventListener("mouseleave", start);
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) stop();
-    else start();
-  });
+  document.addEventListener("visibilitychange", () => document.hidden ? stop() : start());
 
+  function start() { if (!timer) timer = setInterval(() => goTo(current + 1), intervalMs); }
+  function stop()  { clearInterval(timer); timer = null; }
+  function resetTimer() { stop(); start(); }
+
+  updateCount();
   start();
 }
 
 function initAllSliders() {
-  document.querySelectorAll("[data-slider]").forEach((el) => initSlider(el));
+  document.querySelectorAll("[data-slider]").forEach(el => initSlider(el));
 }
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initAllSliders);
-} else {
-  initAllSliders();
-}
+document.readyState === "loading"
+  ? document.addEventListener("DOMContentLoaded", initAllSliders)
+  : initAllSliders();
