@@ -24,13 +24,6 @@ contactForm.addEventListener('submit', async (e) => {
 
 
     
-    // Verifica reCAPTCHA
-    const recaptchaResponse = grecaptcha.getResponse();
-    if (!recaptchaResponse) {
-        formStatus.textContent = '✕ Por favor, complete a verificação reCAPTCHA.';
-        formStatus.className = 'form-status error';
-        return; // Para o envio se não marcou o box
-    }
 
 
     
@@ -44,10 +37,6 @@ contactForm.addEventListener('submit', async (e) => {
     // Dentro do submit, mude a verificação para:
 
 
-
-    // Coleta os dados
-    const formData = new FormData(contactForm);
-    formData.append('g-recaptcha-response', recaptchaResponse);
 
     try {
         const response = await fetch(contactForm.action, {
