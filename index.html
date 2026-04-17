@@ -19,7 +19,6 @@
 
 <body>
 
-    <!-- Header injetado pelo components.js -->
     <div id="header"></div>
 
     <!-- HERO -->
@@ -27,44 +26,33 @@
   <div class="container">
     <div class="hero-content">
 
-      <!-- Slider -->
-      <div class="hero-banner hero-slider" data-slider="hero-banner" aria-label="Slider principal">
-        <div class="hero-slides" aria-live="polite">
+    <div class="hero-banner hero-slider" data-slider="hero-banner">
+        <div class="hero-slides">
           <div class="hero-slide is-active">
-            <img src="slider/raio-x.jpg" alt="Proteção radiológica em ambiente clínico" loading="eager" decoding="async">
+            <img src="slider/raio-x.jpg" alt="Proteção radiológica">
           </div>
           <div class="hero-slide">
-            <img src="slider/cachorro-raio_x.jpeg" alt="Raio-X veterinário e proteção" loading="lazy" decoding="async">
+            <img src="slider/cachorro-raio_x.jpeg" alt="Veterinário">
           </div>
-          <div class="hero-slide">
-            <img src="slider/raio-x_odontologico.jpeg" alt="Procedimentos e segurança em radiologia" loading="lazy" decoding="async">
+            <div class="hero-slide">
+            <img src="slider/raio-x_odontologico.jpeg" alt="Veterinário">
           </div>
-          <div class="hero-slide">
-            <img src="slider/ultrassom.jpeg" alt="Treinamento e conformidade em radioproteção" loading="lazy" decoding="async">
-          </div>
-        </div>
+    </div>
 
-        <!-- setas_sliders -->
         <div class="hero-nav">
-          <div class="hero-nav-arrows">
-            <button class="hero-arrow" data-prev aria-label="Slide anterior">&#8592;</button>
-            <button class="hero-arrow" data-next aria-label="Próximo slide">&#8594;</button>
-          </div>
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <div class="hero-progress" role="tablist" aria-label="Navegação do slider"></div>
-            <span class="hero-count"></span>
-          </div>
+          <button class="hero-arrow" data-prev aria-label="Anterior">&#8592;</button>
+          <button class="hero-arrow" data-next aria-label="Próximo">&#8594;</button>
         </div>
       </div>
-      <!-- FIM do hero-banner -->
 
-      <!-- Seta de scroll FORA do banner -->
-      <div class="scroll-indicator">
-        <a href="#servicos" aria-label="Rolar para baixo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 9l6 6 6-6"/>
-          </svg>
-        </a>
+      <div class="hero-text-side">
+        <h1>
+          Proteção Radiológica com <span class="cyan-text">Segurança,</span><br>
+          <span class="cyan-text">Credibilidade</span> e
+          <span class="teal-text">Qualidade.</span>
+        </h1>
+        <p class="hero-subtitle">Soluções completas em radioproteção.</p>
+        <a href="#servicos" class="btn-main">CONHEÇA NOSSOS SERVIÇOS</a>
       </div>
 
     </div>
@@ -72,22 +60,17 @@
 </section>
 
 
-
     <!-- A EMPRESA -->
     <section id="empresa" class="about">
         <div class="container">
             <div class="about-grid">
                 <!-- Esquerda: Conheça os nossos serviços-->
-                <div class="about-left">
-                    <h1>Proteção Radiológica com <span class="cyan-text">Segurança,</span> <span class="cyan-text">Credibilidade</span> e <span class="teal-text">Qualidade.</span></h1>
-                    <p class="hero-subtitle">Soluções completas em radioproteção.</p>
-                    <a href="servicos.html" class="btn-main">CONFIRA NOSSOS SERVIÇOS</a>
-                </div>
 
                 <!-- Direita: Conheça Empresa -->
                 <div class="about-card">
                         <h2 class="title-section">SP Rad Serviços em Proteção Radiológica</h2>
-                    <p class="description">Formada pela mesma equipe técnica da Sapra Assessoria, a SP Rad realiza serviços de Controle de Qualidade da Imagem, 
+                    <p class="description">
+                        Formada pela mesma equipe técnica da Sapra Assessoria, a SP Rad realiza serviços de Controle de Qualidade da Imagem, 
                         Levantamento Radiométrico Ambiental, Testes de Radiação de Fuga, Treinamentos e muito mais.</p>
                     </ul>
                     <a href="empresa.html" class="btn-secondary">CONHEÇA A EMPRESA</a>
