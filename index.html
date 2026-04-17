@@ -27,8 +27,7 @@
   <div class="container">
     <div class="hero-content">
 
-    <!-- Slider -->
-
+      <!-- Slider -->
       <div class="hero-banner hero-slider" data-slider="hero-banner" aria-label="Slider principal">
         <div class="hero-slides" aria-live="polite">
           <div class="hero-slide is-active">
@@ -56,9 +55,17 @@
             <span class="hero-count"></span>
           </div>
         </div>
-
       </div>
+      <!-- FIM do hero-banner -->
 
+      <!-- Seta de scroll FORA do banner -->
+      <div class="scroll-indicator">
+        <a href="#servicos" aria-label="Rolar para baixo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 9l6 6 6-6"/>
+          </svg>
+        </a>
+      </div>
 
     </div>
   </div>
@@ -216,7 +223,7 @@
         </div>
 
         <div class="courses-grid">
-            <a class="course-player-card" href="https://cursos.sprad.com.br" target="_blank" rel="noopener noreferrer" aria-label="Acessar plataforma do curso de proteção radiológica">
+            <a class="course-player-card" href="curso_em_breve.html" target="_blank" rel="noopener noreferrer" aria-label="Acessar plataforma do curso de proteção radiológica">
                 <div class="course-player-media" aria-hidden="true">
                     <span class="course-episode">Curso</span>
                     <div class="course-play">
@@ -237,32 +244,60 @@
     </div>
 </section>
 
-    <!-- SOLUÇÕES -->
-    <section class="solutions">
-        <div class="solutions-inner">
+<section class="solutions">
+  <div class="solutions-inner">
+    <div class="solutions-badge">Por que a SP Rad?</div>
+    <h2 class="title-cyan">Soluções em Proteção Radiológica</h2>
+    <p class="solutions-p">
+      A SP Rad inova através da aquisição de novos equipamentos de medidas e
+      na qualificação de sua equipe para atender às modernas tecnologias do
+      diagnóstico por imagem.
+    </p>
 
-            <div class="solutions-badge">Por que a SP Rad?</div>
+    <div class="solutions-stats">
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Conformidade Legal</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-number">+10</span>
+        <span class="stat-label">Anos de Experiência</span>
+      </div>
+    </div>
 
-            <h2 class="title-cyan">Soluções em Proteção Radiológica</h2>
+    </div>
+</section>
 
-            <p class="solutions-p">A SP Rad inova através da aquisição de novos equipamentos de medidas e na qualificação de sua equipe para atender às modernas tecnologias do diagnóstico por imagem.</p>
-
-            <div class="solutions-stats">
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Conformidade Legal</span>
-                </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number">+10</span>
-                    <span class="stat-label">Anos de Experiência</span>
-                </div>
+    <section class="services-cta">
+        <div class="container">
+            <div class="cta-inner">
+            <div class="cta-left">
+                <span class="cta-eyebrow">Fale conosco</span>
+                <h2>Solicite um orçamento<br>sem compromisso</h2>
+                <p>Entre em contato com nossa equipe e descubra como podemos ajudar sua instituição a garantir segurança e conformidade legal.</p>
+                <a href="contato.html" class="btn-secondary">ENTRE EM CONTATO →</a>
             </div>
 
-            <p class="simple-p">Venha nos conhecer, navegue pelo site, tire suas dúvidas e solicite um orçamento sem compromisso.</p>
-
-            <a href="contato.html" class="btn-secondary">ENTRE EM CONTATO</a>
-
+            <div class="cta-right">
+                <div class="cta-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>+10 anos de experiência</span>
+                </div>
+                <div class="cta-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Equipe especializada</span>
+                </div>
+                <div class="cta-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Cadastros estaduais em dia</span>
+                </div>
+                <div class="cta-item">
+                <i class="fa-solid fa-circle-check"></i>
+                <span>Parceria Sapra Landauer</span>
+                </div>
+            </div>
+            </div>
         </div>
     </section>
 
@@ -272,6 +307,5 @@
     <!-- components.js -->
     <script src="components.js"></script>
     <script src="slider.js"></script>
-    
-</body>
+  </body>
 </html>

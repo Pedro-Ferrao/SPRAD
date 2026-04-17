@@ -201,15 +201,18 @@ body {
    HERO
 ════════════════════════════ */
 .hero {
+  margin-top: 20px; 
   background: #ffffff;
-  padding: 60px 0 56px;
+  padding: 48px 0 56px;
   overflow: hidden;
 }
+
+
 
 .hero-content {
   display: flex;
   align-items: center;
-  gap: 56px;
+  gap: 40px; /* volta para um valor intermediário entre 32 e 56 */
   flex-wrap: wrap;
 }
 
@@ -311,6 +314,34 @@ body {
   object-position: center; /* Mantém o foco da imagem no meio ao cortar as bordas */
   display: block;
 
+}
+
+.scroll-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;    /* Ocupa toda a largura para poder centralizar no meio */
+  clear: both;    /* Garante que não haja elementos flutuando ao lado */
+  margin-top: 15px; 
+  position: relative;
+  left: 0;
+}
+
+.scroll-indicator a {
+  display: flex;
+  animation: bounce 1.8s ease-in-out infinite;
+  text-decoration: none;
+}
+
+.scroll-indicator svg {
+  width: 45px;
+  height: 45px;
+  stroke: var(--cyan);
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
 }
 
 /* ── Navegação do slider ─── */
@@ -426,7 +457,7 @@ body {
 ════════════════════════════ */
 .about {
   padding: 80px 0;
-  background: #fff;
+  background: #ffffff;
   border-top: 1px solid #ffffff;
   position: relative;
 }
@@ -472,11 +503,11 @@ body {
 }
 
 .about-card {
-  background: #eef4fb; /* azul bem suave */
+  background: #ffffff; /* azul bem suave */
   border-radius: 16px;
   padding: 40px 36px;
   box-shadow: 0 4px 24px rgba(56, 81, 124, 0.1);
-  border: 1px solid #d6e8f5; /* borda sutil para definir o card */
+  border: 1px solid #ffffff; /* borda sutil para definir o card */
 }
 
 .about-card h1{
@@ -712,6 +743,30 @@ body {
     color: var(--navy);
     margin: 0;
 }
+
+@media (max-width: 768px) {
+  .grid-services {
+    grid-template-columns: 1fr; /* 1 coluna só */
+    padding: 20px 16px;         /* menos margem lateral */
+    gap: 16px;                  /* espaço vertical entre cards */
+  }
+
+  .service-card {
+    padding: 40px 24px;         /* reduz o padding interno dos cards */
+    border-radius: 28px;        /* arredondamento proporcional ao tamanho menor */
+  }
+
+  .service-card-cta {
+    flex-direction: column;     /* empilha texto e botão no CTA */
+    gap: 16px;
+    padding: 28px 20px;
+  }
+
+  .service-card-cta p {
+    font-size: 1.1rem;
+  }
+}
+
 
 /* ════════════════════════════
    SEÇÃO DOWNLOADS (index.html)
@@ -1652,7 +1707,7 @@ body {
 
 /* Missão Visão Valores */
 .mvv-section {
-    background: #f7fafd;
+    background: #ffffff;
     padding: 80px 0;
 }
 
