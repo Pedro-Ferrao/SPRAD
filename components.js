@@ -65,7 +65,7 @@ const headerHTML = `
         <div class="container">
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#empresa">A Empresa</a></li>
+                <li><a href="index.html#empresa">Empresa</a></li>
                 <li><a href="index.html#servicos">Serviços</a></li>
                 <li><a href="index.html#downloads">downloads</a></li>
                 <li><a href="index.html#contato">Contato</a></li>
@@ -82,7 +82,7 @@ const footerHTML = `
 
         <div class="footer-brand">
             <div class="footer-logo">
-                <img src = "Imagens/logo_fundo_preto2.png">
+                <img src = "Imagens/logo_fundopreto5.png">
             </div>
 
         </div>

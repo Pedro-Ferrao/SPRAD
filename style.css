@@ -746,9 +746,13 @@ body {
 
 .downloads-cards {
     display: flex;
-    justify-content: center;
-    gap: 80px;
-    flex-wrap: wrap;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start;  /* Garante que alinhem pelo topo */
+    gap: 60px;               /* Reduzi levemente o gap para não quebrar muito cedo em telas médias */
+    flex-wrap: wrap;         /* Permite que caiam para a linha de baixo se não houver espaço */
+    max-width: 1200px;       /* Evita que os cards fiquem "soltos" em telas ultra-wide */
+    margin: 0 auto;          /* Centraliza o container inteiro na página */
+    padding: 20px;           /* Respiro lateral para não colarem na borda */
 }
 
 .download-circle-card {
@@ -758,7 +762,8 @@ body {
     text-align: center;
     gap: 20px;
     text-decoration: none;
-    max-width: 260px;
+    width: 260px; /* Alterado de max-width para width fixo para manter simetria */
+    flex-shrink: 0;
 }
 
 .circle-outer {
@@ -851,8 +856,9 @@ body {
     font-size: 0.9rem;
     color: #666;
     line-height: 1.7;
-    margin: 0;
+    margin-left: 0px;
 }
+
 
 .circle-cta {
     font-size: 0.8rem;
@@ -861,11 +867,28 @@ body {
     letter-spacing: 0.5px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.3s, color 0.3s;
+    margin-right: 0px;
 }
 
 .download-circle-card:hover .circle-cta {
     border-bottom-color: var(--teal);
     color: var(--navy);
+}
+
+@media (max-width: 768px) {
+    .downloads-cards {
+        gap: 40px; /* Diminui o espaço entre eles no celular */
+    }
+    
+    .circle-outer {
+        width: 180px; /* Reduz um pouco o tamanho do círculo para telas pequenas */
+        height: 180px;
+    }
+    
+    .circle-inner {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 
@@ -1770,7 +1793,7 @@ body {
 ════════════════════════════ */
 .about-hero {
     background: #fff;
-    padding: 70px 0 50px;
+    padding: 40px 0 30px;
     text-align: center;
     border-bottom: 1px solid #e8eef4;
 }
@@ -1785,7 +1808,7 @@ body {
 }
 
 .about-intro {
-    padding: 80px 0;
+    padding: 30px 0;
     background: #fff;
 }
 
@@ -1804,7 +1827,7 @@ body {
 .highlight-box {
     background: linear-gradient(135deg, #f0f8fa 0%, #e8f4f7 100%);
     border-left: 4px solid var(--cyan);
-    padding: 32px 40px;
+    padding: 25px 30px;
     margin: 40px 0;
     border-radius: 8px;
     position: relative;
@@ -1829,7 +1852,7 @@ body {
 
 .mvv-section {
     background: #ffffff;
-    padding: 80px 0;
+    padding: 30px 0;
 }
 
 .mvv-grid {
@@ -1842,7 +1865,7 @@ body {
     background: #fff;
     border: 1px solid #e4eef6;
     border-radius: 16px;
-    padding: 40px 32px;
+    padding: 25px 20px;
     text-align: center;
     transition: box-shadow 0.3s, transform 0.3s;
 }
@@ -1893,7 +1916,7 @@ body {
 .mvv-card ul li {
     color: #666;
     font-size: 0.95rem;
-    padding: 8px 0;
+    padding: 2px 0;
     padding-left: 28px;
     position: relative;
 }
@@ -1906,70 +1929,120 @@ body {
     font-weight: 700;
 }
 
+
 .anvisa-section {
-    padding: 80px 0;
-    background: #fff;
+    padding: 40px 0;
+    background: #ffffff;
+    width: 100%; 
+    display: flex;
+    justify-content: center; 
 }
 
 .anvisa-content {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    display: flex;
+    grid-template-columns: 1.5fr 1fr; 
     gap: 48px;
     align-items: center;
+    width: 100%;       
+    max-width: none;  
+    margin: 0;        
+    padding: 0 5%;     
+}
+
+.anvisa-text {
+    text-align: left; 
+    display: flex;
+    flex-direction: column;
+
 }
 
 .anvisa-text h2 {
     font-family: "Montserrat", sans-serif;
-    font-size: 2rem;
+    font-size: 2.2rem; 
     font-weight: 800;
     color: var(--navy);
     margin-bottom: 24px;
 }
 
 .anvisa-text p {
-    font-size: 0.98rem;
+    font-size: 1.05rem; 
     line-height: 1.9;
     color: #555;
     margin-bottom: 20px;
+    max-width: none; 
 }
 
-.anvisa-badge {
-    background: linear-gradient(135deg, var(--navy), var(--teal));
-    border-radius: 16px;
-    padding: 40px 36px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+/* --- Media Queries para Mobile e Tablets --- */
+
+@media (max-width: 992px) {
+    .mvv-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        gap: 20px;
+    }
+
+    .anvisa-content {
+        grid-template-columns: 1fr; /* Empilha o texto e a imagem/conteúdo */
+        gap: 32px;
+    }
+
+    .anvisa-section {
+        padding-left: 20px; /* Remove o recuo excessivo da esquerda */
+        padding-right: 20px;
+    }
 }
 
-.anvisa-badge::before {
-    content: "";
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(255,255,255,0.05);
-    border-radius: 50%;
-    top: -80px;
-    right: -60px;
+@media (max-width: 768px) {
+    .about-hero {
+        padding: 40px 20px;
+    }
+
+    .about-lead {
+        font-size: 1rem;
+        padding: 0 15px;
+    }
+
+    .intro-content {
+        padding: 0 20px;
+    }
+
+    .mvv-grid {
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
+    }
+
+    .highlight-box {
+        padding: 24px;
+        margin: 30px 15px;
+    }
+
+    .highlight-box i {
+        display: none; /* Opcional: esconde o ícone se o espaço for curto */
+    }
+
+    .anvisa-text h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .anvisa-text p {
+        text-align: justify;
+    }
+
+    .mvv-section {
+        padding: 40px 20px;
+    }
 }
 
-.anvisa-badge i {
-    font-size: 3rem;
-    color: var(--cyan);
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
+/* Ajuste para telas muito pequenas */
+@media (max-width: 480px) {
+    .mvv-card {
+        padding: 30px 20px;
+    }
+    
+    .mvv-icon {
+        width: 50px;
+        height: 50px;
+    }
 }
-
-.anvisa-badge p {
-    color: rgba(255,255,255,0.9);
-    font-size: 0.95rem;
-    line-height: 1.8;
-    margin: 0;
-    position: relative;
-    z-index: 1;
-}
-
 
 /* ════════════════════════════
    PÁGINA DE SERVIÇOS
