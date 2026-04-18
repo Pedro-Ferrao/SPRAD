@@ -331,34 +331,34 @@ body {
 
 .hero-nav {
   position: absolute;
-  bottom: 30px;
-  left: 30px;
+  bottom: 25px; /* Levemente mais próximo da borda */
+  left: 25px;
   z-index: 10;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px; /* Reduzi o espaço entre as setas */
 }
 
 .hero-arrow {
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  width: 50px;
-  height: 50px;
+  background: rgba(255, 255, 255, 0.15); /* Fundo sutil e translúcido */
+  backdrop-filter: blur(4px);            /* Efeito de vidro moderno */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borda fina em vez de sombra */
+  width: 38px;                          /* Tamanho reduzido de 50px para 38px */
+  height: 38px;
   border-radius: 50%;
   cursor: pointer;
-  color: #253a57;
-  font-size: 1.2rem;
+  color: #ffffff;                       /* Branco para contraste no fundo escuro */
+  font-size: 0.9rem;                    /* Ícone menor */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-arrow:hover {
-  background: #54ced2;
-  color: white;
-  transform: scale(1.1);
+  background: #ffffff;                  /* Inverte o fundo no hover */
+  color: #253a57;                       /* Inverte a cor do ícone */
+  transform: translateY(-2px);          /* Sobe levemente em vez de crescer */
 }
 
 @media (max-width: 1100px) {
@@ -653,6 +653,12 @@ body {
   margin-bottom: 32px;
 }
 
+@media (max-width: 768px) {
+  .solutions-stats {
+    max-width: 100%;
+    padding: 20px 16px;
+  }
+}
 
 
 /* ════════════════════════════
@@ -719,7 +725,7 @@ body {
 ════════════════════════════ */
 .services-header {
   text-align: center;
-  padding: 20px 10px 10px;
+  padding: 0px 10px 10px;
   background: #fff;
 }
 
@@ -831,6 +837,12 @@ body {
     margin: 0;
 }
 
+
+@media (max-width: 768px) {
+  .grid-services {
+    padding: 20px 12px;
+  }
+}
 
 /* ════════════════════════════
    SEÇÃO DOWNLOADS (index.html)
@@ -1403,6 +1415,12 @@ body {
 .social-links svg {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    padding: 0 16px 48px; /* era 24px, pode ainda vazar em telas de 320px */
+  }
 }
 
 /* ════════════════════════════
@@ -2651,7 +2669,21 @@ body {
    PÁGINA DE CURSO
 ════════════════════════════ */
 
-.curso-section, .curso{
+.curso-section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.curso{
     margin: 0;
     padding: 0;
     width: 100%;
