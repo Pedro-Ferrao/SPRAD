@@ -394,7 +394,7 @@ body {
    A EMPRESA
 ════════════════════════════ */
 .about {
-  padding: 20px 0;
+  padding: 50px 0;
   background: #ffffff;
   border-top: 1px solid #ffffff;
   position: relative;
@@ -480,6 +480,7 @@ body {
 }
 
 .title-section {
+  text-align: center;
   font-family: "Montserrat", sans-serif;
   font-size: 2.2rem;
   margin-bottom: 30px;
@@ -497,11 +498,16 @@ body {
 .description {
   max-width: 950px;
   margin: 0 auto 20px;
+  text-align: center;
 }
 
 
 .btn-secondary {
-  display: inline-block;
+  display: block;         /* Muda para block para aceitar margem auto */
+  width: fit-content;    /* Garante que o botão não ocupe a largura toda */
+  margin: 0 auto;        /* Centraliza horizontalmente */
+  
+  /* Mantém o resto do seu código */
   background: var(--navy);
   color: var(--white);
   padding: 12px 35px;
@@ -512,10 +518,7 @@ body {
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
-  transition:
-    background 0.3s,
-    transform 0.2s,
-    box-shadow 0.3s;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
 }
 
 .btn-secondary::before {
@@ -553,7 +556,7 @@ body {
    INICIO SOLUÇÕES - empresa
 ════════════════════════════ */
 .solutions {
-  padding: 0;
+  padding: 20px;
   background: #fff;
   position: relative;
 }
@@ -596,23 +599,27 @@ body {
 }
 
 .solutions-stats {
-  display: flex;
-  align-items: center;
+  display: flex;          /* Essencial para alinhar lado a lado */
+  align-items: center;    /* Alinha verticalmente os números e o divisor */
   justify-content: center;
-  gap: 0;
+  max-width: 550px;       /* Aumentei um pouco para não espremer o texto */
+  margin: 0 auto 48px;
+  gap: 10px;              /* Espaço entre os itens e o divisor */
+  
+  /* Estilos visuais que você já tinha */
   background: #ffffff;
   border: 1px solid #e2edf5;
-  border-radius: 16px;
-  padding: 36px 20px;
-  margin-bottom: 48px;
+  border-radius: 24px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(56, 81, 124, 0.05);
 }
 
 .stat-item {
-  flex: 1;
+  flex: 1;                /* Faz os dois lados terem o mesmo tamanho exato */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  text-align: center;
 }
 
 .stat-number {
@@ -621,6 +628,7 @@ body {
   font-weight: 800;
   color: var(--orange);
   line-height: 1;
+
 }
 
 .stat-label {
@@ -633,8 +641,9 @@ body {
 
 .stat-divider {
   width: 1px;
-  height: 48px;
+  height: 50px;           /* Altura fixa para o divisor */
   background: #dde8f0;
+  flex-shrink: 0;         /* Impede que o divisor "suma" se o espaço apertar */
 }
 
 .simple-p {
@@ -643,15 +652,7 @@ body {
   margin-bottom: 32px;
 }
 
-.about, .solutions, .services-header {
-  padding-top: 20px !important;
-  padding-bottom: 20px !important;
-}
 
-.about-grid, .solutions-inner {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-}
 
 /* ════════════════════════════
    FINAL SOLUÇÕES - empresa
