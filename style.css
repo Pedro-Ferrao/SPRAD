@@ -33,6 +33,11 @@ body {
   padding: 0 20px;
 }
 
+.double-container{
+    display: flex; /* Ativa o Flexbox */
+    gap: 10px;
+}
+
 .text-center {
   text-align: center;
 }
@@ -43,7 +48,7 @@ body {
 
 .top-bar {
   background: var(--white);
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid #ffffff;
   padding: 24px 0;
   position: sticky;
   top: 0;
@@ -389,7 +394,7 @@ body {
    A EMPRESA
 ════════════════════════════ */
 .about {
-  padding: 40px 0;
+  padding: 20px 0;
   background: #ffffff;
   border-top: 1px solid #ffffff;
   position: relative;
@@ -408,7 +413,7 @@ body {
 
 .about-grid {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   align-items: center;
   gap: 60px;
   padding: 20px 0;
@@ -464,6 +469,12 @@ body {
   border: 1px solid #ffffff;
 }
 
+.about-card, 
+.solutions-inner {
+    flex: 1;
+    min-width: 300px; /* Impede que fiquem muito espremidas no mobile */
+}
+
 .about-card h1{
   font-size: 2.25rem;
 }
@@ -480,13 +491,14 @@ body {
   font-weight: 600;
   font-size: 1.2rem;
   max-width: 900px;
-  margin: 0 auto 30px;
+  margin: 0 auto 15px;
 }
 
 .description {
   max-width: 950px;
-  margin: 0 auto 40px;
+  margin: 0 auto 20px;
 }
+
 
 .btn-secondary {
   display: inline-block;
@@ -537,6 +549,114 @@ body {
   box-shadow: 0 4px 10px rgba(56, 81, 124, 0.25);
 }
 
+/* ════════════════════════════
+   INICIO SOLUÇÕES - empresa
+════════════════════════════ */
+.solutions {
+  padding: 0;
+  background: #fff;
+  position: relative;
+}
+
+.solutions-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 40px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.solutions-badge {
+  display: inline-block;
+  background: rgba(84, 206, 210, 0.12);
+  color: var(--teal);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 7px 18px;
+  margin-bottom: 24px;
+}
+
+.title-cyan {
+  font-family: "Montserrat", sans-serif;
+  color: var(--navy);
+  font-size: 2.5rem;
+  margin-bottom: 24px;
+}
+
+.solutions-p {
+  color: #666;
+  font-size: 1.1rem;
+  max-width: 680px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.solutions-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background: #ffffff;
+  border: 1px solid #e2edf5;
+  border-radius: 16px;
+  padding: 36px 20px;
+  margin-bottom: 48px;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-number {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 48px;
+  background: #dde8f0;
+}
+
+.simple-p {
+  color: #888;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.about, .solutions, .services-header {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+.about-grid, .solutions-inner {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
+/* ════════════════════════════
+   FINAL SOLUÇÕES - empresa
+════════════════════════════ */
+
 .checklist {
   list-style: none;
   display: flex;
@@ -583,12 +703,21 @@ body {
 }
 
 
+
+
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+    }
+}
+
+
 /* ════════════════════════════
    SERVIÇOS
 ════════════════════════════ */
 .services-header {
   text-align: center;
-  padding: 70px 20px 50px;
+  padding: 30px 20px 20px;
   background: #fff;
 }
 
@@ -987,14 +1116,6 @@ body {
 }
 
 
-/* ════════════════════════════
-   SOLUÇÕES
-════════════════════════════ */
-.solutions {
-  padding: 0;
-  background: #fff;
-  position: relative;
-}
 
 /* ════════════════════════════
    CURSO OBRIGATÓRIO (index.html)
@@ -1171,105 +1292,12 @@ body {
   letter-spacing: 0.3px;
 }
 
-.course-cta {
-  color: var(--teal);
-  font-weight: 900;
-  font-size: 0.82rem;
-  letter-spacing: 0.4px;
-  white-space: nowrap;
-  border-bottom: 1px solid transparent;
-  transition: color 0.25s ease, border-color 0.25s ease;
-}
 
 .course-player-card:hover .course-cta {
   color: var(--navy);
   border-bottom-color: var(--navy);
 }
 
-.solutions-inner {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 60px 40px;
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.solutions-badge {
-  display: inline-block;
-  background: rgba(84, 206, 210, 0.12);
-  color: var(--teal);
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  padding: 7px 18px;
-  margin-bottom: 24px;
-}
-
-.title-cyan {
-  font-family: "Montserrat", sans-serif;
-  color: var(--navy);
-  font-size: 2.5rem;
-  margin-bottom: 24px;
-}
-
-.solutions-p {
-  color: #666;
-  font-size: 1.1rem;
-  max-width: 680px;
-  margin: 0 auto 56px;
-  line-height: 1.8;
-  font-weight: 400;
-}
-
-.solutions-stats {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  background: #f7fafd;
-  border: 1px solid #e2edf5;
-  border-radius: 16px;
-  padding: 36px 20px;
-  margin-bottom: 48px;
-}
-
-.stat-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-}
-
-.stat-number {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--orange);
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #888;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.stat-divider {
-  width: 1px;
-  height: 48px;
-  background: #dde8f0;
-}
-
-.simple-p {
-  color: #888;
-  font-size: 0.95rem;
-  margin-bottom: 32px;
-}
 
 /* ════════════════════════════
    FOOTER
@@ -1517,7 +1545,7 @@ body {
 
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 40px;
   }
 
   .about-left .title-section {
@@ -1586,7 +1614,7 @@ body {
   }
 
   .solutions-inner {
-    padding: 40px 20px;
+    padding: 30px 40px;
   }
 
   .title-cyan {
@@ -1792,7 +1820,7 @@ body {
    PÁGINA A EMPRESA
 ════════════════════════════ */
 .about-hero {
-    background: #fff;
+    background: #ffffff;
     padding: 40px 0 30px;
     text-align: center;
     border-bottom: 1px solid #e8eef4;
@@ -2316,7 +2344,7 @@ body {
    PÁGINA DE CONTATO
 ════════════════════════════ */
 .contact-hero {
-    background: #fff;
+    background: #ffffff;
     padding: 70px 0 50px;
     text-align: center;
     border-bottom: 1px solid #e8eef4;
@@ -2614,4 +2642,73 @@ body {
 @keyframes fadeOutPage {
     from { opacity: 1; transform: translateY(0);     }
     to   { opacity: 0; transform: translateY(-16px); }
+}
+
+
+/* ════════════════════════════
+   PÁGINA DE CURSO
+════════════════════════════ */
+
+.curso-section, .curso{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Centralização da Imagem */
+.container-curso {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.img-breve {
+    max-width: 85%;
+    max-height: 75vh;
+    height: auto;
+    display: block;
+}
+
+.btn-back {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.btn-back:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border-color: #ffffff;
+    text-decoration: none;
+  }
+
+
+@media (max-width: 600px) {
+    .btn-back {
+        top: 20px;
+        left: 20px;
+        font-size: 12px;
+        padding: 8px 15px;
+    }
 }
