@@ -1942,10 +1942,13 @@ body {
 
 @media (max-width: 992px) {
     .contact-grid {
-        grid-template-columns: 1fr; /* Transforma as 2 colunas em 1 */
-        gap: 32px;
         display: flex;
         flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 0 10px; /* Margem de segurança lateral */
+        width: 100%;
+        overflow-x: hidden; /* Impede scroll horizontal */
     }
 
     .contact-hero {
@@ -1954,15 +1957,16 @@ body {
 
     .contact-form-wrapper, 
     .contact-info-wrapper {
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 auto;
     }
 }
 
 /* Ajustes para Celulares */
 @media (max-width: 768px) {
-    .contact-main {
-        padding: 30px 15px;
+.contact-main {
+        padding: 20px 10px;
     }
 
     /* Formulário: Empilha campos que estavam lado a lado */
@@ -1971,8 +1975,8 @@ body {
         gap: 20px;
     }
 
-    .contact-form-wrapper {
-        padding: 30px 20px;
+.contact-form-wrapper {
+        padding: 30px 15px; /* Reduzi o padding para o conteúdo interno respirar */
         border-radius: 15px;
     }
 
@@ -1986,16 +1990,30 @@ body {
         padding: 16px 20px;
     }
 
+.form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100% !important;
+        max-width: 100%;
+        display: block;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
     /* Cards de Informação: Ajuste para o texto não vazar */
-    .contact-info-card {
-        padding: 25px 15px;
-        box-sizing: border-box;
+.contact-info-card {
+        padding: 20px 15px;
+        width: 100%;
     }
 
     .info-item {
-        gap: 12px;
-        align-items: center;
-        overflow: hidden; /* Evita quebra de layout */
+        align-items: flex-start;
+        gap: 10px;
+        width: 100%;
     }
 
     .info-icon {
@@ -2004,16 +2022,19 @@ body {
         flex-shrink: 0; /* Impede o ícone de amassar */
     }
 
-    .info-content {
+.info-content {
         flex: 1;
-        min-width: 0; /* Permite que o texto interno quebre corretamente */
+        min-width: 0;
+        word-wrap: break-word;
     }
 
     .info-value {
-        font-size: 0.92rem;
-        word-break: break-word; /* Quebra e-mails longos se necessário */
-        white-space: normal;
-        line-height: 1.3;
+        font-size: 0.88rem;
+        word-break: break-all; /* Essencial para e-mails longos */
+    }
+
+    .btn-submit {
+        width: 100%;
     }
 
     /* Remove o efeito de pulso se estiver atrapalhando o clique no mobile */
@@ -2033,6 +2054,15 @@ body {
     }
 }
 
+@media (max-width: 350px) {
+    .contact-form-wrapper {
+        padding: 20px 10px;
+    }
+    
+    .contact-form-wrapper h2 {
+        font-size: 1.2rem;
+    }
+}
 
 
 /* ════════════════════════════
