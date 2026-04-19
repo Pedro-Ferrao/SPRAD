@@ -1935,74 +1935,105 @@ body {
     animation: whatsappPulse 2s infinite;
 }
 
+.whatsapp-item::before {
+    /* Certificando que a animação não quebre o layout */
+    pointer-events: none; 
+}
+
 @media (max-width: 992px) {
     .contact-grid {
-        grid-template-columns: 1fr; /* Transforma as duas colunas em uma */
+        grid-template-columns: 1fr; /* Transforma as 2 colunas em 1 */
         gap: 32px;
+        display: flex;
+        flex-direction: column;
     }
 
     .contact-hero {
         padding: 50px 20px 30px;
     }
+
+    .contact-form-wrapper, 
+    .contact-info-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
+/* Ajustes para Celulares */
 @media (max-width: 768px) {
     .contact-main {
         padding: 30px 15px;
     }
 
-    .contact-form-wrapper {
-        padding: 30px 20px; /* Reduz o espaçamento interno do formulário */
-        border-radius: 15px;
+    /* Formulário: Empilha campos que estavam lado a lado */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    .form-row {
-        grid-template-columns: 1fr; /* Nome e Sobrenome ficam um embaixo do outro */
-        gap: 20px;
+    .contact-form-wrapper {
+        padding: 30px 20px;
+        border-radius: 15px;
     }
 
     .contact-form-wrapper h2 {
         font-size: 1.5rem;
     }
 
+    /* Botão: Ocupa largura total para facilitar o toque */
     .btn-submit {
-        width: 100%; /* Botão ocupa a largura total no mobile */
-        padding: 14px 20px;
+        width: 100%;
+        padding: 16px 20px;
     }
 
+    /* Cards de Informação: Ajuste para o texto não vazar */
     .contact-info-card {
-        padding: 30px 15px;
+        padding: 25px 15px;
+        box-sizing: border-box;
     }
-    
+
     .info-item {
-        padding: 10px;
         gap: 12px;
+        align-items: center;
+        overflow: hidden; /* Evita quebra de layout */
     }
 
     .info-icon {
-        width: 40px;
-        height: 40px;
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0; /* Impede o ícone de amassar */
     }
 
-    .info-icon i {
-        font-size: 1.1rem;
+    .info-content {
+        flex: 1;
+        min-width: 0; /* Permite que o texto interno quebre corretamente */
     }
 
     .info-value {
-        font-size: 0.9rem;
+        font-size: 0.92rem;
+        word-break: break-word; /* Quebra e-mails longos se necessário */
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    /* Remove o efeito de pulso se estiver atrapalhando o clique no mobile */
+    .whatsapp-item::before {
+        display: none; 
     }
 }
 
-/* Ajuste para telas muito pequenas (iPhone SE, etc) */
+/* Ajustes para telas muito pequenas (ex: iPhone SE) */
 @media (max-width: 380px) {
     .contact-form-wrapper h2 {
         font-size: 1.3rem;
     }
-    
-    .info-label {
-        font-size: 0.7rem;
+
+    .info-value {
+        font-size: 0.85rem;
     }
 }
+
+
 
 /* ════════════════════════════
    PÁGINA DE CURSO
