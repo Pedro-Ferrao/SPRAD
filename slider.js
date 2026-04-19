@@ -4,7 +4,7 @@ function initSlider(container, options = {}) {
   const intervalMs     = options.intervalMs     ?? 5200;
 
   const slides    = Array.from(container.querySelectorAll(slideSelector));
-  const navEl     = container.querySelector(".hero-progress");
+  const navEl = container.querySelector(".hero-nav");
   const countEl   = container.querySelector(".hero-count");
   const btnPrev   = container.querySelector("[data-prev]");
   const btnNext   = container.querySelector("[data-next]");

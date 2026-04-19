@@ -9,68 +9,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="style.css">
-    <style>
-        html { scroll-behavior: smooth; }
-        #home, #empresa, #servicos, #contato {
-            scroll-margin-top: 130px;
-        }
-    </style>
 </head>
+<body style="overflow-x: hidden;">
 
-<body>
+<div id="header"></div>
 
-    <div id="header"></div>
-
-    <!-- HERO -->
 <section id="home" class="hero">
-  <div class="container">
-    <div class="hero-content">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-banner hero-slider" data-slider="hero-banner">
+                <div class="hero-slides">
+                    <div class="hero-slide is-active">
+                        <img src="slider/raio-x.jpg" alt="Proteção radiológica">
+                    </div>
+                    <div class="hero-slide">
+                        <img src="slider/cachorro-raio_x.jpeg" alt="Veterinário">
+                    </div>
+                    <div class="hero-slide">
+                        <img src="slider/raio-x_odontologico.jpeg" alt="Raio-X Odontológico">
+                    </div>
+                    <div class="hero-slide">
+                        <img src="slider/gynecologist-performing-ultrasound-consultation.jpg.jpeg" alt="Ultrassom">
+                    </div>
+                </div>
+                <div class="hero-nav" role="tablist" aria-label="Slides"></div>
+            </div>
 
-    <div class="hero-banner hero-slider" data-slider="hero-banner">
-        <div class="hero-slides">
-          <div class="hero-slide is-active">
-            <img src="slider/raio-x.jpg" alt="Proteção radiológica">
-          </div>
-          <div class="hero-slide">
-            <img src="slider/cachorro-raio_x.jpeg" alt="Veterinário">
-          </div>
-            <div class="hero-slide">
-            <img src="slider/raio-x_odontologico.jpeg" alt="Veterinário">
-          </div>
-            <div class="hero-slide">
-            <img src="slider/gynecologist-performing-ultrasound-consultation.jpg.jpeg" alt="Veterinário">
-          </div>
-    </div>
-
-        <div class="hero-nav">
-          <button class="hero-arrow" data-prev aria-label="Anterior">&#8592;</button>
-          <button class="hero-arrow" data-next aria-label="Próximo">&#8594;</button>
+            <div class="hero-text-side">
+                <h1>
+                    Proteção Radiológica com <span class="cyan-text">Segurança,</span><br>
+                    <span class="cyan-text">Credibilidade</span> e
+                    <span class="teal-text">Qualidade.</span>
+                </h1>
+                <p class="hero-subtitle">Atendimento online em canais personalizados, com agilidade e efeciência.</p>
+                <a href="#servicos" class="btn-main">CONHEÇA NOSSOS SERVIÇOS</a>
+            </div>
         </div>
-      </div>
-
-      <div class="hero-text-side">
-        <h1>
-          Proteção Radiológica com <span class="cyan-text">Segurança,</span><br>
-          <span class="cyan-text">Credibilidade</span> e
-          <span class="teal-text">Qualidade.</span>
-        </h1>
-        <p class="hero-subtitle">Atendimento online em canais personalizados, com agilidade e efeciência.</p>
-        <a href="#servicos" class="btn-main">CONHEÇA NOSSOS SERVIÇOS</a>
-      </div>
-
     </div>
-  </div>
 </section>
 
-
-    <!-- A EMPRESA -->
 <section class="about">
-    <div class="container">
+    <div  class="container">
         <div class="about-grid">
-
-            <div class="about-card">
+            <div id="empresa"  class="about-card">
                 <h2 class="title-section">SP Rad Serviços em Proteção Radiológica</h2>
-                <p id="empresa" class="description">
+                <p class="description">
                     Nosso objetivo é a realização de serviços de qualidade, agilidade no atendimento e solução de problemas em radioproteção garantindo aos nossos clientes segurança e qualidade em sua instituição.
                 </p>
                 <a href="empresa.html" class="btn-secondary">CONHEÇA A EMPRESA</a>
@@ -79,9 +62,6 @@
             <div class="solutions-inner">
                 <div class="solutions-badge">Por que a SP Rad?</div>
                 <h2 class="title-cyan">Experiência e Trabalho em Proteção Radiológica</h2>
-         
-                </p>
-
                 <div class="solutions-stats">
                     <div class="stat-item">
                         <span class="stat-number">100%</span>
@@ -93,79 +73,79 @@
                         <span class="stat-label">Anos de Experiência</span>
                     </div>
                 </div>
-            </div> 
-</section>
-
-    <!-- SERVIÇOS -->
-    <section class="services">
-        <div class="grid-services">
-            <div class="service-card bg-cyan">
-                <div class="icon-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="3" width="20" height="14" rx="2"/>
-                        <line x1="8" y1="21" x2="16" y2="21"/>
-                        <line x1="12" y1="17" x2="12" y2="21"/>
-                        <polyline points="7 10 10 13 17 8"/>
-                    </svg>
-                </div>
-                <p>Controle de Qualidade da Imagem de equipamentos emissores de Raios-X</p>
-                <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
-            </div>
-            <div class="service-card bg-navy">
-                <div class="icon-box">
-                    <i class="fa-solid fa-radiation"></i>
-                </div>
-                <p>Levantamento Radiométrico Ambiental e Radiação de Fuga</p>
-                <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
-            </div>
-            <div class="service-card bg-teal">
-                <div class="icon-box" id="servicos">
-                    <i class="fa-solid fa-person-rays"></i>
-                </div>
-                <p>Dosimetria Pessoal - Monitoração Individual Externa</p>
-                <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
-            </div>
-            <div class="service-card bg-navy">
-               <div class="icon-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <line x1="8" y1="13" x2="16" y2="13"/>
-                        <line x1="8" y1="17" x2="16" y2="17"/>
-                        <line x1="8" y1="9" x2="10" y2="9"/>
-                    </svg>
-                </div>
-                <p>Plano de Proteção Radiológica PPR</p>
-                <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
-            </div>
-            <div class="service-card bg-teal">
-               <div class="icon-box">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2"/>
-                        <circle cx="12" cy="12" r="4"/>
-                        <line x1="12" y1="3" x2="12" y2="8"/>
-                        <line x1="12" y1="16" x2="12" y2="21"/>
-                        <line x1="3" y1="12" x2="8" y2="12"/>
-                        <line x1="16" y1="12" x2="21" y2="12"/>
-                    </svg>
-                </div>
-                <p>Fantoma de Mamografia exigido pela legislação vigente</p>
-                <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
-            </div>
-            <div class="service-card bg-cyan">
-                 <div class="icon-box">
-                    <i class="fa-solid fa-shield-halved"></i>
-                </div>
-                <p>Cálculo de Blindagem de radiação ionizante em salas de radiologia</p>
-                <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
-            </div>
-            <div class="service-card-cta">
-                <p>Conheça todos os nossos serviços</p>
-                <a href="servicos.html" class="btn-main">VER TODOS →</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+<section class="services">
+    <div class="grid-services">
+        <div class="service-card bg-cyan">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                    <polyline points="7 10 10 13 17 8"/>
+                </svg>
+            </div>
+            <p>Controle de Qualidade da Imagem de equipamentos emissores de Raios-X</p>
+            <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+        </div>
+        <div class="service-card bg-navy">
+            <div class="icon-box">
+                <i class="fa-solid fa-radiation"></i>
+            </div>
+            <p>Levantamento Radiométrico Ambiental e Radiação de Fuga</p>
+            <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+        </div>
+        <div class="service-card bg-teal">
+            <div class="icon-box" id="servicos">
+                <i class="fa-solid fa-person-rays"></i>
+            </div>
+            <p>Dosimetria Pessoal - Monitoração Individual Externa</p>
+            <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+        </div>
+        <div class="service-card bg-navy">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14 2 14 8 20 8"/>
+                    <line x1="8" y1="13" x2="16" y2="13"/>
+                    <line x1="8" y1="17" x2="16" y2="17"/>
+                    <line x1="8" y1="9" x2="10" y2="9"/>
+                </svg>
+            </div>
+            <p>Plano de Proteção Radiológica PPR</p>
+            <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+        </div>
+        <div class="service-card bg-teal">
+            <div class="icon-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="12" cy="12" r="4"/>
+                    <line x1="12" y1="3" x2="12" y2="8"/>
+                    <line x1="12" y1="16" x2="12" y2="21"/>
+                    <line x1="3" y1="12" x2="8" y2="12"/>
+                    <line x1="16" y1="12" x2="21" y2="12"/>
+                </svg>
+            </div>
+            <p>Fantoma de Mamografia exigido pela legislação vigente</p>
+            <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+        </div>
+        <div class="service-card bg-cyan">
+            <div class="icon-box">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+            <p>Cálculo de Blindagem de radiação ionizante em salas de radiologia</p>
+            <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+        </div>
+        <div class="service-card-cta">
+            <p>Conheça todos os nossos serviços</p>
+            <a href="servicos.html" class="btn-main">VER TODOS →</a>
+        </div>
+    </div>
+</section>
 
 <section id="downloads" class="downloads-section">
     <div class="container">
@@ -174,10 +154,7 @@
             <h2 class="downloads-title">Central de Downloads</h2>
             <p class="downloads-subtitle">Acesse gratuitamente sinalizações e normas regulamentadoras para sua instituição.</p>
         </div>
-
         <div class="downloads-cards">
-
-            <!-- Card: Sinalizações -->
             <a href="downloads.html" class="download-circle-card">
                 <div class="circle-outer">
                     <div class="circle-inner">
@@ -192,8 +169,6 @@
                 <p class="circle-desc">Sinalizações obrigatórias de proteção radiológica.</p>
                 <span class="circle-cta">ACESSAR DOWNLOADS →</span>
             </a>
-
-            <!-- Card: Portarias e Normas -->
             <a href="downloads.html#normas" class="download-circle-card">
                 <div class="circle-outer">
                     <div class="circle-inner">
@@ -208,20 +183,17 @@
                 <p class="circle-desc">RDC Nº 611 e <br>Instruções Normativas</p>
                 <span class="circle-cta">ACESSAR DOWNLOADS →</span>
             </a>
-
         </div>
     </div>
 </section>
 
-<!-- CURSO OBRIGATÓRIO -->
 <section id="cursos" class="courses-section">
     <div class="container">
         <div class="courses-header">
             <span class="courses-badge">Nosso Curso</span>
-            <h2 class="courses-title">Atualização em Proteção Radiológica (SP Rad)</h2>
+            <h2 class="courses-title">Atualização em Proteção Radiológica</h2>
             <p class="courses-subtitle">Treinamento obrigatório fornecido pela SP Rad. Acesse a plataforma do curso para adquirir e iniciar.</p>
         </div>
-
         <div class="courses-grid">
             <a class="course-player-card" href="curso_em_breve.html" rel="noopener noreferrer" aria-label="Acessar plataforma do curso de proteção radiológica">
                 <div class="course-player-media" aria-hidden="true">
@@ -231,59 +203,50 @@
                     </div>
                     <div class="course-media-title">SP Rad</div>
                 </div>
-
                 <div class="course-player-body">
                     <h3 class="course-player-title">Treinamento — Atualização em Proteção Radiologia</h3>
                     <p class="course-player-desc">Conteúdo objetivo para capacitar a equipe e atender às exigências de segurança em conformidade legal.</p>
-                    <div class="course-player-meta">
-                    </div>
+                    <div class="course-player-meta"></div>
                 </div>
             </a>
         </div>
     </div>
 </section>
 
-
-
-
-
-    <section  class="services-cta">
-        <div class="container">
-            <div class="cta-inner">
+<section class="services-cta">
+    <div class="container">
+        <div class="cta-inner">
             <div class="cta-left">
                 <span class="cta-eyebrow">Fale conosco</span>
-                <h2 id="contato" >Solicite um orçamento<br>sem compromisso</h2>
-                <p  >Entre em contato com nossa equipe e descubra como podemos ajudar sua instituição a garantir segurança e conformidade legal.</p>
-                <a   href="contato.html" class="btn-secondary">ENTRE EM CONTATO →</a>
+                <h2 id="contato">Solicite um orçamento<br>sem compromisso</h2>
+                <p>Entre em contato com nossa equipe e descubra como podemos ajudar sua instituição a garantir segurança e conformidade legal.</p>
+                <a href="contato.html" class="btn-secondary">ENTRE EM CONTATO →</a>
             </div>
-
             <div class="cta-right">
                 <div class="cta-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <span>+10 anos de experiência</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Atendimento rápido</span>
                 </div>
                 <div class="cta-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <span>Equipe especializada</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Equipe especializada</span>
                 </div>
                 <div class="cta-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <span>Cadastros estaduais em dia</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Conformidade legal garantida</span>
                 </div>
                 <div class="cta-item">
-                <i class="fa-solid fa-circle-check"></i>
-                <span>Parceria Sapra Landauer</span>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Orçamento sem compromisso</span>
                 </div>
-            </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer injetado pelo components.js -->
-    <div id="footer"></div>
+<div id="footer"></div>
 
-    <!-- components.js -->
-    <script src="components.js"></script>
-    <script src="slider.js"></script>
-  </body>
+<script src="components.js"></script>
+<script src="slider.js"></script>
+</body>
 </html>

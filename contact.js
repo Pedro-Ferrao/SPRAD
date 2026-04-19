@@ -23,36 +23,34 @@ contactForm.addEventListener('submit', async (e) => {
     const btnIcon = submitBtn.querySelector('i');
 
 
-    
 
-
-    
 
     // Estado de carregamento
-    submitBtn.disabled = true;
-    btnText.textContent = 'ENVIANDO...';
-    btnIcon.className = 'fa-solid fa-spinner fa-spin';
-    formStatus.textContent = '';
-    formStatus.className = 'form-status';
-    // Dentro do submit, mude a verificação para:
+submitBtn.disabled = true;
+btnText.textContent = 'ENVIANDO...';
+btnIcon.className = 'fa-solid fa-spinner fa-spin';
+formStatus.textContent = '';
+formStatus.className = 'form-status';
 
+// --- ADICIONE ESTA LINHA ABAIXO ---
+const formData = new FormData(contactForm); 
+// ---------------------------------
 
-
-    try {
-        const response = await fetch(contactForm.action, {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        });
+try {
+    const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData, // Agora o formData está definido!
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
 
         if (response.ok) {
             // Sucesso
             formStatus.textContent = '✓ Mensagem enviada com sucesso! Entraremos em contato em breve.';
             formStatus.className = 'form-status success';
             contactForm.reset();
-            grecaptcha.reset();
+
 
             // Animação de sucesso no botão
             btnText.textContent = 'ENVIADO';
@@ -76,7 +74,7 @@ contactForm.addEventListener('submit', async (e) => {
         btnText.textContent = 'TENTAR NOVAMENTE';
         btnIcon.className = 'fa-solid fa-paper-plane';
         submitBtn.disabled = false;
-        grecaptcha.reset();
+
     }
 });
 
