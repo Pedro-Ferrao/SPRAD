@@ -215,6 +215,41 @@ body {
     background: linear-gradient(to right, var(--navy), var(--cyan), var(--navy));
 }
 
+/* ── LOGO MOBILE ── */
+@media (max-width: 768px) {
+    .logo-wrapper img {
+        height: 63px !important;
+    }
+}
+
+/* ── TELAS MÉDIAS: corrige top-contacts torto ── */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .top-bar .container {
+        padding: 0 20px;
+        gap: 16px;
+    }
+
+    .top-contacts {
+        gap: 16px;
+    }
+
+    .contact-item {
+        font-size: 0.82rem;
+        gap: 6px;
+        /* impede que o número quebre no meio */
+        white-space: nowrap;
+    }
+
+    .contact-item svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .logo-wrapper img {
+        height: 90px;
+    }
+}
+
 /* ════════════════════════════
    HERO
 ════════════════════════════ */
@@ -1365,14 +1400,14 @@ body {
 }
 
 .mvv-card ul li {
+    text-align: center;
     color: #666;
     font-size: 0.95rem;
-    padding: 2px 0 2px 28px;
+
     position: relative;
 }
 
 .mvv-card ul li::before {
-    content: "✓";
     position: absolute;
     left: 0;
     color: var(--cyan);
