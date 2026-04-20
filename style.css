@@ -218,7 +218,7 @@ body {
 /* ── LOGO MOBILE ── */
 @media (max-width: 768px) {
     .logo-wrapper img {
-        height: 63px !important;
+        height: 80px !important;
     }
 }
 
