@@ -1429,17 +1429,17 @@ body {
     background: #ffffff;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 .anvisa-content {
     display: flex;
     gap: 48px;
-    align-items: center;
+    align-items: left;
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: 0 5%;
+    padding: 0 ;
 }
 
 .anvisa-text {
