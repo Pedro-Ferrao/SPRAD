@@ -396,9 +396,10 @@ body {
    A EMPRESA
 ════════════════════════════ */
 .about {
-    padding: 2px 0px;
+    padding: 30px 0px;
     background: #ffffff;
     position: relative;
+
 }
 
 .about::before {
@@ -430,7 +431,7 @@ body {
     border: 1px solid #ffffff;
     flex: 1;
     min-width: 300px;
-    margin-top: 40px;
+
 }
 
 .title-section {
@@ -507,7 +508,7 @@ body {
 
 .solutions-inner {
     max-width: 860px;
-    padding: 60px 40px;
+    padding: 20px 40px;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -519,13 +520,14 @@ body {
     display: inline-block;
     background: rgba(84, 206, 210, 0.12);
     color: var(--teal);
-    font-size: 1rem;
+    font-size: 0.82rem;
     font-weight: 700;
     letter-spacing: 2.5px;
     text-transform: uppercase;
+    border-radius: 4px;
     padding: 7px 18px;
-    margin-bottom: 24px;
-    margin-top: 90px;
+    margin-bottom: 10px;
+    margin-top: 20px;
 }
 
 .title-cyan {
@@ -549,7 +551,7 @@ body {
     align-items: center;
     justify-content: center;
     max-width: 550px;
-    margin: 0 auto 48px;
+    
     gap: 10px;
     background: #ffffff;
     border: 1px solid #e2edf5;
@@ -630,6 +632,8 @@ body {
     margin-top: 2px;
 }
 
+
+
 /* ════════════════════════════
    SERVIÇOS
 ════════════════════════════ */
@@ -654,6 +658,26 @@ body {
     gap: 15px;
     padding: 4px 20px 15px;
 }
+
+.services-header{
+        text-align: center;
+    margin-bottom: 36px;
+}
+
+.services-badge{
+    display: inline-block;
+    background: rgba(84, 206, 210, 0.12);
+    color: var(--teal);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 7px 18px;
+    margin-bottom: 25px;
+
+}
+
 
 .service-card {
     padding: 60px 40px;
