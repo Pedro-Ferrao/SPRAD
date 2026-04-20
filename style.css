@@ -220,6 +220,11 @@ body {
     .logo-wrapper img {
         height: 80px !important;
     }
+    .logo-wrapper{
+        justify-content: center;
+        display: flex;
+    }
+
 }
 
 /* ── TELAS MÉDIAS: corrige top-contacts torto ── */
