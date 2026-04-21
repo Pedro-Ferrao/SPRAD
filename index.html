@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <link rel="shortcut icon" type="imagex/png" href="Imagens/WhatsApp_Image_2026-04-20_at_19.44.12-removebg-preview.png">
+    <link rel="shortcut icon" type="imagex/png" href="Imagens/image_ba3cf7ed-removebg-preview.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SP Rad | Serviços em Proteção Radiológica</title>
@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="topFunctions.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="overflow-x: hidden;">
@@ -49,6 +50,15 @@
     </div>
 </section>
 
+
+<div id="scroll-container"><div id="scroll-container">
+    <button onclick="topFunction()" id="myBtn" title="Voltar ao topo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
+        <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+        </svg>
+    </button>
+
 <section class="about">
     <div  class="container">
         <div class="about-grid">
@@ -80,6 +90,9 @@
     </div>
 </section>
 
+
+
+
 <section class="services">
         <div class="grid-services">
                 <div class="service-card bg-cyan">
@@ -92,21 +105,21 @@
                         </svg>
                     </div>
                     <p>Controle de Qualidade da Imagem de equipamentos emissores de Raios-X</p>
-                    <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+                    <a href="servicos.html#qualidade-em-radiologia" class="more-details">MAIS DETALHES →</a>
                 </div>
                 <div class="service-card bg-navy">
                     <div class="icon-box">
                         <i class="fa-solid fa-radiation"></i>
                     </div>
                     <p>Levantamento Radiométrico Ambiental e Radiação de Fuga</p>
-                    <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+                    <a href="servicos.html#Levantamento-radiometrico" class="more-details" >MAIS DETALHES →</a>
                 </div>
                 <div class="service-card bg-teal">
                     <div class="icon-box" id="servicos">
                         <i class="fa-solid fa-person-rays"></i>
                     </div>
                     <p>Dosimetria Pessoal - Monitoração Individual Externa</p>
-                    <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+                    <a href="servicos.html#dosimetria-individual" class="more-details">MAIS DETALHES →</a>
                 </div>
                 <div class="service-card bg-navy">
                     <div class="icon-box">
@@ -119,28 +132,21 @@
                         </svg>
                     </div>
                     <p>Plano de Proteção Radiológica PPR</p>
-                    <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+                    <a href="servicos.html#ppr" class="more-details">MAIS DETALHES →</a>
                 </div>
                 <div class="service-card bg-teal">
                     <div class="icon-box">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="3" y="3" width="18" height="18" rx="2"/>
-                            <circle cx="12" cy="12" r="4"/>
-                            <line x1="12" y1="3" x2="12" y2="8"/>
-                            <line x1="12" y1="16" x2="12" y2="21"/>
-                            <line x1="3" y1="12" x2="8" y2="12"/>
-                            <line x1="16" y1="12" x2="21" y2="12"/>
-                        </svg>
+                    <i class="fa-solid fa-wave-square"></i>
                     </div>
-                    <p>Fantoma de Mamografia exigido pela legislação vigente</p>
-                    <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+                    <p>Controle de Qualidade da Imagem em Ultrassom</p>
+                    <a href="servicos.html#qualidade em ultrassom" class="more-details">MAIS DETALHES →</a>
                 </div>
                 <div class="service-card bg-cyan">
                     <div class="icon-box">
                         <i class="fa-solid fa-shield-halved"></i>
                     </div>
                     <p>Cálculo de Blindagem de radiação ionizante em salas de radiologia</p>
-                    <a href="servicos.html" class="more-details">MAIS DETALHES →</a>
+                    <a href="servicos.html#blindagem" class="more-details">MAIS DETALHES →</a>
                 </div>
                 <div class="service-card-cta">
                     <p>Conheça todos os nossos serviços</p>
@@ -192,8 +198,8 @@
 <section id="cursos" class="courses-section">
     <div class="container">
         <div class="courses-header">
-            <span class="courses-badge">Nosso Curso</span>
-            <h2 class="courses-title">Atualização em Proteção Radiológica</h2>
+            <span class="courses-badge">Nosso Curso Online</span>
+            <h2 class="courses-title">Proteção Radiológica na Radiologia Médica<br> e Intervencionista</h2>
             <p class="courses-subtitle">Treinamento obrigatório fornecido pela SP Rad. Acesse a plataforma do curso para adquirir e iniciar.</p>
         </div>
         <div class="courses-grid">
@@ -246,8 +252,11 @@
     </div>
 </section>
 
-<div id="footer"></div>
 
+<div id="footer"></div>
+</div>
+
+<script src="topFunction.js"></script>
 <script src="components.js"></script>
 <script src="slider.js"></script>
 </body>

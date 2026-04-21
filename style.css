@@ -1193,7 +1193,7 @@ body {
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 60px 80px;
+    padding: 0 20px 30px;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -1210,6 +1210,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 18px;
+    
 }
 
 .footer-contacts .contact-item {
@@ -1233,8 +1234,8 @@ body {
 }
 
 .footer-bottom {
-    background-color: #333333;
-    padding: 26px 0;
+    background-color: #252525;
+    padding: 10px 0;
     border-top: 1px solid #444;
 }
 
@@ -1252,7 +1253,14 @@ body {
 
 .footer-bottom strong { color: #999; }
 
-.social-links { display: flex; gap: 12px; }
+.social-links { 
+    display: flex;
+    gap: 12px; 
+    display: flex;
+    justify-content: end;
+    margin-right: 110px;
+    margin-bottom: 10px;
+}
 
 .social-links a {
     display: flex;
@@ -1287,6 +1295,42 @@ body {
     color: var(--cyan);
     transform: translateY(-3px);
     filter: drop-shadow(0 5px 15px rgba(0, 255, 255, 0.3));
+}
+
+
+#myBtn {
+  display: block;
+  position: sticky;
+  top: 90vh; /* Fica na parte inferior da tela */
+  margin-left: auto; /* Alinha à direita */
+  margin-right: 30px;
+  margin-left: auto; /* Empurra para a direita */
+  margin-right: 30px;
+  margin-bottom: 20px;
+  bottom: auto;
+  right: auto;
+  z-index: 9999; 
+  border: 1px solid #ccc; /* Borda fina como na imagem */
+  background-color: #f1f1f1; /* Cor de fundo leve */
+  color: #000000; /* Cor da seta */
+  cursor: pointer; 
+  padding: 8px; 
+  width: 40px;
+  height: 40px;
+  border-radius: 4px; /* Leve curvatura */
+  transition: all 0.3s;
+}
+
+/* Tamanho do ícone dentro do botão */
+#myBtn svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Efeito ao passar o mouse */
+#myBtn:hover {
+  background-color: #333;
+  color: #fff; /* Inverte as cores no hover */
 }
 
 /* ════════════════════════════

@@ -109,19 +109,18 @@ const footerHTML = `
                     </a>
                 </div>
             </div>
+
         </div>
 
     </div>
 
-    <div class="footer-bottom">
-        <div class="footer-container flex-between">
-            <p>Site Desenvolvido por <strong>Pedro Ferrão©</strong></p>
             <div class="social-links">
                 <a href="https://www.facebook.com/sprad.com.br/?locale=pt_BR" target="blank" aria-label="Facebook">
                     <svg viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                     </svg>
                 </a>
+
                 <a href="https://www.instagram.com/sprad.protecaoradiologica/" target="_blank" aria-label="Instagram">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -129,7 +128,18 @@ const footerHTML = `
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
                     </svg>
                 </a>
+
+                <a href="https://www.linkedin.com/company/sp-rad-servi%C3%A7os-em-prote%C3%A7%C3%A3o-radiol%C3%B3gica/?originalSubdomain=br" target="_blank" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
             </div>
+
+    <div class="footer-bottom">
+        <div class="footer-container flex-between">
+            <p>Site Desenvolvido por <strong>Pedro Ferrão©</strong></p>
+
         </div>
     </div>
 </footer>
