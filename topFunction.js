@@ -15,3 +15,7 @@ window.onscroll = function () {
 function topFunction() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
+
+
+// botão do whatsApp flutuante
+// Botão WhatsApp flutuante — aparece quando a hero sai do viewport
