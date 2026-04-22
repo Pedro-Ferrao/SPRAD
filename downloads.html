@@ -4,7 +4,7 @@
     <link rel="shortcut icon" type="imagex/png" href="Imagens/icone-site.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SP Rad | Downloads</title>
+    <title>SP Rad Serviços em Proteção Radiológica - Downloads</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -17,12 +17,22 @@
 
     <div id="header"></div>
 
+<div id="scroll-container">
+    <button onclick="topFunction()" id="myBtn" title="Voltar ao topo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-up">
+        <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+        </svg>
+    </button>
+
+
 <section id="sinalizacoes" class="download-section">
     <div class="container">
         <div class="text-center">
             <h2 class="title-section">Sinalizações de <span class="cyan-text">Segurança</span></h2>
             <p class="description">Faça o download gratuito das sinalizações obrigatórias para sua clínica ou hospital.</p>
         </div>
+
 
         <div class="grid-downloads">
             <div class="download-card">
@@ -38,7 +48,7 @@
 
             <div class="download-card">
                 <div class="card-preview">
-                    <img src="Imagens/luminosa.jpg" alt="Sinalização Luminosa">
+                    <img src="Imagens/sinalização-luminosa.jpg" alt="Sinalização Luminosa">
                 </div>
                 <div class="card-body">
                     <h3>Sinalização Luminosa</h3>
@@ -49,7 +59,7 @@
 
             <div class="download-card">
                 <div class="card-preview">
-                    <img src="Imagens/gravidez.jpg" alt="Aviso Gravidez">
+                    <img src="Imagens/suspeita-de-gravidez.jpg" alt="Aviso Gravidez">
                 </div>
                 <div class="card-body">
                     <h3>Suspeita de Gravidez</h3>
@@ -60,7 +70,7 @@
 
             <div class="download-card">
                 <div class="card-preview">
-                    <img src="Imagens/acompanhantes.jpg" alt="Acompanhantes">
+                    <img src="Imagens/pacientes-e-acompanhantes.jpg" alt="Acompanhantes">
                 </div>
                 <div class="card-body">
                     <h3>Pacientes e Acompanhantes</h3>
@@ -170,10 +180,12 @@
         </div>
     </section>
 
+</div>
 
 
     <div id="footer"></div>
 
+    <script src="topFunction.js"></script>
     <script src="components.js"></script>
     <script src="contact.js"></script>
 </body>
