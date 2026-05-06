@@ -136,36 +136,50 @@ const footerHTML = `
 
     <div class="footer-bottom">
         <div class="footer-container flex-between">
-            <p>Site Desenvolvido por 
-                <img src="Imagens/PF-STUDIOS-MKT_logo.png" alt="Pedro Ferrão" class="footer-dev-logo">
-            </p>
+            <p>&copy; 2026 SP Rad Serviços Em Proteção Radiológica - Todos os direitos reservados</p>
+
+            <a href="privacidade.html" class="footer-link">Política de Privacidade</a>
+
+            <div class="dev-info">
+                <span>Site desenvolvido por</span>
+                <img src="Imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
+            </div>
         </div>
     </div>
 </footer>
 `;
 
-document.getElementById('header').innerHTML = headerHTML;
-document.getElementById('footer').innerHTML = footerHTML;
+// 1. Injeta o HTML
+document.getElementById("header").innerHTML = headerHTML;
+document.getElementById("footer").innerHTML = footerHTML;
 
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.getElementById('nav-links');
+// 2. Só DEPOIS busca os elementos
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('open');
-});
+// 3. Verifica se existem antes de usar
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("open");
+  });
 
-document.querySelectorAll('#nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('open');
+  document.querySelectorAll("#nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("open");
     });
-});
+  });
+}
 
-const currentPage = window.location.pathname.split('/').pop();
-document.querySelectorAll('#nav-links a').forEach(link => {
-    const linkPage = link.getAttribute('href').split('#')[0];
-    if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
-        link.classList.add('active');
-    }
+// 4. Active link
+const currentPage = window.location.pathname.split("/").pop();
+document.querySelectorAll("#nav-links a").forEach((link) => {
+  const linkPage = link.getAttribute("href").split("#")[0];
+  if (
+    linkPage === currentPage ||
+    (currentPage === "" && linkPage === "index.html")
+  ) {
+    link.classList.add("active");
+  }
 });

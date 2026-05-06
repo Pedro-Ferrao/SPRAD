@@ -1219,15 +1219,46 @@ body {
   color: #999;
 }
 
+.footer-link {
+    color: #777; /* Mesma cor do texto de copyright */
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.footer-link:hover {
+    color: #54ced2; /* Usa o ciano da marca para o destaque no hover */
+    text-decoration: underline;
+}
+
+/* Ajuste opcional para mobile: empilhar itens se o espaço for curto */
+@media (max-width: 768px) {
+    .footer-bottom .flex-between {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
 .footer-dev-logo {
     height: 30px; /* Ajuste essa altura conforme o design do seu logo */
     width: auto;  /* Mantém a proporção */
     vertical-align: middle; /* Alinha o logo com o texto "Site Desenvolvido por" */
-    margin-left: 8px;       /* Dá um espaço entre o texto e a imagem */
+    margin-left: 4px;       /* Dá um espaço entre o texto e a imagem */
     transition: opacity 0.3s ease;
     filter: grayscale(200%) brightness(2); /* Opcional: deixa o logo cinza para combinar com o footer */
+
 }
 
+
+.dev-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #777;
+    font-size: 0.88rem;
+}
 
 .social-links {
   display: flex;
@@ -2250,6 +2281,67 @@ body {
     .course-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ════════════════════════════
+   PÁGINA PRIVACIDADE
+════════════════════════════ */
+
+.privacidade-grid {
+    padding: 60px 0;
+    background-color: #f8f9fa; 
+}
+
+.priv-card {
+    background: #ffffff;
+    border: 2px solid #54ced2;
+    border-radius: 20px;
+    padding: 40px; /* Aumentei para dar um aspecto mais premium */
+    box-shadow: 0 4px 24px rgba(56, 81, 124, 0.08);
+    box-sizing: border-box;
+    max-width: 900px; /* Limita a largura para a leitura não ficar cansativa */
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.priv-card h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid #e0e0e0; /* Linha sutil para separar seções */
+    padding-bottom: 10px;
+}
+
+.priv-card h3:first-child {
+    margin-top: 0;
+}
+
+.priv-card p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+.priv-card ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.priv-card li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 10px;
 }
 
 /* ════════════════════════════
