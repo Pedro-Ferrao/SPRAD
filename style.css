@@ -1210,21 +1210,42 @@ body {
   padding-bottom: 0;
 }
 
+.footer-bottom .flex-between {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+}
+
 .footer-bottom p {
   font-size: 0.88rem;
   color: #777;
 }
+.footer-bottom p {
+    flex: 1; 
+    text-align: left;
+    margin: 0;
+}
+
 
 .footer-bottom strong {
   color: #999;
 }
 
+.footer-bottom .dev-info {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end; /* Joga sua logo para a ponta direita */
+    align-items: center;
+}
+
 .footer-link {
-    color: #777; /* Mesma cor do texto de copyright */
+    flex: 1;
+    text-align: center;
+    color: #777;
     font-size: 0.88rem;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 500;
 }
 
 .footer-link:hover {
@@ -2299,7 +2320,7 @@ body {
     padding: 40px; /* Aumentei para dar um aspecto mais premium */
     box-shadow: 0 4px 24px rgba(56, 81, 124, 0.08);
     box-sizing: border-box;
-    max-width: 900px; /* Limita a largura para a leitura não ficar cansativa */
+    max-width: 1000px; /* Limita a largura para a leitura não ficar cansativa */
     margin: 0 auto;
     
     display: flex;
