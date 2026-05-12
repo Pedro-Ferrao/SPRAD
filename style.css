@@ -1411,7 +1411,6 @@ body {
   background: #ffffff;
   padding: 40px 0 30px;
   text-align: center;
-  border-bottom: 1px solid #e8eef4;
 }
 
 .about-lead {
@@ -1561,7 +1560,7 @@ body {
   background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
   padding: 80px 0;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .page-eyebrow {
@@ -1590,7 +1589,7 @@ body {
 
 .services-page {
   padding: 60px 0 80px;
-  background: #f7fafd;
+  background: #ffffff;
 }
 
 .service-detail-card {
@@ -2310,7 +2309,7 @@ body {
 
 .privacidade-grid {
     padding: 60px 0;
-    background-color: #f8f9fa; 
+    background-color: #ffffff; 
 }
 
 .priv-card {
@@ -2364,6 +2363,120 @@ body {
     color: #4a4a4a;
     margin-bottom: 10px;
 }
+
+
+
+/* ════════════════════════════
+   PÁGINA NOSSOS SERVIÇOS
+════════════════════════════ */
+
+.serv-grid {
+    padding: 60px 0;
+    background-color: #ffffff; 
+}
+
+.serv-card {
+    background: #ffffff;
+    border: 2px solid #54ced2;
+    border-radius: 20px;
+    padding: 40px; /* Aumentei para dar um aspecto mais premium */
+    box-shadow: 0 4px 24px rgba(56, 81, 124, 0.08);
+    box-sizing: border-box;
+    max-width: 1000px; /* Limita a largura para a leitura não ficar cansativa */
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.serv-card h2 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.6rem;
+    text-align: center;
+    font-weight: 800;
+    color: var(--navy);
+    margin: 0 0 20px 0;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ffffff; /* Linha sutil para separar seções */
+    padding-bottom: 10px;
+}
+
+.serv-card h3:first-child {
+    margin-top: 0;
+}
+
+.serv-card p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+}
+
+.serv-card ul {
+    list-style: none;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.serv-card li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 10px;
+}
+
+.serv-banner {
+    width: 80%;            /* Diminui a largura da imagem (ajuste a % como preferir) */
+    margin: 0 auto 40px;   /* Centraliza e cria a distância de 40px para o texto */
+    
+    height: auto;          /* Remove a altura fixa de 390px */
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+    position: relative;
+    flex: none;            /* Garante que o flexbox não force o tamanho */
+}
+
+.serv-banner img {
+    width: 100%;
+    height: auto;          /* Deixa a altura ser definida pela proporção da imagem */
+    display: block;
+    object-fit: contain;   /* Garante que nada será cortado */
+}
+
+.serv-banner-ajust {
+    /* 1. Controla a largura máxima (diminua o % se quiser menor ainda) */
+    width: 60%; 
+    margin: 0 auto 40px; /* Centraliza e afasta do texto */
+    
+    /* 2. Controla a altura máxima para imagens verticais não ficarem gigantes */
+    max-height: 450px; 
+    
+    /* 3. Mantém a integridade */
+    height: auto;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: transparent; /* Evita fundo branco caso a imagem seja menor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.serv-banner-ajust img {
+    /* 4. O segredo para manter proporção sem cortar */
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    display: block;
+}
+
 
 /* ════════════════════════════
    ANIMAÇÕES
