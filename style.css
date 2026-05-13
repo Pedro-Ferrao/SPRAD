@@ -1601,7 +1601,8 @@ body {
   background: #fff;
   border: 1px solid #e4eef6;
   box-shadow: 0 2px 16px rgba(56, 81, 124, 0.07);
-  margin-bottom: 20px;
+  max-width: 950px;      
+  margin: 0 auto 20px;  
   transition:
     box-shadow 0.3s,
     transform 0.3s;
@@ -1643,6 +1644,26 @@ body {
   font-size: 0.95rem;
   line-height: 1.8;
   margin: 0;
+}
+
+.btn-serv {
+  display: inline-block;
+  background: #30496d;
+  color: #ffffff;
+  padding:10px 25px;
+  border-radius: 600px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(57, 89, 134, 0.2);
+}
+
+.btn-serv:hover {
+  background: #2d9da1;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(45, 157, 161, 0.3);
 }
 
 /* ════════════════════════════
