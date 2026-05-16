@@ -1159,8 +1159,8 @@ body {
   margin: 0 auto;
   padding: 0 20px 30px;
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .footer-logo img {
@@ -1216,6 +1216,7 @@ body {
     justify-content: space-between; 
     align-items: center;
     width: 100%;
+
 }
 
 .footer-bottom p {
@@ -1232,6 +1233,7 @@ body {
 .footer-bottom strong {
   color: #999;
 }
+
 
 .footer-bottom .dev-info {
     flex: 1;
@@ -1280,6 +1282,7 @@ body {
     gap: 8px;
     color: #777;
     font-size: 0.88rem;
+    
 }
 
 .social-links {
@@ -1576,16 +1579,15 @@ body {
 }
 
 .services-page .container {
-  max-width: 1200px;
+  max-width: 100rem;
   width: 92%;
-  margin: 0 auto;
   padding: 0;
 }
 
 .srv-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 28px;
+  gap: 40px;
   width: 100%;
   justify-content: center; 
   justify-items: center;
