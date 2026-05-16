@@ -136,7 +136,7 @@ const footerHTML = `
 
     <div class="footer-bottom">
         <div class="footer-container flex-between">
-            <p>&copy; 2026 SP Rad Serviços Em Proteção Radiológica - Todos os direitos reservados</p>
+            <p>&copy; 2026 SP Rad Serviços Em Proteção Radiológica</p>
 
             <a href="aviso-privacidade.html" class="footer-link">Política de Privacidade e Termos de Uso</a>
 

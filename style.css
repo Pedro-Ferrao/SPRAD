@@ -466,6 +466,7 @@ body {
   max-width: 950px;
   margin: 0 auto 20px;
   text-align: center;
+  color: var(--cyan);
 }
 
 .btn-secondary {
@@ -1413,8 +1414,21 @@ body {
   text-align: center;
 }
 
+.page-title{
+  font-size: 2.6rem;
+}
+
 .about-lead {
-  font-size: 1.15rem;
+  font-size: 0.9rem;
+  color: var(--cyan);
+  font-weight: 600;
+  max-width: 720px;
+  margin: 24px auto 0;
+  line-height: 1.8;
+}
+
+.about-sub{
+  font-size: 1rem;
   color: var(--cyan);
   font-weight: 600;
   max-width: 720px;
@@ -1556,114 +1570,134 @@ body {
 /* ════════════════════════════
    PÁGINA DE SERVIÇOS
 ════════════════════════════ */
-.page-hero {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
-  padding: 80px 0;
-  text-align: center;
-  color: rgb(255, 255, 255);
-}
-
-.page-eyebrow {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--cyan);
-  margin-bottom: 14px;
-}
-
-.page-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 2.8rem;
-  font-weight: 800;
-  margin-bottom: 16px;
-}
-
-.page-subtitle {
-  font-size: 1rem;
-  opacity: 0.8;
-  max-width: 520px;
-  margin: 0 auto;
-}
-
 .services-page {
   padding: 60px 0 80px;
   background: #ffffff;
 }
 
-.service-detail-card {
-  display: flex;
-  align-items: flex-start;
+.services-page .container {
+  max-width: 1200px;
+  width: 92%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.srv-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 28px;
-  padding: 32px 36px;
-  border-radius: 16px;
+  width: 100%;
+  justify-content: center; 
+  justify-items: center;
+  /* Garante que todas as linhas do grid tenham a mesma altura baseada no maior card */
+  grid-auto-rows: 1fr; 
+}
+
+.srv-card {
   background: #fff;
   border: 1px solid #e4eef6;
-  box-shadow: 0 2px 16px rgba(56, 81, 124, 0.07);
-  max-width: 950px;      
-  margin: 0 auto 20px;  
-  transition:
-    box-shadow 0.3s,
-    transform 0.3s;
+  border-radius: 35px;
+  padding: 26px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  text-align: center;
+  align-items: center;
+  
+  /* FAZ O CARD OCUPAR 100% DA ALTURA DA LINHA DO GRID */
+  height: 100%; 
+  /* Garante que a largura se comporte bem */
+  width: 100%; 
+  box-sizing: border-box; 
 }
 
-.service-detail-card:hover {
-  box-shadow: 0 8px 32px rgba(56, 81, 124, 0.13);
-  transform: translateY(-4px);
+.srv-card:hover {
+  border-color: #2d9da1;
+  box-shadow: 0 6px 24px rgba(45, 157, 161, 0.18);
+  transform: translateY(-3px);
 }
 
-.sdc-icon {
+.srv-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--teal), var(--cyan));
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 56px;
-  height: 56px;
-  background: linear-gradient(135deg, var(--teal), var(--cyan));
-  border-radius: 14px;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: white;
   flex-shrink: 0;
 }
 
-.sdc-content {
-  padding-top: 4px;
-}
-
-.sdc-content h3 {
+.srv-label {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.05rem;
-  font-weight: 800;
-  color: var(--navy);
-  margin-bottom: 10px;
-  line-height: 1.4;
-}
-
-.sdc-content p {
-  color: #666;
-  font-size: 0.95rem;
-  line-height: 1.8;
-  margin: 0;
-}
-
-.btn-serv {
-  display: inline-block;
-  background: #30496d;
-  color: #ffffff;
-  padding:10px 25px;
-  border-radius: 600px;
-  text-decoration: none;
+  font-size: 0.92rem;
   font-weight: 700;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(57, 89, 134, 0.2);
+  color: var(--navy);
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  
 }
 
-.btn-serv:hover {
-  background: #2d9da1;
-  transform: translateY(-3px);
-  box-shadow: 0 15px 25px rgba(45, 157, 161, 0.3);
+.srv-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  color: #2d9da1;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  margin-top: auto;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+}
+
+.srv-link i {
+  font-size: 0.85rem;
+  transition: transform 0.2s;
+}
+
+.srv-card:hover .srv-link i {
+  transform: translateX(3px);
+}
+
+.srv-card:hover .srv-icon {
+  background: linear-gradient(135deg, #2d9da1, #30496d);
+}
+
+.srv-card:hover .srv-label {
+  color: #2d9da1;
+}
+
+@media (max-width: 900px) {
+  .srv-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .srv-label{
+    margin-top: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .srv-grid {
+    grid-template-columns: 1fr;
+  }
+
+    .srv-label{
+    margin-top: auto;
+  }
+
+  .services-page {
+    padding: 40px 0 60px;
+  }
 }
 
 /* ════════════════════════════
@@ -1845,6 +1879,12 @@ body {
 .contact-hero {
   background: #ffffff;
   padding: 70px 0 50px;
+  text-align: center;
+}
+
+.about-hero-down {
+  background: #ffffff;
+  padding: 40px 0 30px;
   text-align: center;
 }
 
@@ -2348,6 +2388,10 @@ body {
     text-align: left;
 }
 
+.doc-title{
+  font-size: 2rem;
+}
+
 .priv-card h3 {
     font-family: "Montserrat", sans-serif;
     font-size: 1.2rem;
@@ -2384,7 +2428,6 @@ body {
     color: #4a4a4a;
     margin-bottom: 10px;
 }
-
 
 
 /* ════════════════════════════
@@ -2464,20 +2507,17 @@ body {
 
 .serv-banner img {
     width: 100%;
-    height: auto;          /* Deixa a altura ser definida pela proporção da imagem */
+    height: auto;          
     display: block;
-    object-fit: contain;   /* Garante que nada será cortado */
+    object-fit: contain;   
 }
 
 .serv-banner-ajust {
-    /* 1. Controla a largura máxima (diminua o % se quiser menor ainda) */
     width: 60%; 
     margin: 0 auto 40px; /* Centraliza e afasta do texto */
     
-    /* 2. Controla a altura máxima para imagens verticais não ficarem gigantes */
     max-height: 450px; 
     
-    /* 3. Mantém a integridade */
     height: auto;
     border-radius: 30px;
     overflow: hidden;
@@ -2489,7 +2529,6 @@ body {
 }
 
 .serv-banner-ajust img {
-    /* 4. O segredo para manter proporção sem cortar */
     width: auto;
     height: auto;
     max-width: 100%;
