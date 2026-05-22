@@ -35,12 +35,6 @@ const headerHTML = `
             </div>
 
             <div class="mobile-actions">
-                <a href="https://wa.me/5516982000886" class="whatsapp-mobile-btn" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="22" height="22">
-                        <path d="M30.19.031a31.753 31.753 0 0 0-26.735 46.12L.085 62.509A1.235 1.235 0 0 0 1.58 63.96l16.029-3.8A31.744 31.744 0 1 0 30.19.031zM49.316 49.31A24.871 24.871 0 0 1 20.68 54l-2.232-1.112-9.828 2.326 2.069-10.042-1.1-2.154a24.874 24.874 0 0 1 4.578-28.857A24.854 24.854 0 0 1 49.316 49.31z" fill="white"/>
-                        <path d="M47.147 38.619L41 36.854a2.292 2.292 0 0 0-2.267.6l-1.5 1.531a2.239 2.239 0 0 1-2.435.514C31.883 38.32 25.765 32.88 24.2 30.16a2.239 2.239 0 0 1 .177-2.483l1.312-1.7a2.292 2.292 0 0 0 .283-2.328L23.388 17.8a2.293 2.293 0 0 0-3.58-.82c-1.716 1.451-3.752 3.657-4 6.1-.436 4.308 1.411 9.738 8.4 16.258 8.071 7.534 14.534 8.528 18.743 7.509 2.387-.578 4.294-2.9 5.5-4.793a2.293 2.293 0 0 0-1.3-3.436z" fill="white"/>
-                    </svg>
-                </a>
                 <button class="hamburger" id="hamburger" aria-label="Abrir menu">
                     <span></span>
                     <span></span>
@@ -109,49 +103,66 @@ const footerHTML = `
                     </a>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="social-links">
-        <a href="https://www.facebook.com/sprad.com.br/?locale=pt_BR" target="blank" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-            </svg>
-        </a>
-
-        <a href="https://www.instagram.com/sprad.protecaoradiologica/" target="_blank" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-            </svg>
-        </a>
-
-        <a href="https://www.linkedin.com/company/sp-rad-servi%C3%A7os-em-prote%C3%A7%C3%A3o-radiol%C3%B3gica/?originalSubdomain=br" target="_blank" aria-label="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-            </svg>
-        </a>
-    </div>
-
-    <div class="footer-bottom">
-        <div class="footer-container flex-between">
-            <p>&copy; 2026 SP Rad Serviços Em Proteção Radiológica</p>
-
-            <a href="aviso-privacidade.html" class="footer-link">Política de Privacidade e Termos de Uso</a>
-
-            <div class="dev-info">
-                <span>Site desenvolvido por</span>
-                <img src="Imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
+            <!-- Social links agora dentro do footer-contacts -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/sprad.com.br/?locale=pt_BR" target="blank" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/sprad.protecaoradiologica/" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/sp-rad-servi%C3%A7os-em-prote%C3%A7%C3%A3o-radiol%C3%B3gica/?originalSubdomain=br" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
             </div>
+
+        </div>
+
+    </div>
+
+
+<div class="footer-bottom">
+    <div class="footer-container"> 
+        <p>&copy; 2026 SP Rad Serviços Em Proteção Radiológica</p>
+        <a href="aviso-privacidade.html"class="footer-link">Política de Privacidade e Termos de Uso</a>
+        <div class="dev-info">
+            <span>Desenvolvido por</span>
+            <img src="Imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
         </div>
     </div>
+</div>
+
 </footer>
+`;
+
+const whatsappButtonHTML = `
+<a 
+    href="https://wa.me/5516982000886"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp"
+>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="30" height="30">
+        <path d="M30.19.031a31.753 31.753 0 0 0-26.735 46.12L.085 62.509A1.235 1.235 0 0 0 1.58 63.96l16.029-3.8A31.744 31.744 0 1 0 30.19.031zM49.316 49.31A24.871 24.871 0 0 1 20.68 54l-2.232-1.112-9.828 2.326 2.069-10.042-1.1-2.154a24.874 24.874 0 0 1 4.578-28.857A24.854 24.854 0 0 1 49.316 49.31z" fill="white"/>
+        <path d="M47.147 38.619L41 36.854a2.292 2.292 0 0 0-2.267.6l-1.5 1.531a2.239 2.239 0 0 1-2.435.514C31.883 38.32 25.765 32.88 24.2 30.16a2.239 2.239 0 0 1 .177-2.483l1.312-1.7a2.292 2.292 0 0 0 .283-2.328L23.388 17.8a2.293 2.293 0 0 0-3.58-.82c-1.716 1.451-3.752 3.657-4 6.1-.436 4.308 1.411 9.738 8.4 16.258 8.071 7.534 14.534 8.528 18.743 7.509 2.387-.578 4.294-2.9 5.5-4.793a2.293 2.293 0 0 0-1.3-3.436z" fill="white"/>
+    </svg>
+</a>
 `;
 
 // 1. Injeta o HTML
 document.getElementById("header").innerHTML = headerHTML;
 document.getElementById("footer").innerHTML = footerHTML;
+document.documentElement.insertAdjacentHTML("beforeend", whatsappButtonHTML);
 
 // 2. Só DEPOIS busca os elementos
 const hamburger = document.getElementById("hamburger");
@@ -183,3 +194,4 @@ document.querySelectorAll("#nav-links a").forEach((link) => {
     link.classList.add("active");
   }
 });
+

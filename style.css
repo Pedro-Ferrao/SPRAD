@@ -689,17 +689,25 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
   border-radius: 50px;
+  
+  background: var(--navy); 
+  
+  transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease; 
 }
 
 .service-card:hover {
+  background: var(--teal); 
   transform: translateY(-10px);
-  box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   z-index: 2;
+}
+
+.service-card:hover {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), inset 0 0 50px rgba(0, 0, 0, 0.1);
 }
 
 .bg-cyan {
@@ -751,31 +759,49 @@ body {
 
 .service-card-cta {
   grid-column: 1 / -1;
-  background: #ffffff;
-  border: 3px dashed var(--orange);
-  border-radius: 35px;
-  padding: 35px;
+  background: #f8fafc; /* Um cinza bem leve e limpo */
+  border: 1px solid #e2e8f0; /* Borda fina e elegante */
+  border-radius: 30px;
+  padding: 40px;
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
-  transition:
-    background 0.3s,
-    border-color 0.3s;
-}
-
-.service-card-cta:hover {
-  background: #ffffff;
-  border-color: var(--teal);
+  justify-content: space-between; /* Separa o texto do botão nas pontas */
+  max-width: 900px;
+  margin: 20px auto 0; /* Centraliza o card na tela */
+  width: 100%;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .service-card-cta p {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
+  font-size: 1.4rem;
+  font-weight: 700;
   color: var(--navy);
   margin: 0;
+  text-align: center;
+}
+
+/* O NOVO BOTÃO */
+.btn-main {
+  display: inline-block;
+  background: var(--navy);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 14px 35px;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-main:hover {
+  background: var(--cyan);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* ════════════════════════════
@@ -1150,26 +1176,21 @@ body {
 .footer-main {
   background-color: #333333;
   color: #999999;
-  padding-top: 90px;
+  padding-top: 28px; /* Reduzido de 90px para diminuir o espaço vazio */
   font-size: 0.9rem;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px 30px;
+  padding: 0 60px 30px; /* padding lateral maior para simetria com social-links */
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center; /* Centraliza verticalmente logo e contatos */
 }
 
 .footer-logo img {
   height: 110px;
-}
-
-.footer-slogan {
-  font-size: 0.92rem;
-  color: #888;
 }
 
 .footer-contacts {
@@ -1198,99 +1219,13 @@ body {
   gap: 50px;
 }
 
-.footer-bottom {
-  background-color: #252525;
-  padding: 10px 0;
-  border-top: 1px solid #444;
-}
-
-.flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 0;
-}
-
-.footer-bottom .flex-between {
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
-
-}
-
-.footer-bottom p {
-  font-size: 0.88rem;
-  color: #777;
-}
-.footer-bottom p {
-    flex: 1; 
-    text-align: left;
-    margin: 0;
-}
-
-
-.footer-bottom strong {
-  color: #999;
-}
-
-
-.footer-bottom .dev-info {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end; /* Joga sua logo para a ponta direita */
-    align-items: center;
-}
-
-.footer-link {
-    flex: 1;
-    text-align: center;
-    color: #777;
-    font-size: 0.88rem;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-link:hover {
-    color: #54ced2; /* Usa o ciano da marca para o destaque no hover */
-    text-decoration: underline;
-}
-
-/* Ajuste opcional para mobile: empilhar itens se o espaço for curto */
-@media (max-width: 768px) {
-    .footer-bottom .flex-between {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-}
-
-.footer-dev-logo {
-    height: 30px; /* Ajuste essa altura conforme o design do seu logo */
-    width: auto;  /* Mantém a proporção */
-    vertical-align: middle; /* Alinha o logo com o texto "Site Desenvolvido por" */
-    margin-left: 4px;       /* Dá um espaço entre o texto e a imagem */
-    transition: opacity 0.3s ease;
-    filter: grayscale(200%) brightness(2); /* Opcional: deixa o logo cinza para combinar com o footer */
-
-}
-
-
-.dev-info {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #777;
-    font-size: 0.88rem;
-    
-}
-
+/* Social links alinhado com o padding do container */
 .social-links {
   display: flex;
   gap: 12px;
-  justify-content: end;
-  margin-right: 110px;
-  margin-bottom: 10px;
+  justify-content: flex-start;
+  margin-top: 8px;
+  padding: 0;
 }
 
 .social-links a {
@@ -1303,9 +1238,7 @@ body {
   background: #444;
   color: #aaa;
   text-decoration: none;
-  transition:
-    background 0.3s,
-    color 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
 .social-links a:hover {
@@ -1316,6 +1249,58 @@ body {
 .social-links svg {
   width: 20px;
   height: 20px;
+}
+
+/* Footer bottom com um único container centralizado */
+.footer-bottom {
+  background-color: #252525;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom .footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+/* As três colunas do rodapé com largura igual para ficarem centralizadas */
+.footer-bottom p {
+  text-align: left;
+  margin: 0;
+  font-size: 0.88rem;
+  color: #777;
+}
+
+.footer-link {
+  text-align: center;
+  color: #777;
+  font-size: 0.88rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #54ced2;
+  text-decoration: underline;
+}
+
+.dev-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  color: #777;
+  font-size: 0.88rem;
+}
+
+.footer-dev-logo {
+  height: 30px;
+  width: auto;
+  vertical-align: middle;
+  filter: grayscale(100%) brightness(2);
+  transition: opacity 0.3s ease;
 }
 
 .contact-link {
@@ -1333,6 +1318,40 @@ body {
   filter: drop-shadow(0 5px 15px rgba(0, 255, 255, 0.3));
 }
 
+/* Remove a classe .flex-between — não é mais necessária */
+
+@media (max-width: 768px) {
+  .footer-bottom .footer-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 20px;
+  }
+
+  .footer-contacts {
+    align-items: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    padding: 0 20px;
+  }
+
+  .footer-bottom .footer-container {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-bottom p,
+  .footer-link,
+  .dev-info {
+    flex: none;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
 /* ════════════════════════════
    BOTÕES - WHATSAPP E RETURN
 ════════════════════════════ */
@@ -1371,41 +1390,30 @@ body {
 /* ════════════════════════════
    WHATSAPP FLUTUANTE
 ════════════════════════════ */
-.whatsapp-float {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 90px;
-  right: 30px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #25d366;
-  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
-  z-index: 9998;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+.floating-whatsapp {
+    position: fixed !important; /* Força o posicionamento fixo */
+    bottom: 20px !important;    /* Garante a distância do fundo da tela */
+    right: 20px !important;     /* Garante a distância da direita da tela */
+
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999999 !important; /* Aumentado para garantir que fique acima de tudo */
+
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-decoration: none;
 }
 
-.whatsapp-float:hover {
-  background: #1ebe5d;
-  transform: scale(1.1) translateY(-3px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.55);
-}
-
-.whatsapp-float::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: #25d366;
-  opacity: 0.5;
-  animation: whatsappPulse 2s infinite;
-  pointer-events: none;
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
 }
 
 /* ════════════════════════════
@@ -1575,132 +1583,133 @@ body {
 ════════════════════════════ */
 .services-page {
   padding: 60px 0 80px;
-  background: #ffffff;
+  background: #ffffff; /* era #ffffff — novo fundo suave */
 }
-
+ 
 .services-page .container {
   max-width: 100rem;
   width: 92%;
   padding: 0;
 }
-
+ 
+/* ── Grid ── */
 .srv-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 40px;
+  gap: 20px;
   width: 100%;
-  justify-content: center; 
+  justify-content: center;
   justify-items: center;
-  /* Garante que todas as linhas do grid tenham a mesma altura baseada no maior card */
-  grid-auto-rows: 1fr; 
+  grid-auto-rows: 1fr;
 }
-
-.srv-card {
-  background: #fff;
-  border: 1px solid #e4eef6;
-  border-radius: 35px;
-  padding: 26px 24px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-  text-align: center;
-  align-items: center;
-  
-  /* FAZ O CARD OCUPAR 100% DA ALTURA DA LINHA DO GRID */
-  height: 100%; 
-  /* Garante que a largura se comporte bem */
-  width: 100%; 
-  box-sizing: border-box; 
+ 
+/* ── Card base ── */
+  .srv-card {
+    background: #fff;
+    border-radius: 24px 6px 24px 6px;
+    border: 1.5px solid #e4eef6;
+    padding: 28px 18px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .srv-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(45,157,161,0.06) 0%, rgba(77,184,188,0.04) 100%);
+    opacity: 0;
+    transition: opacity 0.35s;
+    border-radius: inherit;
+  }
+ 
+/* Barra lateral colorida — aparece no hover */
+.srv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--teal), var(--cyan));
+  border-radius: 24px 0 0 0;
+  opacity: 0;
+  transition: opacity 0.25s;
 }
-
+ 
+.srv-card:hover::before {
+  opacity: 1;
+}
+ 
+/* Arredondamento alternado — pares */
+.srv-card:nth-child(even) {
+  border-radius: 6px 24px 6px 24px;
+}
+ 
+/* Hover: ímpares invertem o raio */
 .srv-card:hover {
-  border-color: #2d9da1;
-  box-shadow: 0 6px 24px rgba(45, 157, 161, 0.18);
-  transform: translateY(-3px);
+  border-color: var(--teal);
+  box-shadow: 0 8px 28px rgba(45, 157, 161, 0.15);
+  transform: translateY(-4px);
+  border-radius: 6px 24px 6px 24px;
 }
-
-.srv-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, var(--teal), var(--cyan));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: white;
-  flex-shrink: 0;
+ 
+/* Hover: pares invertem o raio */
+.srv-card:nth-child(even):hover {
+  border-radius: 24px 6px 24px 6px;
 }
-
-.srv-label {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.92rem;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.5;
-  flex: 1;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
-  
-}
-
-.srv-link {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.85rem;
-  color: #2d9da1;
-  font-weight: 600;
-  letter-spacing: 0.3px;
-  margin-top: auto;
-  text-decoration: none;
-  text-align: center;
-  justify-content: center;
-}
-
-.srv-link i {
-  font-size: 0.85rem;
-  transition: transform 0.2s;
-}
-
-.srv-card:hover .srv-link i {
-  transform: translateX(3px);
-}
-
-.srv-card:hover .srv-icon {
-  background: linear-gradient(135deg, #2d9da1, #30496d);
-}
-
-.srv-card:hover .srv-label {
-  color: #2d9da1;
-}
-
-@media (max-width: 900px) {
-  .srv-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .srv-label{
-    margin-top: auto;
-  }
-}
-
-@media (max-width: 560px) {
-  .srv-grid {
-    grid-template-columns: 1fr;
+ 
+  .srv-card:hover::after { opacity: 1; }
+  .srv-card:nth-child(even) { border-radius: 6px 24px 6px 24px; }
+  .srv-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(45,157,161,0.15);
   }
 
-    .srv-label{
-    margin-top: auto;
-  }
 
-  .services-page {
-    padding: 40px 0 60px;
+  .srv-icon {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--teal), var(--cyan));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.15rem; color: white; flex-shrink: 0;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s;
+    position: relative; z-index: 1;
   }
-}
+  .srv-card:hover .srv-icon {
+    background: linear-gradient(135deg, var(--navy), var(--teal));
+  }
+ 
+  .srv-label {
+    font-size: 0.8rem; font-weight: 700;
+    color: var(--navy); line-height: 1.45;
+    margin: 0;
+    position: relative; z-index: 1;
+    transition: color 0.25s;
+  }
+  .srv-card:hover .srv-label { color: var(--teal); }
+  .srv-link {
+    display: flex; align-items: center; justify-content: center; gap: 4px;
+    font-size: 0.72rem; color: var(--teal);
+    font-weight: 700; letter-spacing: 0.4px;
+    text-transform: uppercase;
+    position: relative; z-index: 1;
+  }
+  .srv-link i { font-size: 0.8rem; transition: transform 0.25s; }
+  .srv-card:hover .srv-link i { transform: translateX(4px); }
+  @media (max-width: 700px) { .srv-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 420px) { .srv-grid { grid-template-columns: 1fr; } }
 
 /* ════════════════════════════
    CTA SERVIÇOS
@@ -2431,7 +2440,12 @@ body {
     margin-bottom: 10px;
 }
 
-
+@media (max-width: 768px) {
+    .doc-title {
+        font-size: 1.5rem; /* Diminui o tamanho da fonte */
+        line-height: 1.3;   /* Ajusta o espaçamento entre as linhas para não encavalar */
+    }
+  }
 /* ════════════════════════════
    PÁGINA NOSSOS SERVIÇOS
 ════════════════════════════ */
@@ -2539,6 +2553,21 @@ body {
     display: block;
 }
 
+
+@media (max-width: 768px) {
+    .serv-banner {
+        width: 100%; /* Ocupa quase toda a largura da tela do celular */
+        margin: 0 auto 20px; /* Diminui um pouco o espaçamento inferior no mobile */
+        border-radius: 15px; /* Cantos um pouco menos arredondados para telas pequenas */
+    }
+
+    .serv-banner-ajust {
+        width: 100%; /* Garante que a versão de ajuste também não fique minúscula */
+        max-height: 300px; /* Ajusta a altura máxima para fazer sentido no celular */
+        margin: 0 auto 20px;
+        border-radius: 15px;
+    }
+}
 
 /* ════════════════════════════
    ANIMAÇÕES
