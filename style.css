@@ -244,22 +244,17 @@ body {
 .logo-link {
     display: block;
     margin: 0 auto;
-    transform: translateX(-15px); 
+    transform: translateX(-30px); 
   }
 }
 
   .logo-wrapper img {
-    height: 90px !important; 
+    height: 100px !important; 
     display: block;
   }
 
-  .mobile-actions {
-    position: absolute;
-    right: 20px; 
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
+
+
 /* ════════════════════════════
    HERO
 ════════════════════════════ */
