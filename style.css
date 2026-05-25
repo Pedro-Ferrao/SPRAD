@@ -224,46 +224,42 @@ body {
   background: linear-gradient(to right, var(--navy), var(--cyan), var(--navy));
 }
 
-/* ── LOGO MOBILE ── */
 @media (max-width: 768px) {
-  .logo-wrapper img {
-    height: 80px !important;
+  .top-contacts {
+    display: none;
   }
-  .logo-wrapper {
-    justify-content: center;
+
+  .mobile-actions {
     display: flex;
   }
-}
 
-/* ── TELAS MÉDIAS: corrige top-contacts torto ── */
-@media (min-width: 769px) and (max-width: 1024px) {
   .top-bar .container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    position: relative; 
     padding: 0 20px;
-    gap: 16px;
   }
 
-  .top-contacts {
-    gap: 16px;
-    margin-right: 40px;
+.logo-link {
+    display: block;
+    margin: 0 auto;
+    transform: translateX(-15px); 
   }
-
-  .contact-item {
-    font-size: 0.82rem;
-    gap: 6px;
-    /* impede que o número quebre no meio */
-    white-space: nowrap;
-  }
-
-  .contact-item svg {
-    width: 18px;
-    height: 18px;
-  }
+}
 
   .logo-wrapper img {
-    height: 90px;
+    height: 90px !important; 
+    display: block;
+  }
+
+  .mobile-actions {
+    position: absolute;
+    right: 20px; 
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
-
 /* ════════════════════════════
    HERO
 ════════════════════════════ */
@@ -759,27 +755,76 @@ body {
 
 .service-card-cta {
   grid-column: 1 / -1;
-  background: #f8fafc; /* Um cinza bem leve e limpo */
-  border: 1px solid #e2e8f0; /* Borda fina e elegante */
+  background: #ffffff; /* Começa branco igual aos cards de serviços */
+  border: 3px solid rgb(46, 179, 191); /* Borda grossa azul inicial */
   border-radius: 30px;
   padding: 40px;
-  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Separa o texto do botão nas pontas */
-  max-width: 900px;
-  margin: 20px auto 0; /* Centraliza o card na tela */
+  justify-content: center; /* Centraliza o texto perfeitamente no card */
+  max-width: 1000px;
+  margin: 40px auto 0; /* Centraliza o card na tela e dá recuo do grid superior */
   width: 100%;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  text-decoration: none; /* Remove qualquer sublinhado padrão de link */
+  cursor: pointer;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+
+  transition: 
+    background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.service-card-cta:hover {
+  background-color: var(--teal);
+  border-color: #1a4b54;
+  transform: translateY(-6px); /* Elevação sutil ao passar o mouse */
+  box-shadow: 0 20px 40px rgba(45, 157, 161, 0.18);
+}
+
+/* Texto do CTA */
 .service-card-cta p {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--navy);
-  margin: 0;
   text-align: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--teal); 
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; 
+  transition: color 0.3s ease;
+}
+
+.service-card-cta p i {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.service-card-cta:hover p {
+  color: #ffffff;
+}
+
+.service-card-cta:hover p i {
+  transform: translateX(6px);
+}
+
+/* ── Responsividade ── */
+@media (max-width: 768px) {
+  .service-card-cta {
+    padding: 32px 24px;
+  }
+  
+  .service-card-cta p {
+    font-size: 1.15rem;
+    gap: 8px;
+  }
 }
 
 /* O NOVO BOTÃO */
@@ -1176,27 +1221,37 @@ body {
 .footer-main {
   background-color: #333333;
   color: #999999;
-  padding-top: 28px; /* Reduzido de 90px para diminuir o espaço vazio */
+  padding-top: 40px; /* Leve aumento para equilibrar com a nova altura da marca */
   font-size: 0.9rem;
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 60px 30px; /* padding lateral maior para simetria com social-links */
+  padding: 0 60px 40px; /* Ajuste fino de respiro inferior */
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Centraliza verticalmente logo e contatos */
+  align-items: flex-start; /* Alinha o topo da marca com o topo dos contatos */
+}
+
+/* Container da Imagem + Redes Sociais */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaço exato entre a base da logo e os botões sociais */
+  align-items: flex-start; /* Garante alinhamento à esquerda no desktop */
 }
 
 .footer-logo img {
   height: 110px;
+  display: block;
 }
 
 .footer-contacts {
   display: flex;
   flex-direction: column;
   gap: 18px;
+  margin-top: 20px;
 }
 
 .footer-contacts .contact-item {
@@ -1217,15 +1272,18 @@ body {
 .contact-group {
   display: flex;
   gap: 50px;
+  margin-top: 10px;
 }
 
-/* Social links alinhado com o padding do container */
+/* Social links perfeitamente alinhados abaixo da imagem */
 .social-links {
   display: flex;
   gap: 12px;
   justify-content: flex-start;
-  margin-top: 8px;
+  margin: 0;
   padding: 0;
+  margin-left: 17px;
+  margin-top: 8px;
 }
 
 .social-links a {
@@ -1238,12 +1296,13 @@ body {
   background: #444;
   color: #aaa;
   text-decoration: none;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s, color 0.3s, transform 0.2s ease;
 }
 
 .social-links a:hover {
-  background: var(--orange);
-  color: var(--white);
+  background: var(--cyan, #4db8bc);
+  color: #ffffff;
+  transform: translateY(-2px); /* Efeito sutil de subida também nos ícones sociais */
 }
 
 .social-links svg {
@@ -1251,7 +1310,7 @@ body {
   height: 20px;
 }
 
-/* Footer bottom com um único container centralizado */
+/* Footer bottom */
 .footer-bottom {
   background-color: #252525;
   border-top: 1px solid #444;
@@ -1265,7 +1324,6 @@ body {
   padding-bottom: 12px;
 }
 
-/* As três colunas do rodapé com largura igual para ficarem centralizadas */
 .footer-bottom p {
   text-align: left;
   margin: 0;
@@ -1290,7 +1348,6 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
   color: #777;
   font-size: 0.88rem;
 }
@@ -1318,29 +1375,39 @@ body {
   filter: drop-shadow(0 5px 15px rgba(0, 255, 255, 0.3));
 }
 
-/* Remove a classe .flex-between — não é mais necessária */
-
+/* ── Responsividade Inteligente ── */
 @media (max-width: 768px) {
-  .footer-bottom .footer-container {
+  .footer-container {
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    padding: 16px 20px;
+    gap: 35px;
+    padding: 0 20px 30px;
+  }
+
+  .footer-brand {
+    align-items: center; /* Centraliza a logo e os ícones em telas mobile */
+    text-align: center;
   }
 
   .footer-contacts {
     align-items: center;
   }
 
+  .contact-group {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+  }
+
   .social-links {
     justify-content: center;
-    padding: 0 20px;
   }
 
   .footer-bottom .footer-container {
     flex-direction: column;
     gap: 12px;
     text-align: center;
+    padding: 16px 20px;
   }
 
   .footer-bottom p,
@@ -1581,135 +1648,169 @@ body {
 /* ════════════════════════════
    PÁGINA DE SERVIÇOS
 ════════════════════════════ */
+
 .services-page {
-  padding: 60px 0 80px;
-  background: #ffffff; /* era #ffffff — novo fundo suave */
+  padding: 80px 0 100px;
+  background: #feffff; /* Fundo ligeiramente frio para destacar o branco puro dos cards */
 }
- 
+
 .services-page .container {
   max-width: 100rem;
   width: 92%;
   padding: 0;
+  margin: 0 auto;
 }
- 
-/* ── Grid ── */
+
 .srv-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 20px;
+  gap: 28px; /* Espaçamento ideal para não sufocar as bordas grossas */
   width: 100%;
   justify-content: center;
-  justify-items: center;
   grid-auto-rows: 1fr;
 }
- 
-/* ── Card base ── */
-  .srv-card {
-    background: #fff;
-    border-radius: 24px 6px 24px 6px;
-    border: 1.5px solid #e4eef6;
-    padding: 28px 18px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-decoration: none;
-    cursor: pointer;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    transition: border-color 0.3s, box-shadow 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-  .srv-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(45,157,161,0.06) 0%, rgba(77,184,188,0.04) 100%);
-    opacity: 0;
-    transition: opacity 0.35s;
-    border-radius: inherit;
-  }
- 
-/* Barra lateral colorida — aparece no hover */
-.srv-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
+
+.srv-card {
+  background: #ffffff; /* Fundo inicial branco */
+  border-radius: 24px 6px 24px 6px;
+  border: 3px solid rgb(46, 179, 191); /* Borda grossa azul inicial */
+  padding: 36px 24px 28px;   /* Mais respiro interno para os textos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
   height: 100%;
-  background: linear-gradient(180deg, var(--teal), var(--cyan));
-  border-radius: 24px 0 0 0;
-  opacity: 0;
-  transition: opacity 0.25s;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate3d(0, 0, 0);
+  
+  transition: 
+    background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    border-radius 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    
+  backface-visibility: hidden;
 }
- 
-.srv-card:hover::before {
-  opacity: 1;
-}
- 
-/* Arredondamento alternado — pares */
+
 .srv-card:nth-child(even) {
   border-radius: 6px 24px 6px 24px;
 }
- 
-/* Hover: ímpares invertem o raio */
+
 .srv-card:hover {
-  border-color: var(--teal);
-  box-shadow: 0 8px 28px rgba(45, 157, 161, 0.15);
-  transform: translateY(-4px);
+  background-color: var(--teal); 
+    border-color: #1a4b54; 
+  
+  transform: translateY(-8px); /* Elevação sutilmente maior para destacar a sombra */
+  box-shadow: 0 20px 40px rgba(26, 75, 84, 0.15), 0 1px 3px rgba(0, 0, 0, 0.02);
   border-radius: 6px 24px 6px 24px;
 }
- 
-/* Hover: pares invertem o raio */
+
 .srv-card:nth-child(even):hover {
   border-radius: 24px 6px 24px 6px;
 }
- 
-  .srv-card:hover::after { opacity: 1; }
-  .srv-card:nth-child(even) { border-radius: 6px 24px 6px 24px; }
-  .srv-card:hover {
-    border-color: var(--teal);
-    box-shadow: 0 0 0 3px rgba(45,157,161,0.15);
-  }
 
+.srv-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal, #2d9da1), var(--cyan, #4db8bc));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(45, 157, 161, 0.2);
+  
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
 
-  .srv-icon {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--teal), var(--cyan));
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.15rem; color: white; flex-shrink: 0;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), background 0.3s;
-    position: relative; z-index: 1;
+.srv-card:hover .srv-icon {
+  transform: scale(1.08) rotate(1deg);
+}
+
+.srv-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--teal); /* Texto inicial cinza/azul suave (não fica pesado nas letras) */
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease;
+}
+
+.srv-card:hover .srv-label {
+  color: #ffffff;
+}
+
+.srv-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgb(46, 179, 191); /* Mantém o link na cor azul inicial */
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-top: auto;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, gap 0.3s ease, color 0.3s ease;
+}
+
+.srv-link i {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.srv-card:hover .srv-link {
+  opacity: 1;
+  color: white; /* Ciano bem clarinho e elétrico para contrastar elegantemente no petróleo */
+  gap: 9px;
+}
+
+.srv-card:hover .srv-link i {
+  transform: translateX(2px);
+}
+
+/* ── Responsividade Inteligente ── */
+@media (max-width: 1200px) {
+  .srv-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
   }
-  .srv-card:hover .srv-icon {
-    background: linear-gradient(135deg, var(--navy), var(--teal));
+}
+
+@media (max-width: 900px) {
+  .srv-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
   }
- 
-  .srv-label {
-    font-size: 0.8rem; font-weight: 700;
-    color: var(--navy); line-height: 1.45;
-    margin: 0;
-    position: relative; z-index: 1;
-    transition: color 0.25s;
+  .srv-card {
+    padding: 28px 20px 24px;
   }
-  .srv-card:hover .srv-label { color: var(--teal); }
-  .srv-link {
-    display: flex; align-items: center; justify-content: center; gap: 4px;
-    font-size: 0.72rem; color: var(--teal);
-    font-weight: 700; letter-spacing: 0.4px;
-    text-transform: uppercase;
-    position: relative; z-index: 1;
+}
+
+@media (max-width: 500px) {
+  .srv-grid {
+    grid-template-columns: 1fr;
   }
-  .srv-link i { font-size: 0.8rem; transition: transform 0.25s; }
-  .srv-card:hover .srv-link i { transform: translateX(4px); }
-  @media (max-width: 700px) { .srv-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 420px) { .srv-grid { grid-template-columns: 1fr; } }
+}
 
 /* ════════════════════════════
    CTA SERVIÇOS
@@ -2380,8 +2481,9 @@ body {
 ════════════════════════════ */
 
 .privacidade-grid {
-    padding: 60px 0;
-    background-color: #ffffff; 
+  padding: 10px 0 60px 0; 
+  background-color: #ffffff; 
+
 }
 
 .priv-card {
@@ -2399,8 +2501,20 @@ body {
     text-align: left;
 }
 
+.doc-hero{
+  background: #ffffff;
+  padding: 40px 40px 10px 40px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
 .doc-title{
-  font-size: 2rem;
+  font-size: 1.8rem;
+}
+
+.doc-subtitle {
+  font-size: 1.2rem;
 }
 
 .priv-card h3 {
@@ -2442,7 +2556,7 @@ body {
 
 @media (max-width: 768px) {
     .doc-title {
-        font-size: 1.5rem; /* Diminui o tamanho da fonte */
+        font-size: 1.7rem; /* Diminui o tamanho da fonte */
         line-height: 1.3;   /* Ajusta o espaçamento entre as linhas para não encavalar */
     }
   }
@@ -2450,75 +2564,38 @@ body {
    PÁGINA NOSSOS SERVIÇOS
 ════════════════════════════ */
 
+/* --- Estilos Gerais da Seção --- */
 .serv-grid {
     padding: 60px 0;
     background-color: #ffffff; 
 }
 
-.serv-card {
-    background: #ffffff;
-    border: 2px solid #54ced2;
-    border-radius: 20px;
-    padding: 40px; /* Aumentei para dar um aspecto mais premium */
-    box-shadow: 0 4px 24px rgba(56, 81, 124, 0.08);
-    box-sizing: border-box;
-    max-width: 1000px; /* Limita a largura para a leitura não ficar cansativa */
+.container {
+    max-width: 1000px; /* Alinha todo o conteúdo na mesma largura máxima */
     margin: 0 auto;
-    
-    display: flex;
-    flex-direction: column;
-    text-align: left;
+    padding: 0 20px; /* Evita que o conteúdo cole nas bordas em telas menores */
+    box-sizing: border-box;
 }
 
-.serv-card h2 {
+.serv-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 1.6rem;
+    font-size: 2.1rem; /* Aumentado levemente por estar em destaque no topo */
     text-align: center;
     font-weight: 800;
-    color: var(--navy);
-    margin: 0 0 20px 0;
+    color: var(--navy, #1e3a8a); /* Fallback caso var(--navy) não esteja definida */
+    margin: 0 auto 30px auto;
     text-transform: uppercase;
-    border-bottom: 1px solid #ffffff; /* Linha sutil para separar seções */
-    padding-bottom: 10px;
-}
-
-.serv-card h3:first-child {
-    margin-top: 0;
-}
-
-.serv-card p {
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #4a4a4a;
-    margin-bottom: 15px;
-}
-
-.serv-card ul {
-    list-style: none;
-    padding-left: 20px;
-    margin-bottom: 20px;
-}
-
-.serv-card li {
-    font-family: "Open Sans", sans-serif;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #4a4a4a;
-    margin-bottom: 10px;
+    max-width: 800px;
 }
 
 .serv-banner {
-    width: 80%;            /* Diminui a largura da imagem (ajuste a % como preferir) */
-    margin: 0 auto 40px;   /* Centraliza e cria a distância de 40px para o texto */
-    
-    height: auto;          /* Remove a altura fixa de 390px */
+    width: 70%;
+    margin: 0 auto 40px; /* Centraliza e afasta 40px do card de texto abaixo */
+    height: auto;
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     background: #ffffff;
-    position: relative;
-    flex: none;            /* Garante que o flexbox não force o tamanho */
 }
 
 .serv-banner img {
@@ -2529,46 +2606,104 @@ body {
 }
 
 .serv-banner-ajust {
-    width: 60%; 
-    margin: 0 auto 40px; /* Centraliza e afasta do texto */
-    
-    max-height: 450px; 
-    
-    height: auto;
+    width: 100%;             /* Permite que o container use o espaço disponível */
+    max-width: 420px;        /* Limita a largura para imagens verticais não estourarem */
+    margin: 0 auto 40px;     /* Centraliza e afasta 40px do card abaixo */
+    height: 450px;           /* Define uma altura fixa máxima ideal para o desktop */
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    background: transparent; /* Evita fundo branco caso a imagem seja menor */
+    background: #ffffff;
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .serv-banner-ajust img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* Corta sutilmente as bordas para preencher o container sem distorcer */
     display: block;
 }
 
+.serv-card {
+    background: #ffffff;
+    border: 2px solid #54ced2;
+    border-radius: 20px;
+    padding: 40px; 
+    box-shadow: 0 4px 24px rgba(56, 81, 124, 0.08);
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
 
+/* --- Textos e Listas --- */
+.serv-card p {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+
+.serv-card ul {
+    list-style: none;
+    padding-left: 0; /* Zerado para alinhar perfeitamente com o parágrafo */
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.serv-card li {
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 25px; /* Abre espaço para o marcador customizado */
+}
+
+/* Marcador elegante de "check" antes de cada item */
+.serv-card li::before {
+    position: absolute;
+    left: 0;
+    color: #54ced2; /* Mesma cor da borda do card */
+    font-weight: bold;
+}
+
+.serv-card li:last-child {
+    margin-bottom: 0;
+}
+/* --- Responsivo (Mobile) --- */
 @media (max-width: 768px) {
-    .serv-banner {
-        width: 100%; /* Ocupa quase toda a largura da tela do celular */
-        margin: 0 auto 20px; /* Diminui um pouco o espaçamento inferior no mobile */
-        border-radius: 15px; /* Cantos um pouco menos arredondados para telas pequenas */
+    .serv-grid {
+        padding: 40px 0;
     }
-
-    .serv-banner-ajust {
-        width: 100%; /* Garante que a versão de ajuste também não fique minúscula */
-        max-height: 300px; /* Ajusta a altura máxima para fazer sentido no celular */
-        margin: 0 auto 20px;
-        border-radius: 15px;
+    .serv-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    .serv-banner {
+        width: 100%; 
+        margin: 0 auto 25px; 
+        border-radius: 15px; 
+    }
+    .serv-card {
+        padding: 25px 20px; /* Reduz o padding interno para telas pequenas */
     }
 }
 
+@media (max-width: 768px) {
+    .serv-banner-ajust {
+        max-width: 90%;     
+        height: 350px;       
+        margin: 0 auto 25px;
+        border-radius: 15px;
+    }
+}
 /* ════════════════════════════
    ANIMAÇÕES
 ════════════════════════════ */

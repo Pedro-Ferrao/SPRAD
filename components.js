@@ -5,7 +5,7 @@ const headerHTML = `
 
             <a href="index.html" class="logo-link">
                 <div class="logo-wrapper">
-                    <img src="Imagens/logo_site.jpeg" alt="SP Rad - Serviços em Proteção Radiológica">
+                    <img src="Imagens/logo_site.jpg" alt="SP Rad - Serviços em Proteção Radiológica">
                 </div>
             </a>
 
@@ -68,6 +68,25 @@ const footerHTML = `
             <div class="footer-logo">
                 <img src="Imagens/Logo-sprad.png" alt="SP Rad">
             </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/sprad.com.br/?locale=pt_BR" target="_blank" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/sprad.protecaoradiologica/" target="_blank" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/company/sp-rad-servi%C3%A7os-em-prote%C3%A7%C3%A3o-radiol%C3%B3gica/?originalSubdomain=br" target="_blank" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+                    </svg>
+                </a>
+            </div>
         </div>
 
         <div class="footer-contacts">
@@ -103,44 +122,20 @@ const footerHTML = `
                     </a>
                 </div>
             </div>
+        </div>
 
-            <!-- Social links agora dentro do footer-contacts -->
-            <div class="social-links">
-                <a href="https://www.facebook.com/sprad.com.br/?locale=pt_BR" target="blank" aria-label="Facebook">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/sprad.protecaoradiologica/" target="_blank" aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/company/sp-rad-servi%C3%A7os-em-prote%C3%A7%C3%A3o-radiol%C3%B3gica/?originalSubdomain=br" target="_blank" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
-                    </svg>
-                </a>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-container"> 
+            <p>&copy; 2026 SP Rad Serviços em Proteção Radiológica</p>
+            <a href="legal.html" class="footer-link">Política de Privacidade e Termos de Uso</a>
+            <div class="dev-info">
+                <span>Desenvolvido por</span>
+                <img src="Imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
             </div>
-
-        </div>
-
-    </div>
-
-
-<div class="footer-bottom">
-    <div class="footer-container"> 
-        <p>&copy; 2026 SP Rad Serviços Em Proteção Radiológica</p>
-        <a href="aviso-privacidade.html"class="footer-link">Política de Privacidade e Termos de Uso</a>
-        <div class="dev-info">
-            <span>Desenvolvido por</span>
-            <img src="Imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
         </div>
     </div>
-</div>
-
 </footer>
 `;
 
