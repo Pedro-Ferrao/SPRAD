@@ -796,7 +796,7 @@ body {
 /* Texto do CTA */
 .service-card-cta p {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--teal); 
   margin: 0;
@@ -1914,17 +1914,26 @@ body {
    PÁGINA DE DOWNLOADS
 ════════════════════════════ */
 .download-section {
-  padding: 80px 0;
+  padding: 80px 0 80px 0; 
   background-color: #fcfcfc;
+  clear: both; 
+  display: block;
+}
+
+.download-section .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto; /* O '0 auto' zera a margem superior/inferior do container */
+  padding: 0 15px;
 }
 
 .grid-downloads {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(4, 260px);
+  justify-content: center; 
   gap: 30px;
   margin-top: 50px;
 }
-
 .download-card {
   background: var(--white);
   border-radius: 16px;
@@ -2515,11 +2524,11 @@ body {
 }
 
 .doc-title{
-  font-size: 1.8rem;
+  font-size: 2.4rem;
 }
 
 .doc-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .priv-card h3 {
