@@ -1929,10 +1929,13 @@ body {
 
 .grid-downloads {
   display: grid;
-  grid-template-columns: repeat(4, 260px);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   justify-content: center; 
   gap: 30px;
   margin-top: 50px;
+  max-width: 590px; 
+  margin-left: auto;  
+  margin-right: auto; 
 }
 .download-card {
   background: var(--white);
