@@ -2613,20 +2613,20 @@ body {
     background: #ffffff;
 }
 
-.serv-banner-fantoma {
+.serv-banner-w {
     width: 70%;
-    margin: 0 auto 40px; /* Centraliza e afasta 40px do card de texto abaixo */
+    margin: 0 auto 40px; /* Centraliza e afasta do texto */
     height: auto;
     border-radius: 30px;
     overflow: hidden;
     background: #ffffff;
 }
 
-.serv-banner img {
+.serv-banner-w img {
     width: 100%;
-    height: auto;          
-    display: block;
-    object-fit: contain;   
+    height: 100%;
+    object-fit: cover; 
+    display: block;    
 }
 
 .serv-banner-ajust {
