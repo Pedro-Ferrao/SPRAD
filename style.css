@@ -2580,8 +2580,6 @@ body {
 /* ════════════════════════════
    PÁGINA NOSSOS SERVIÇOS
 ════════════════════════════ */
-
-/* --- Estilos Gerais da Seção --- */
 .serv-grid {
     padding: 60px 0;
     background-color: #ffffff; 
@@ -2612,6 +2610,15 @@ body {
     border-radius: 30px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+}
+
+.serv-banner-fantoma {
+    width: 70%;
+    margin: 0 auto 40px; /* Centraliza e afasta 40px do card de texto abaixo */
+    height: auto;
+    border-radius: 30px;
+    overflow: hidden;
     background: #ffffff;
 }
 
