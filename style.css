@@ -35,6 +35,7 @@ body {
   line-height: 1.6;
   background-color: var(--white);
   animation: fadeInPage 0.5s ease forwards;
+  overflow-x: hidden;
 }
 
 .container {
@@ -1832,6 +1833,7 @@ body {
   padding: 90px 0;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .services-cta::before {
@@ -1853,6 +1855,7 @@ body {
   gap: 60px;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .cta-left {
