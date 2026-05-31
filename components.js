@@ -48,11 +48,11 @@ const headerHTML = `
     <nav class="navbar" id="navbar">
         <div class="container">
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#empresa">Empresa</a></li>
-                <li><a href="index.html#servicos">Serviços</a></li>
-                <li><a href="index.html#downloads">Downloads</a></li>
-                <li><a href="index.html#contato">Contato</a></li>
+                <li><a href="index#home">Home</a></li>
+                <li><a href="index#empresa">Empresa</a></li>
+                <li><a href="index#servicos">Serviços</a></li>
+                <li><a href="index#downloads">Downloads</a></li>
+                <li><a href="index#contato">Contato</a></li>
             </ul>
         </div>
     </nav>
@@ -129,7 +129,7 @@ const footerHTML = `
     <div class="footer-bottom">
         <div class="footer-container"> 
             <p>&copy; 2026 SP Rad Serviços em Proteção Radiológica</p>
-            <a href="legal.html" class="footer-link">Política de Privacidade e Termos de Uso</a>
+            <a href="legal" class="footer-link">Política de Privacidade e Termos de Uso</a>
             <div class="dev-info">
                 <span>Desenvolvido por</span>
                 <img src="Imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
