@@ -1226,25 +1226,28 @@ body {
 .footer-main {
   background-color: #333333;
   color: #999999;
-  padding-top: 40px; /* Leve aumento para equilibrar com a nova altura da marca */
+  padding-top: 40px;
   font-size: 0.9rem;
+  width: 100%;  
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 60px 40px; /* Ajuste fino de respiro inferior */
+  padding: 0 60px 40px; 
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* Alinha o topo da marca com o topo dos contatos */
+  align-items: flex-start;
+  width: 100%;          
+  box-sizing: border-box; /
 }
 
 /* Container da Imagem + Redes Sociais */
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: 20px; /* Espaço exato entre a base da logo e os botões sociais */
-  align-items: flex-start; /* Garante alinhamento à esquerda no desktop */
+  gap: 20px; 
+  align-items: flex-start; 
 }
 
 .footer-logo img {
@@ -1280,7 +1283,6 @@ body {
   margin-top: 10px;
 }
 
-/* Social links perfeitamente alinhados abaixo da imagem */
 .social-links {
   display: flex;
   gap: 12px;
@@ -1319,6 +1321,7 @@ body {
 .footer-bottom {
   background-color: #252525;
   border-top: 1px solid #444;
+  width: 100%; 
 }
 
 .footer-bottom .footer-container {
@@ -1378,6 +1381,10 @@ body {
   color: var(--cyan);
   transform: translateY(-3px);
   filter: drop-shadow(0 5px 15px rgba(0, 255, 255, 0.3));
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 /* ── Responsividade Inteligente ── */
