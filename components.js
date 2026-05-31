@@ -3,7 +3,7 @@ const headerHTML = `
     <div class="top-bar">
         <div class="container">
 
-            <a href="index.html" class="logo-link">
+            <a href="./" class="logo-link">
                 <div class="logo-wrapper">
                     <img src="Imagens/logo_site.jpg" alt="SP Rad - Serviços em Proteção Radiológica">
                 </div>
@@ -129,7 +129,7 @@ const footerHTML = `
     <div class="footer-bottom">
         <div class="footer-container"> 
             <p>&copy; 2026 SP Rad Serviços em Proteção Radiológica</p>
-            <a href="legal" class="footer-link">Política de Privacidade e Termos de Uso</a>
+            <a href="/legal" class="footer-link">Política de Privacidade e Termos de Uso</a>
             <div class="dev-info">
                 <span>Desenvolvido por</span>
                 <img src="Imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
