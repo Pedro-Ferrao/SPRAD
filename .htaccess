@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Força HTTPS e WWW
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.sprad\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://www.sprad.com.br/$1 [R=301,L]
+
+# Remove /index ou /index.html e redireciona para a raiz limpa (/)
+RewriteCond %{THE_REQUEST} \s/+(.*/)?index(\.html)?[\s?] [NC]
+RewriteRule ^(.*/)?index(\.html)?$ /$1 [R=301,L]
+
+# Permite URLs sem .html pras outras páginas
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [NC,L]
