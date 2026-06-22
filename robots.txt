@@ -2,10 +2,7 @@
 User-agent: *
 Allow: /
 
-# Evita que os robôs percam tempo rastreando arquivos de configuração ou scripts internos
-Disallow: /vercel.json
-Disallow: /.htaccess
-Disallow: /README.md
+
 
 # Aponta a localização exata do seu sitemap para os buscadores
 Sitemap: https://www.sprad.com.br/sitemap.xml
