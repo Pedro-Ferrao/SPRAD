@@ -1931,7 +1931,7 @@ body {
 ════════════════════════════ */
 .download-section {
   padding: 80px 0 80px 0; 
-  background-color: #fcfcfc;
+  background-color: var(--white);
   clear: both; 
   display: block;
 }
