@@ -1,3 +1,8 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/sinalizacoes/sinalizacao-luminosa.pdf", "destination": "/sinalizacoes/luz-vermelha-entrada-proibida.pdf", "permanent": true },
+    { "source": "/sinalizacoes/suspeita-de-gravidez.pdf", "destination": "/sinalizacoes/aviso-gravidez-exame-radiologico.pdf", "permanent": true },
+    { "source": "/sinalizacoes/pacientes-acompanhantes.pdf", "destination": "/sinalizacoes/orientacoes-protecao-radiologica.pdf", "permanent": true }
+  ]
 }
