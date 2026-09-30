@@ -19,7 +19,7 @@
   </url>
   <url>
     <loc>https://www.sprad.com.br/downloads</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
@@ -169,23 +169,48 @@
   </url>
 
   <url>
-    <loc>https://www.sprad.com.br/sinalizacoes/pacientes-acompanhantes.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.sprad.com.br/sinalizacoes/simbolo-radiacao.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sprad.com.br/sinalizacoes/sinalizacao-luminosa.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <loc>https://www.sprad.com.br/sinalizacoes/luz-vermelha-entrada-proibida.pdf</loc>
+    <lastmod>2026-09-30</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.sprad.com.br/sinalizacoes/suspeita-de-gravidez.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <loc>https://www.sprad.com.br/sinalizacoes/aviso-gravidez-exame-radiologico.pdf</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sprad.com.br/sinalizacoes/orientacoes-protecao-radiologica.pdf</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sprad.com.br/sinalizacoes/vestimenta-plumbifera-paciente.pdf</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sprad.com.br/sinalizacoes/permanencia-acompanhantes.pdf</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sprad.com.br/sinalizacoes/vestimenta-plumbifera-acompanhante.pdf</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sprad.com.br/sinalizacoes/um-paciente-por-vez.pdf</loc>
+    <lastmod>2026-09-30</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.sprad.com.br/sinalizacoes/aviso-gravidez.pdf</loc>
+    <lastmod>2026-09-30</lastmod>
     <priority>0.6</priority>
   </url>
 
