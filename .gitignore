@@ -1,0 +1,7 @@
+# Material de trabalho do cliente (não vai para o site)
+alteracoes/
+
+# Pacotes e temporários
+*.zip
+*.tmp
+node_modules/

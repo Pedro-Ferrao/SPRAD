@@ -4,7 +4,8 @@
 
   <url>
     <loc>https://www.sprad.com.br/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/index.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/slider/radiologia.jpg</image:loc></image:image>
@@ -12,252 +13,292 @@
     <image:image><image:loc>https://www.sprad.com.br/slider/radiologia_odontologica.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/controle-de-qualidade-em-ultrassom.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/controle-de-qualidade-da-imagem-em-radiologia.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/curso.jpeg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/curso.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/empresa</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/empresa.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/contato</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/contato.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/downloads</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/downloads.jpeg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/simbolo-radiacao.png</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/luz-vermelha-entrada-proibida.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/aviso-gravidez-exame-radiologico.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/orientacoes-protecao-radiologica.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/vestimenta-plumbifera-paciente.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/permanencia-acompanhantes.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/vestimenta-plumbifera-acompanhante.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/um-paciente-por-vez.jpg</image:loc></image:image>
-    <image:image><image:loc>https://www.sprad.com.br/Imagens/sinalizacoes/aviso-gravidez.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/simbolo-radiacao.png</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/luz-vermelha-entrada-proibida.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/aviso-gravidez-exame-radiologico.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/orientacoes-protecao-radiologica.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/vestimenta-plumbifera-paciente.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/permanencia-acompanhantes.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/vestimenta-plumbifera-acompanhante.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/um-paciente-por-vez.jpg</image:loc></image:image>
+    <image:image><image:loc>https://www.sprad.com.br/imagens/sinalizacoes/aviso-gravidez.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/curso-online</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/curso.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/legal</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/legal.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/servicos-em-protecao-radiologica</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/servicos.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/calculo-de-blindagem</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/calculo-de-blindagem-para-protecao-radiologica.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/calculo-de-blindagem-para-protecao-radiologica.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/dosimetria-individual</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/dosimetria-individual.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/dosimetria-individual.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/controle-de-qualidade-em-monitores-e-negatoscopios</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/controle-de-qualidade-em-monitores-e-negatoscopios.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/controle-de-qualidade-em-monitores-e-negatoscopios.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/controle-de-qualidade-em-radiologia</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/controle-de-qualidade-em-radiologia.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/controle-de-qualidade-da-imagem-em-radiologia.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/controle-de-qualidade-em-ressonancia-magnetica</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/controle-de-qualidade-em-ressonancia-magnetica.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/controle-de-qualidade-em-ressonancia-magnetica.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/controle-de-qualidade-em-ultrassom</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/controle-de-qualidade-em-ultrassom.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/fantoma-de-mamografia</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/fantoma-de-mamografia.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/fantoma-para-mamografia.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/integridade-de-epis-radiologicos</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/integridade-de-epis-radiologicos.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/integridade-de-equipamentos-de-protecao-radiologica-individual.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/levantamento-radiometrico-e-teste-de-fuga</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/levantamento-radiometrico-e-teste-de-fuga.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/levantamento-radiometrico-ambiental.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/plano-de-protecao-radiologica-ppr</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/plano-de-protecao-radiologica-ppr.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/plano-de-protecao-radiologica-ppr.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/programa-de-garantia-de-qualidade-pgq</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/programa-de-garantia-de-qualidade-pgq.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/programa-de-garantia-de-qualidade-pgq.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/supervisao-de-protecao-radiologica</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/supervisao-de-protecao-radiologica.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/supervisao-de-protecao-radiologica.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/treinamento-em-protecao-radiologica</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/treinamento-em-protecao-radiologica.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/treinamento-em-protecao-radiologica.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/radiologia-industrial</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/radiologia-industrial.jpeg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/radiologia-industrial.jpeg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/radiologia-odontologica</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/radiologia-odontologica.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/radiologia-odontologica.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/radiologia-veterinaria</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image><image:loc>https://www.sprad.com.br/miniaturas/radiologia-veterinaria.jpg</image:loc></image:image>
     <image:image><image:loc>https://www.sprad.com.br/servicos/radiologia-veterinaria.jpg</image:loc></image:image>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/in90.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/in91.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/in92.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/in93.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/in94.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/in95.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/in96.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/in97.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/instrucoes-normativas/rdc611.pdf</loc>
-    <lastmod>2026-06-20</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/simbolo-radiacao.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/luz-vermelha-entrada-proibida.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/aviso-gravidez-exame-radiologico.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/orientacoes-protecao-radiologica.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/vestimenta-plumbifera-paciente.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/permanencia-acompanhantes.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/vestimenta-plumbifera-acompanhante.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/um-paciente-por-vez.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.sprad.com.br/sinalizacoes/aviso-gravidez.pdf</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>

@@ -8,6 +8,10 @@ RewriteCond %{HTTPS} !=on [OR]
 RewriteCond %{HTTP_HOST} !^www\.sprad\.com\.br$ [NC]
 RewriteRule ^(.*)$ https://www.sprad.com.br/$1 [R=301,L]
 
+# Bloqueia arquivos internos do projeto caso sejam enviados ao servidor
+RewriteRule ^(\.git|dev|alteracoes)(/|$) - [F,L,NC]
+RewriteRule ^(README\.md|package\.json|\.gitignore|\.gitattributes)$ - [F,L,NC]
+
 # Sinalizações antigas -> novos arquivos
 RewriteRule ^sinalizacoes/sinalizacao-luminosa\.pdf$ /sinalizacoes/luz-vermelha-entrada-proibida.pdf [R=301,L,NC]
 RewriteRule ^sinalizacoes/suspeita-de-gravidez\.pdf$ /sinalizacoes/aviso-gravidez-exame-radiologico.pdf [R=301,L,NC]

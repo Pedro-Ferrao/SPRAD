@@ -48,6 +48,12 @@ createServer(async (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   let path = decodeURIComponent(url.pathname);
 
+  // Mesmos bloqueios do .htaccess (arquivos internos do projeto)
+  if (/^\/(\.git|dev|alteracoes)(\/|$)|^\/(readme\.md|package\.json|\.gitignore|\.gitattributes)$/i.test(path)) {
+    res.writeHead(403);
+    return res.end("Acesso negado");
+  }
+
   const target = REDIRECTS[path.toLowerCase()];
   if (target) return redirect(res, target);
 

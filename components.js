@@ -5,7 +5,7 @@ const headerHTML = `
 
             <a href="./" class="logo-link">
                 <div class="logo-wrapper">
-                    <img src="Imagens/logo_site.jpg" alt="SP Rad - Serviços em Proteção Radiológica">
+                    <img src="imagens/logo-site.jpg" alt="SP Rad - Serviços em Proteção Radiológica">
                 </div>
             </a>
 
@@ -66,7 +66,7 @@ const footerHTML = `
 
         <div class="footer-brand">
             <div class="footer-logo">
-                <img src="Imagens/Logo-sprad.png" alt="SP Rad">
+                <img src="imagens/logo-sprad.png" alt="SP Rad">
             </div>
             <div class="social-links">
                 <a href="https://www.facebook.com/sprad.com.br/?locale=pt_BR" target="_blank" aria-label="Facebook">
@@ -132,7 +132,7 @@ const footerHTML = `
             <a href="/legal" class="footer-link">Política de Privacidade e Termos de Uso</a>
             <div class="dev-info">
                 <span>Desenvolvido por</span>
-                <img src="Imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
+                <img src="imagens/pfstudio-mkt.png" alt="PF Studios MKT" class="footer-dev-logo">
             </div>
         </div>
     </div>
