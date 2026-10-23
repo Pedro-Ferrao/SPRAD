@@ -39,6 +39,7 @@ O projeto foi construído utilizando tecnologias web fundamentais para garantir 
 ├── slider/                 # Imagens do slider da página inicial
 ├── dev/server.mjs          # Servidor local (npm run dev), imita o .htaccess
 ├── .htaccess               # Regras do Apache (HostGator): HTTPS, URLs limpas, redirecionamentos
+├── vercel.json / .vercelignore  # Regras e exclusões para a Vercel (URLs limpas, redirecionamentos)
 ├── sitemap.xml / robots.txt
 ├── components.js           # Cabeçalho e rodapé compartilhados
 ├── contact.js              # Lógica do formulário de contato
