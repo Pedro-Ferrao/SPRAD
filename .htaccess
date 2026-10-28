@@ -2,6 +2,7 @@ RewriteEngine On
 
 # MIME types para arquivos estáticos
 AddType application/pdf .pdf
+AddType "text/vcard; charset=utf-8" .vcf
 
 # Força HTTPS e WWW
 RewriteCond %{HTTPS} !=on [OR]

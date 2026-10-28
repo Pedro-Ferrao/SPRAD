@@ -22,6 +22,7 @@ const TYPES = {
   ".webp": "image/webp",
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon",
+  ".vcf": "text/vcard; charset=utf-8",
 };
 
 // Mesmos redirecionamentos do .htaccess
@@ -73,6 +74,7 @@ createServer(async (req, res) => {
   let found = null;
   if (await isFile(file)) found = file;
   else if (await isFile(file + ".html")) found = file + ".html";
+  else if (await isFile(join(file, "index.html"))) found = join(file, "index.html");
 
   if (!found) {
     res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
