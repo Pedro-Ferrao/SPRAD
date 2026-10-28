@@ -11,6 +11,10 @@ import segno
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "cartao"
 SITE = "https://www.sprad.com.br"
+# Onde os cartões estão publicados hoje. Prévia de compartilhamento (Open Graph) e o botão
+# Compartilhar usam este endereço, porque www.sprad.com.br ainda está na HostGator.
+# Quando o domínio for apontado para a Vercel, troque para PUBLICO = SITE e rode de novo.
+PUBLICO = "https://sprad.vercel.app"
 AZUL_QR = "#0b3a66"
 
 COMERCIAL = ("(16) 98200-0886", "5516982000886")
@@ -127,6 +131,7 @@ def intent_android(c):
 
 def pagina(c):
     url = SITE + c["path"]
+    url_publica = PUBLICO + c["path"]
     t, d = escape(c["titulo"]), escape(c["descricao"])
     wa_num = c["whatsapp"][1]
     contatos = "".join(
@@ -164,8 +169,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:site_name" content="SP Rad">
     <meta property="og:title" content="{t}">
     <meta property="og:description" content="{d}">
-    <meta property="og:url" content="{url}">
-    <meta property="og:image" content="{SITE}/miniaturas/cartao.jpeg">
+    <meta property="og:url" content="{url_publica}">
+    <meta property="og:image" content="{PUBLICO}/miniaturas/cartao.jpeg">
+    <meta property="og:image:secure_url" content="{PUBLICO}/miniaturas/cartao.jpeg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="1200">
@@ -173,7 +179,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{t}">
     <meta name="twitter:description" content="{d}">
-    <meta name="twitter:image" content="{SITE}/miniaturas/cartao.jpeg">
+    <meta name="twitter:image" content="{PUBLICO}/miniaturas/cartao.jpeg">
     <link rel="stylesheet" href="/cartao/cartao.css">
 </head>
 <body>
@@ -201,7 +207,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="acoes">
             <a class="btn btn-whats" href="https://wa.me/{wa_num}" target="_blank" rel="noopener">{icone("whatsapp")}WhatsApp</a>
             <a class="btn btn-salvar" href="/cartao/{c["slug"]}.vcf" type="text/vcard" data-salvar data-android="{escape(intent_android(c))}">{icone("salvar")}Salvar contato</a>
-            <button class="btn btn-compartilhar" type="button" data-compartilhar data-titulo="{t}" data-texto="{d}" data-url="{url}">{icone("compartilhar")}Compartilhar cartão</button>
+            <button class="btn btn-compartilhar" type="button" data-compartilhar data-titulo="{t}" data-texto="{d}" data-url="{url_publica}">{icone("compartilhar")}Compartilhar cartão</button>
         </div>
 
         <ul class="contatos">{contatos}</ul>
