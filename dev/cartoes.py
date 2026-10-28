@@ -68,8 +68,7 @@ REDES = [
 ]
 
 ICONES = {
-    "whatsapp": '<path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>'
-                '<path d="M9 8.5c.3 2.6 2.4 5 5.2 5.8l1.1-1.3 1.9.9c-.2 1-1 1.8-2.2 1.8-3.6 0-6.8-3.2-6.8-6.8 0-1.2.8-2 1.8-2.2l.9 1.9z" fill="currentColor"/>',
+    "whatsapp": '<path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>',
     "salvar": '<circle cx="9" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/>'
               '<path d="M2 21v-1.5A4.5 4.5 0 0 1 6.5 15h5a4.5 4.5 0 0 1 4.5 4.5V21M19 8v6M16 11h6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
     "compartilhar": '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>'
@@ -166,37 +165,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <main class="cartao">
-    <header class="logo">
-        <a href="{SITE}"><img src="/imagens/logo-site.jpg" width="1208" height="475" alt="SP Rad - Serviços em Proteção Radiológica"></a>
-    </header>
+    <div class="topo">
+        <header class="logo">
+            <a href="{SITE}"><img src="/imagens/logo-site.jpg" width="1208" height="475" alt="SP Rad - Serviços em Proteção Radiológica"></a>
+        </header>
 
-    <section class="faixa">
-        <p class="sobre">Cartão digital · SP Rad</p>
-        <h1>{escape(c["nome"])}</h1>
-        <p class="cargo">{escape(c["cargo"])}</p>
-        <p class="slogan">Segurança · Credibilidade · Qualidade</p>
-    </section>
+        <section class="faixa">
+            <p class="sobre">Cartão digital · SP Rad</p>
+            <h1>{escape(c["nome"])}</h1>
+            <p class="cargo">{escape(c["cargo"])}</p>
+            <p class="slogan">Segurança · Credibilidade · Qualidade</p>
+        </section>
+    </div>
 
+    <div class="corpo">
     <div class="conteudo">
         <div class="acoes">
             <a class="btn btn-whats" href="https://wa.me/{wa_num}" target="_blank" rel="noopener">{icone("whatsapp")}WhatsApp</a>
-            <a class="btn btn-salvar" href="/cartao/{c["slug"]}.vcf" download="{c["slug"]}.vcf">{icone("salvar")}Salvar contato</a>
+            <a class="btn btn-salvar" href="/cartao/{c["slug"]}.vcf" type="text/vcard">{icone("salvar")}Salvar contato</a>
             <button class="btn btn-compartilhar" type="button" data-compartilhar data-titulo="{t}" data-texto="{d}" data-url="{url}">{icone("compartilhar")}Compartilhar cartão</button>
         </div>
 
         <ul class="contatos">{contatos}</ul>
 
-        <a class="btn btn-site" href="{SITE}" target="_blank" rel="noopener">{icone("site")}Visitar nosso site{icone("seta", "ico seta")}</a>
-        <p class="legenda">www.sprad.com.br</p>
+        <div class="bloco-site">
+            <a class="btn btn-site" href="{SITE}" target="_blank" rel="noopener">{icone("site")}Visitar nosso site{icone("seta", "ico seta")}</a>
+            <p class="legenda">www.sprad.com.br</p>
+        </div>
 
-        <h2>Acompanhe a SP Rad</h2>
-        <div class="redes">{redes}</div>
+        <div class="bloco-redes">
+            <h2>Acompanhe a SP Rad</h2>
+            <div class="redes">{redes}</div>
+        </div>
+    </div>
 
-        <section class="qr-bloco">
-            <h2>{escape(c["qr_rotulo"])}</h2>
-            {qr_svg(url)}
-            <p class="legenda pequena">{url}</p>
-        </section>
+    <section class="qr-bloco">
+        <h2>{escape(c["qr_rotulo"])}</h2>
+        {qr_svg(url)}
+        <p class="legenda pequena">{url.replace(".com.br/", ".com.br/<wbr>")}</p>
+    </section>
     </div>
 
     <footer class="rodape"><a href="{SITE}">www.sprad.com.br</a></footer>
