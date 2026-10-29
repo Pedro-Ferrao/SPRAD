@@ -5,6 +5,10 @@
   "description": "Site SP Rad | Serviços em Proteção Radiológica",
   "type": "module",
   "scripts": {
-    "dev": "node dev/server.mjs"
+    "dev": "node dev/server.mjs",
+    "cartoes": "node dev/cartoes.mjs"
+  },
+  "devDependencies": {
+    "qrcode": "^1.5.4"
   }
 }

@@ -5,3 +5,4 @@ package.json
 .htaccess
 .gitignore
 .gitattributes
+package-lock.json
