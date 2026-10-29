@@ -4,7 +4,6 @@
 import io
 from html import escape
 from pathlib import Path
-from urllib.parse import quote
 
 import segno
 
@@ -112,23 +111,6 @@ def vcard(c):
     return "\r\n".join(linhas) + "\r\n"
 
 
-def intent_android(c):
-    # Abre a tela "Adicionar contato" do Android já preenchida (Chrome entende links intent:).
-    # O cartao.js completa com S.browser_fallback_url (o .vcf) e ;end.
-    # Tipos de telefone do Android: 2 = celular, 3 = trabalho, 17 = celular do trabalho.
-    (_, tel1), (_, tel2) = (numero for _, numero in c["contatos"])
-    extras = [("S.name", c["nome"]), ("S.company", "SP Rad - Serviços em Proteção Radiológica")]
-    if not c["empresa"]:
-        extras.append(("S.job_title", c["cargo"]))
-    extras += [
-        ("S.phone", f"+{tel1}"), ("i.phone_type", "2"),
-        ("S.secondary_phone", f"+{tel2}"), ("i.secondary_phone_type", "3" if tel2 == FIXO[1] else "17"),
-        ("S.email", c["email"]), ("i.email_type", "2"),
-    ]
-    corpo = "".join(f"{k}={quote(v, safe='')};" for k, v in extras)
-    return f"intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/contact;{corpo}"
-
-
 def pagina(c):
     url = SITE + c["path"]
     url_publica = PUBLICO + c["path"]
@@ -206,7 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="conteudo">
         <div class="acoes">
             <a class="btn btn-whats" href="https://wa.me/{wa_num}" target="_blank" rel="noopener">{icone("whatsapp")}WhatsApp</a>
-            <a class="btn btn-salvar" href="/cartao/{c["slug"]}.vcf" type="text/vcard" data-salvar data-android="{escape(intent_android(c))}">{icone("salvar")}Salvar contato</a>
+            <a class="btn btn-salvar" href="/cartao/{c["slug"]}.vcf" type="text/vcard">{icone("salvar")}Salvar contato</a>
             <button class="btn btn-compartilhar" type="button" data-compartilhar data-titulo="{t}" data-texto="{d}" data-url="{url_publica}">{icone("compartilhar")}Compartilhar cartão</button>
         </div>
 

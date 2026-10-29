@@ -140,12 +140,6 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
 .qr-bloco h2 { margin-top: 28px; }
 .qr { display: block; width: 190px; height: 190px; margin: 14px auto 0; shape-rendering: crispEdges; }
 
-.qr-bloco.destaque .qr { animation: destaque 1.2s ease 2; }
-@keyframes destaque {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(22, 79, 128, 0); }
-    50% { box-shadow: 0 0 0 10px rgba(22, 79, 128, .18); }
-}
-
 .rodape {
     padding: 20px;
     background: var(--azul);

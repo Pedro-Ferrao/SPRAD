@@ -2,39 +2,11 @@
     const aviso = document.querySelector(".aviso");
 
     let timer;
-    function mostrar(msg, tempo) {
+    function mostrar(msg) {
         aviso.textContent = msg;
         aviso.hidden = false;
         clearTimeout(timer);
-        timer = setTimeout(() => { aviso.hidden = true; }, tempo || 2500);
-    }
-
-    // Salvar contato: nenhum site grava direto na agenda, então cada sistema usa o caminho nativo.
-    // Android abre "Adicionar contato" preenchido; iPhone abre o .vcf na tela de contato do sistema;
-    // no PC não há agenda, então orienta a usar o QR Code no celular.
-    const salvar = document.querySelector("[data-salvar]");
-    if (salvar) {
-        const ua = navigator.userAgent;
-        const android = /Android/i.test(ua);
-        const ios = /iPhone|iPad|iPod/i.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
-
-        salvar.addEventListener("click", (e) => {
-            if (ios) return;
-            e.preventDefault();
-            if (android) {
-                const vcf = new URL(salvar.getAttribute("href"), location.href).href;
-                location.href = salvar.dataset.android + "S.browser_fallback_url=" + encodeURIComponent(vcf) + ";end";
-                return;
-            }
-            mostrar("Para salvar o contato, escaneie o QR Code com o celular.", 4000);
-            const qr = document.querySelector(".qr-bloco");
-            if (qr) {
-                qr.scrollIntoView({ behavior: "smooth", block: "center" });
-                qr.classList.remove("destaque");
-                void qr.offsetWidth;
-                qr.classList.add("destaque");
-            }
-        });
+        timer = setTimeout(() => { aviso.hidden = true; }, 2500);
     }
 
     // Compartilhar cartão: usa o compartilhamento nativo e, sem ele, copia o link.
