@@ -84,8 +84,8 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 270px;
-    padding: 28px 24px 22px;
+    min-height: 204px; /* mesma altura da faixa dos cartões com foto */
+    padding: 20px 22px 18px;
     background:
         linear-gradient(0deg, rgba(11, 58, 102, .92) 0%, rgba(11, 58, 102, .55) 24%, rgba(11, 58, 102, 0) 48%),
         linear-gradient(90deg, rgba(11, 58, 102, .95) 0%, rgba(11, 58, 102, .82) 42%, rgba(11, 58, 102, .2) 76%, rgba(11, 58, 102, 0) 100%),
@@ -94,12 +94,9 @@ a { color: inherit; text-decoration: none; }
 }
 .com-capa .faixa-texto { flex: none; }
 .com-capa h1, .com-capa .cargo { text-shadow: 0 2px 10px rgba(5, 30, 55, .45); }
-.com-capa h1 { margin-top: 0; font-size: 36px; }
-.com-capa .cargo { margin-top: 4px; font-size: 20px; font-weight: 500; line-height: 1.3; opacity: 1; }
-.com-capa .slogan { margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .3); text-shadow: 0 1px 6px rgba(5, 30, 55, .5); }
-
-.contatos .local { display: block; font-size: 17px; font-weight: 700; color: var(--azul); }
-.contatos .local + .rotulo { margin-top: 3px; font-size: 15px; color: var(--texto); }
+.com-capa h1 { margin-top: 0; font-size: 28px; }
+.com-capa .cargo { margin-top: 2px; font-size: 16px; font-weight: 500; line-height: 1.3; opacity: 1; }
+.com-capa .slogan { margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255, 255, 255, .3); text-shadow: 0 1px 6px rgba(5, 30, 55, .5); }
 
 .conteudo { padding: 26px 24px 30px; }
 
@@ -232,10 +229,16 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .faixa h1 { margin-top: 14px; font-size: clamp(34px, 3.4vw, 50px); }
     .faixa .cargo { font-size: clamp(18px, 1.5vw, 22px); }
     .faixa .slogan { margin-top: 22px; font-size: clamp(13px, 1.05vw, 16px); }
-    .faixa.com-capa { justify-content: center; min-height: 0; padding: clamp(36px, 4vw, 60px) clamp(40px, 4.5vw, 72px); border-bottom-left-radius: 18px; }
-    .com-capa h1 { font-size: clamp(38px, 3.6vw, 54px); }
-    .com-capa .cargo { font-size: clamp(20px, 1.7vw, 26px); }
-    .com-capa .slogan { margin-top: 20px; padding-top: 16px; max-width: 34em; }
+    /* Mesma altura da faixa com foto: foto + padding vertical. */
+    .faixa.com-capa {
+        justify-content: center;
+        min-height: calc(clamp(140px, 12vw, 190px) + 2 * clamp(28px, 3vw, 44px));
+        padding: clamp(24px, 2.4vw, 36px) clamp(40px, 4.5vw, 72px);
+        border-bottom-left-radius: 18px;
+    }
+    .com-capa h1 { font-size: clamp(30px, 2.8vw, 42px); }
+    .com-capa .cargo { font-size: clamp(16px, 1.35vw, 20px); }
+    .com-capa .slogan { margin-top: clamp(12px, 1.2vw, 18px); padding-top: clamp(10px, 1vw, 14px); max-width: 34em; }
     .faixa.com-foto { grid-template-columns: auto 1fr; gap: 0 clamp(28px, 3vw, 44px); padding: clamp(28px, 3vw, 44px) clamp(40px, 4.5vw, 72px); }
     .foto { width: clamp(140px, 12vw, 190px); height: clamp(140px, 12vw, 190px); border-width: 5px; }
     .com-foto .sobre { font-size: 12px; letter-spacing: .22em; }
@@ -315,9 +318,9 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .qr-bloco { margin: 0 16px; }
     .faixa { padding: 24px 20px 26px; }
     .faixa:not(.com-foto):not(.com-capa) h1 { font-size: 23px; }
-    .com-capa h1 { font-size: 32px; }
-    .com-capa .cargo { font-size: 18px; }
-    .faixa.com-capa { min-height: 240px; padding: 24px 20px 20px; }
+    .com-capa h1 { font-size: 26px; }
+    .com-capa .cargo { font-size: 15px; }
+    .faixa.com-capa { min-height: 196px; padding: 18px 20px 16px; }
     .faixa.com-foto { gap: 14px; padding: 20px 16px 22px; }
     .foto { width: 96px; height: 96px; border-width: 3px; }
     .btn { font-size: 14px; padding: 12px 10px; }
