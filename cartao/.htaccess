@@ -1,0 +1,24 @@
+# Regras só da pasta /cartao (HostGator). Independe do .htaccess da raiz,
+# para os cartões funcionarem sem alterar a configuração do resto do site.
+AddType "text/vcard; charset=utf-8" .vcf
+DirectoryIndex index.html
+
+RewriteEngine On
+RewriteBase /cartao/
+
+# Força HTTPS e WWW
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^www\.sprad\.com\.br$ [NC]
+RewriteRule ^(.*)$ https://www.sprad.com.br/cartao/$1 [R=301,L]
+
+# /cartao/index.html -> /cartao/ e /cartao/nome.html -> /cartao/nome
+RewriteCond %{THE_REQUEST} \s/+cartao/index(\.html)?[\s?] [NC]
+RewriteRule ^index(\.html)?$ /cartao/ [R=301,L]
+RewriteCond %{THE_REQUEST} \s/+cartao/([^./]+)\.html[\s?] [NC]
+RewriteRule ^([^./]+)\.html$ /cartao/$1 [R=301,L]
+
+# /cartao/nome -> nome.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^./]+)$ $1.html [L]

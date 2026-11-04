@@ -7,10 +7,9 @@ import QRCode from "qrcode";
 
 const OUT = fileURLToPath(new URL("../cartao/", import.meta.url));
 const SITE = "https://www.sprad.com.br";
-// Onde os cartões estão publicados hoje. Prévia de compartilhamento (Open Graph) e o botão
-// Compartilhar usam este endereço, porque www.sprad.com.br ainda está na HostGator.
-// Quando o domínio for apontado para a Vercel, troque para PUBLICO = SITE e rode de novo.
-const PUBLICO = "https://sprad.vercel.app";
+// Endereço usado na prévia de compartilhamento (Open Graph) e no botão Compartilhar.
+// Os cartões são publicados na HostGator, no domínio oficial.
+const PUBLICO = SITE;
 const AZUL_QR = "#0b3a66";
 
 const COMERCIAL = ["(16) 98200-0886", "5516982000886"];
@@ -25,13 +24,15 @@ const CARTOES = [
     descricao: "Acesse o cartão digital da SP Rad e entre em contato com nossa equipe de proteção radiológica.",
     nome: "SP Rad",
     cargo: "Serviços em Proteção Radiológica",
+    capa: "/cartao/sprad.jpg",
     whatsapp: COMERCIAL,
     contatos: [
-      ["Celular / WhatsApp", COMERCIAL],
-      ["Telefone fixo", FIXO],
+      ["WhatsApp", COMERCIAL],
+      ["Telefone comercial", FIXO],
     ],
     email: "sprad@sprad.com.br",
-    qrRotulo: "QR Code da SP Rad",
+    local: ["São Carlos – SP", "Atendemos em todo o Brasil"],
+    qrRotulo: "QR Code da empresa",
     empresa: true,
   },
   {
@@ -115,6 +116,7 @@ const ICONES = {
     '<path d="M6 16c.5-1.5 1.7-2.2 3-2.2s2.5.7 3 2.2M14 10h4M14 13h3"/>',
   celular: '<rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/>',
   telefone: '<path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/>',
+  local: '<path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/>',
   email: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/>',
   compartilhar: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>' +
     '<path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/>',
@@ -141,6 +143,7 @@ function vcard(c) {
   const linhas = ["BEGIN:VCARD", "VERSION:3.0"];
   if (c.empresa) {
     linhas.push("N:;;;;", "FN:SP Rad", "ORG:SP Rad - Serviços em Proteção Radiológica", "X-ABShowAs:COMPANY");
+    if (c.local) linhas.push("ADR;TYPE=WORK:;;;São Carlos;SP;;Brasil");
   } else {
     linhas.push(`N:${c.sobrenome};${c.prenome};;;`, `FN:${c.nome}`, "ORG:SP Rad - Serviços em Proteção Radiológica", `TITLE:${c.cargo}`);
   }
@@ -163,6 +166,10 @@ async function pagina(c) {
     item(numero === FIXO[1] ? "telefone" : (i === 0 ? "celular" : "telefone"), rotulo, `tel:+${numero}`, exibe)
   ).join("");
   contatos += item("email", "E-mail", `mailto:${c.email}`, c.email);
+  if (c.local) {
+    contatos += `<li>${icone("local", "ico contato-ico")}<div><strong class="local">${escape(c.local[0])}</strong>` +
+      `<span class="rotulo">${escape(c.local[1])}</span></div></li>`;
+  }
   const foto = c.foto
     ? `<img class="foto" src="${c.foto}" width="480" height="480" alt="Foto de ${escape(c.nome)}">
             `
@@ -223,11 +230,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="${SITE}"><img src="/imagens/logo-site.jpg" width="1208" height="475" alt="SP Rad - Serviços em Proteção Radiológica"></a>
         </header>
 
-        <section class="faixa${c.foto ? " com-foto" : ""}">
+        <section class="faixa${c.foto ? " com-foto" : ""}${c.capa ? " com-capa" : ""}"${c.capa ? ` style="--capa: url('${c.capa}')"` : ""}>
             ${foto}<div class="faixa-texto">
-            <p class="sobre">Cartão digital · SP Rad</p>
+            ${c.capa ? "" : '<p class="sobre">Cartão digital · SP Rad</p>'}
             <h1>${escape(c.nome)}</h1>
-            <p class="cargo">${escape(c.cargo)}</p>
+            <p class="cargo">${c.capa ? escape(c.cargo).replace(" em ", " em<br>") : escape(c.cargo)}</p>
             </div>
             <p class="slogan">Segurança · Credibilidade · Qualidade</p>
         </section>
