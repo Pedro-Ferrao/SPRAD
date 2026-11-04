@@ -57,6 +57,24 @@ a { color: inherit; text-decoration: none; }
     text-transform: uppercase;
 }
 
+/* Faixa com foto: foto redonda à esquerda do nome. */
+.faixa.com-foto { display: flex; align-items: center; gap: 18px; padding: 22px 20px 24px; }
+.faixa-texto { flex: 1; min-width: 0; }
+.foto {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+    background: #fff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
+}
+.com-foto .sobre { font-size: 10px; letter-spacing: .16em; }
+.com-foto h1 { margin-top: 8px; font-size: 22px; }
+.com-foto .cargo { font-size: 14px; }
+.com-foto .slogan { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .25); font-size: 10.5px; letter-spacing: .03em; }
+
 .conteudo { padding: 26px 24px 30px; }
 
 .acoes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -84,7 +102,8 @@ a { color: inherit; text-decoration: none; }
 .ico { width: 18px; height: 18px; flex-shrink: 0; }
 
 .btn-whats { background: var(--verde); color: #fff; }
-.btn-compartilhar { background: var(--claro); color: var(--azul); }
+.btn-salvar { background: var(--azul); color: #fff; }
+.btn-compartilhar { grid-column: 1 / -1; background: var(--claro); color: var(--azul); }
 
 .contatos {
     margin-top: 28px;
@@ -93,7 +112,9 @@ a { color: inherit; text-decoration: none; }
     border: 1px solid var(--borda);
     border-radius: 14px;
 }
-.contatos li { padding: 14px 0; border-bottom: 1px solid var(--borda); }
+.contatos li { display: flex; align-items: center; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--borda); }
+.contatos li > div { min-width: 0; }
+.contato-ico { width: 26px; height: 26px; color: var(--azul); }
 .contatos li:last-child { border-bottom: 0; }
 .contatos .rotulo { display: block; font-size: 13px; color: var(--suave); }
 .contatos a {
@@ -185,6 +206,12 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .faixa h1 { margin-top: 14px; font-size: clamp(34px, 3.4vw, 50px); }
     .faixa .cargo { font-size: clamp(18px, 1.5vw, 22px); }
     .faixa .slogan { margin-top: 22px; font-size: clamp(13px, 1.05vw, 16px); }
+    .faixa.com-foto { flex-direction: row; justify-content: flex-start; gap: clamp(28px, 3vw, 44px); padding: clamp(28px, 3vw, 44px) clamp(40px, 4.5vw, 72px); }
+    .foto { width: clamp(140px, 12vw, 190px); height: clamp(140px, 12vw, 190px); border-width: 5px; }
+    .com-foto .sobre { font-size: 12px; letter-spacing: .22em; }
+    .com-foto h1 { margin-top: 14px; font-size: clamp(34px, 3.4vw, 50px); }
+    .com-foto .cargo { font-size: clamp(18px, 1.5vw, 22px); }
+    .com-foto .slogan { margin-top: 20px; padding-top: 16px; font-size: clamp(13px, 1.05vw, 16px); letter-spacing: .06em; }
 
     .corpo {
         flex: 1;
@@ -204,6 +231,7 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .ico { width: 20px; height: 20px; }
 
     .acoes { grid-area: acoes; grid-template-columns: 1fr; grid-auto-rows: 1fr; gap: 14px; }
+    .btn-compartilhar { grid-column: auto; }
 
     .contatos { grid-area: contatos; margin-top: 0; padding: 6px clamp(18px, 1.8vw, 26px); display: flex; flex-direction: column; justify-content: center; }
     .contatos li { padding: 18px 0; }
@@ -246,8 +274,8 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .faixa .slogan { font-size: 11.5px; letter-spacing: .03em; }
 }
 
-/* Celular estreito: WhatsApp e Compartilhar não cabem lado a lado. */
-@media (max-width: 380px) {
+/* Celular estreito: WhatsApp e Salvar contato não cabem lado a lado. */
+@media (max-width: 340px) {
     .acoes { grid-template-columns: 1fr; }
 }
 
@@ -256,5 +284,9 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .qr-bloco { margin: 0 16px; }
     .faixa { padding: 24px 20px 26px; }
     .faixa h1 { font-size: 23px; }
+    .faixa.com-foto { gap: 14px; padding: 20px 16px 22px; }
+    .foto { width: 96px; height: 96px; border-width: 3px; }
+    .com-foto h1 { font-size: 19px; }
+    .com-foto .slogan { font-size: 9.5px; letter-spacing: 0; }
     .btn { font-size: 14px; padding: 12px 10px; }
 }
