@@ -36,6 +36,7 @@ a { color: inherit; text-decoration: none; }
 .logo img { display: block; width: 100%; max-width: 300px; height: auto; margin: 0 auto; }
 
 .faixa {
+    container-type: inline-size;
     padding: 28px 28px 30px;
     background: linear-gradient(135deg, var(--azul) 0%, var(--azul-2) 100%);
     color: #fff;
@@ -51,19 +52,22 @@ a { color: inherit; text-decoration: none; }
 .faixa .cargo { margin-top: 6px; font-size: 16px; opacity: .9; }
 .faixa .slogan {
     margin-top: 18px;
-    font-size: 13px;
+    font-size: min(13px, 3.9cqi);
     font-weight: 700;
     letter-spacing: .06em;
     text-transform: uppercase;
 }
 
 /* Faixa com foto: foto redonda à esquerda do nome. */
-.faixa.com-foto { display: flex; align-items: center; gap: 18px; padding: 22px 20px 24px; }
-.faixa-texto { flex: 1; min-width: 0; }
+.faixa.com-foto { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 0 16px; padding: 22px 20px 22px; }
+.com-foto .slogan { grid-column: 1 / -1; text-align: center; }
+/* Nome e slogan sempre em uma linha: a fonte diminui com a largura disponível (cqi). */
+.faixa-texto { flex: 1; min-width: 0; container-type: inline-size; }
+.faixa h1, .faixa .slogan { white-space: nowrap; }
 .foto {
     flex-shrink: 0;
-    width: 120px;
-    height: 120px;
+    width: 112px;
+    height: 112px;
     border-radius: 50%;
     border: 4px solid #fff;
     object-fit: cover;
@@ -71,9 +75,9 @@ a { color: inherit; text-decoration: none; }
     box-shadow: 0 4px 14px rgba(0, 0, 0, .18);
 }
 .com-foto .sobre { font-size: 10px; letter-spacing: .16em; }
-.com-foto h1 { margin-top: 8px; font-size: 22px; }
+.com-foto h1 { margin-top: 8px; font-size: min(22px, 8.6cqi); }
 .com-foto .cargo { font-size: 14px; }
-.com-foto .slogan { margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(255, 255, 255, .25); font-size: 10.5px; letter-spacing: .03em; }
+.com-foto .slogan { margin-top: 18px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .25); font-size: min(12.5px, 3.9cqi); letter-spacing: .04em; }
 
 .conteudo { padding: 26px 24px 30px; }
 
@@ -206,12 +210,13 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .faixa h1 { margin-top: 14px; font-size: clamp(34px, 3.4vw, 50px); }
     .faixa .cargo { font-size: clamp(18px, 1.5vw, 22px); }
     .faixa .slogan { margin-top: 22px; font-size: clamp(13px, 1.05vw, 16px); }
-    .faixa.com-foto { flex-direction: row; justify-content: flex-start; gap: clamp(28px, 3vw, 44px); padding: clamp(28px, 3vw, 44px) clamp(40px, 4.5vw, 72px); }
+    .faixa.com-foto { grid-template-columns: auto 1fr; gap: 0 clamp(28px, 3vw, 44px); padding: clamp(28px, 3vw, 44px) clamp(40px, 4.5vw, 72px); }
     .foto { width: clamp(140px, 12vw, 190px); height: clamp(140px, 12vw, 190px); border-width: 5px; }
     .com-foto .sobre { font-size: 12px; letter-spacing: .22em; }
-    .com-foto h1 { margin-top: 14px; font-size: clamp(34px, 3.4vw, 50px); }
+    .com-foto h1 { margin-top: 14px; font-size: min(clamp(34px, 3.4vw, 50px), 8.6cqi); }
     .com-foto .cargo { font-size: clamp(18px, 1.5vw, 22px); }
-    .com-foto .slogan { margin-top: 20px; padding-top: 16px; font-size: clamp(13px, 1.05vw, 16px); letter-spacing: .06em; }
+    .foto { grid-row: 1 / 3; }
+    .com-foto .slogan { grid-column: 2; text-align: left; margin-top: 20px; padding-top: 16px; font-size: min(clamp(13px, 1.05vw, 16px), 2.6cqi); letter-spacing: .06em; }
 
     .corpo {
         flex: 1;
@@ -271,7 +276,7 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .qr-bloco { margin: 0 18px; }
     .acoes { gap: 10px; }
     .btn { padding: 12px 10px; gap: 7px; }
-    .faixa .slogan { font-size: 11.5px; letter-spacing: .03em; }
+    .faixa:not(.com-foto) .slogan { letter-spacing: .03em; }
 }
 
 /* Celular estreito: WhatsApp e Salvar contato não cabem lado a lado. */
@@ -283,10 +288,8 @@ h2 { margin-top: 30px; text-align: center; font-size: 15px; font-weight: 700; co
     .conteudo { padding: 22px 16px 26px; }
     .qr-bloco { margin: 0 16px; }
     .faixa { padding: 24px 20px 26px; }
-    .faixa h1 { font-size: 23px; }
+    .faixa:not(.com-foto) h1 { font-size: 23px; }
     .faixa.com-foto { gap: 14px; padding: 20px 16px 22px; }
     .foto { width: 96px; height: 96px; border-width: 3px; }
-    .com-foto h1 { font-size: 19px; }
-    .com-foto .slogan { font-size: 9.5px; letter-spacing: 0; }
     .btn { font-size: 14px; padding: 12px 10px; }
 }

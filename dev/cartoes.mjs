@@ -188,8 +188,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="sobre">Cartão digital · SP Rad</p>
             <h1>${escape(c.nome)}</h1>
             <p class="cargo">${escape(c.cargo)}</p>
-            <p class="slogan">Segurança · Credibilidade · Qualidade</p>
             </div>
+            <p class="slogan">Segurança · Credibilidade · Qualidade</p>
         </section>
     </div>
 
