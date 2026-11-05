@@ -25,7 +25,7 @@ const CARTOES = [
     descricao: "Acesse o cartão digital da SP Rad e entre em contato com nossa equipe de proteção radiológica.",
     nome: "SP Rad",
     cargo: "Serviços em Proteção Radiológica",
-    capa: "/cartao/sprad.jpg",
+    simbolo: true,
     whatsapp: COMERCIAL,
     contatos: [
       ["WhatsApp", COMERCIAL],
@@ -49,7 +49,7 @@ const CARTOES = [
     whatsapp: ["(16) 98137-7485", "5516981377485"],
     contatos: [
       ["Celular / WhatsApp", ["+55 16 98137-7485", "5516981377485"]],
-      ["Celular comercial", COMERCIAL],
+      ["Telefone comercial", COMERCIAL],
     ],
     email: "paulo@sprad.com.br",
     qrRotulo: "QR Code individual",
@@ -69,7 +69,7 @@ const CARTOES = [
     whatsapp: ["(16) 99314-6120", "5516993146120"],
     contatos: [
       ["Celular / WhatsApp", ["+55 16 99314-6120", "5516993146120"]],
-      ["Celular comercial", COMERCIAL],
+      ["Telefone comercial", COMERCIAL],
     ],
     email: "giglioti@sprad.com.br",
     qrRotulo: "QR Code individual",
@@ -89,7 +89,7 @@ const CARTOES = [
     whatsapp: ["(16) 98178-2585", "5516981782585"],
     contatos: [
       ["Celular / WhatsApp", ["+55 16 98178-2585", "5516981782585"]],
-      ["Celular comercial", COMERCIAL],
+      ["Telefone comercial", COMERCIAL],
     ],
     email: "jeferson@sprad.com.br",
     qrRotulo: "QR Code individual",
@@ -131,6 +131,20 @@ function icone(nome, classe = "ico") {
   return `<svg class="${classe}" viewBox="0 0 24 24" aria-hidden="true"${traco}>${ICONES[nome]}</svg>`;
 }
 
+// Símbolo de radiação (trifólio) dentro de um círculo, no lugar da foto no cartão da empresa.
+function simboloRadiacao() {
+  const ponto = (ang, r) => {
+    const a = (ang * Math.PI) / 180;
+    return `${(50 + r * Math.cos(a)).toFixed(2)} ${(50 - r * Math.sin(a)).toFixed(2)}`;
+  };
+  const pas = [150, 30, 270].map((centro) => {
+    const [a1, a2] = [centro - 30, centro + 30];
+    return `M${ponto(a1, 10)}L${ponto(a1, 31)}A31 31 0 0 0 ${ponto(a2, 31)}L${ponto(a2, 10)}A10 10 0 0 1 ${ponto(a1, 10)}Z`;
+  }).join("");
+  return `<svg class="foto simbolo" viewBox="0 0 100 100" role="img" aria-label="Símbolo de proteção radiológica">` +
+    `<path fill="#9fd4f4" d="${pas}"/><circle cx="50" cy="50" r="6.5" fill="#9fd4f4"/></svg>`;
+}
+
 async function qrSvg(url) {
   const svg = await QRCode.toString(url, {
     type: "svg", errorCorrectionLevel: "M", margin: 4, color: { dark: AZUL_QR, light: "#ffffff" },
@@ -146,7 +160,7 @@ function vcard(c) {
     linhas.push(`N:${c.sobrenome};${c.prenome};;;`, `FN:${c.nome}`, "ORG:SP Rad - Serviços em Proteção Radiológica", `TITLE:${c.cargo}`);
   }
   for (const [, [, numero]] of c.contatos) {
-    const tipo = numero === FIXO[1] ? "WORK,VOICE" : (numero === COMERCIAL[1] && !c.empresa ? "WORK,CELL" : "CELL");
+    const tipo = numero === FIXO[1] ? "WORK,VOICE" : (numero === COMERCIAL[1] && !c.empresa ? "WORK,VOICE" : "CELL");
     linhas.push(`TEL;TYPE=${tipo}:+${numero}`);
   }
   linhas.push(`EMAIL;TYPE=INTERNET,WORK:${c.email}`, `URL:${SITE}`, `URL:${SITE}${c.path}`, "END:VCARD");
@@ -164,7 +178,10 @@ async function pagina(c) {
     item(numero === FIXO[1] ? "telefone" : (i === 0 ? "celular" : "telefone"), rotulo, `tel:+${numero}`, exibe)
   ).join("");
   contatos += item("email", "E-mail", `mailto:${c.email}`, c.email);
-  const foto = c.foto
+  const foto = c.simbolo
+    ? `${simboloRadiacao()}
+            `
+    : c.foto
     ? `<img class="foto" src="${c.foto}" width="480" height="480" alt="Foto de ${escape(c.nome)}">
             `
     : "";
@@ -224,11 +241,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <a href="${SITE}"><img src="/imagens/logo-site.jpg" width="1208" height="475" alt="SP Rad - Serviços em Proteção Radiológica"></a>
         </header>
 
-        <section class="faixa${c.foto ? " com-foto" : ""}${c.capa ? " com-capa" : ""}"${c.capa ? ` style="--capa: url('${c.capa}')"` : ""}>
+        <section class="faixa${c.foto || c.simbolo ? " com-foto" : ""}${c.capa ? " com-capa" : ""}"${c.capa ? ` style="--capa: url('${c.capa}')"` : ""}>
             ${foto}<div class="faixa-texto">
             ${c.capa ? "" : '<p class="sobre">Cartão digital · SP Rad</p>'}
             <h1>${escape(c.nome)}</h1>
-            <p class="cargo">${c.capa ? escape(c.cargo).replace(" em ", " em<br>") : escape(c.cargo)}</p>
+            <p class="cargo">${c.capa || c.simbolo ? escape(c.cargo).replace(" em ", " em<br>") : escape(c.cargo)}</p>
             </div>
             <p class="slogan">Segurança · Credibilidade · Qualidade</p>
         </section>
