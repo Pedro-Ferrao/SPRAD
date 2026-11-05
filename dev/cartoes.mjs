@@ -197,8 +197,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:title" content="${t}">
     <meta property="og:description" content="${d}">
     <meta property="og:url" content="${urlPublica}">
-    <meta property="og:image" content="${PUBLICO}/miniaturas/cartao.jpeg">
-    <meta property="og:image:secure_url" content="${PUBLICO}/miniaturas/cartao.jpeg">
+    <meta property="og:image" content="${PUBLICO}/miniaturas/cartao-digital.jpeg">
+    <meta property="og:image:secure_url" content="${PUBLICO}/miniaturas/cartao-digital.jpeg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="1200">
@@ -206,7 +206,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${t}">
     <meta name="twitter:description" content="${d}">
-    <meta name="twitter:image" content="${PUBLICO}/miniaturas/cartao.jpeg">
+    <meta name="twitter:image" content="${PUBLICO}/miniaturas/cartao-digital.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
