@@ -142,7 +142,9 @@ function simboloRadiacao() {
     return `M${ponto(a1, 10)}L${ponto(a1, 31)}A31 31 0 0 0 ${ponto(a2, 31)}L${ponto(a2, 10)}A10 10 0 0 1 ${ponto(a1, 10)}Z`;
   }).join("");
   return `<svg class="foto simbolo" viewBox="0 0 100 100" role="img" aria-label="Símbolo de proteção radiológica">` +
-    `<path fill="#9fd4f4" d="${pas}"/><circle cx="50" cy="50" r="6.5" fill="#9fd4f4"/></svg>`;
+    `<defs><filter id="sombra-simbolo" x="-20%" y="-20%" width="140%" height="140%">` +
+    `<feDropShadow dx="1.5" dy="2.5" stdDeviation="2" flood-color="#06223f" flood-opacity=".55"/></filter></defs>` +
+    `<g filter="url(#sombra-simbolo)"><path fill="#9fd4f4" d="${pas}"/><circle cx="50" cy="50" r="6.5" fill="#9fd4f4"/></g></svg>`;
 }
 
 async function qrSvg(url) {
