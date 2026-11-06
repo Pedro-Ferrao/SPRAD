@@ -144,11 +144,13 @@ function simboloRadiacao() {
   return `<svg class="foto simbolo" viewBox="0 0 100 100" role="img" aria-label="Símbolo de proteção radiológica">` +
     `<defs><radialGradient id="disco-simbolo" cx="50%" cy="42%" r="62%">` +
     `<stop offset="0" stop-color="#14588f"/><stop offset=".6" stop-color="#0e4c84"/><stop offset="1" stop-color="#0a4074"/></radialGradient>` +
+    `<radialGradient id="brilho-simbolo" cx="42%" cy="30%" r="45%">` +
+    `<stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>` +
     `<linearGradient id="pas-simbolo" x1="0" y1="0" x2="1" y2="1">` +
-    `<stop offset="0" stop-color="#cfe4f3"/><stop offset=".45" stop-color="#9cc4e0"/><stop offset="1" stop-color="#5a8cb5"/></linearGradient>` +
+    `<stop offset="0" stop-color="#dcedf9"/><stop offset=".45" stop-color="#9cc4e0"/><stop offset="1" stop-color="#5a8cb5"/></linearGradient>` +
     `<filter id="sombra-simbolo" x="-25%" y="-25%" width="150%" height="150%">` +
     `<feDropShadow dx="3" dy="4" stdDeviation="1.2" flood-color="#021a38" flood-opacity=".9"/></filter></defs>` +
-    `<circle cx="50" cy="50" r="50" fill="url(#disco-simbolo)"/>` +
+    `<circle cx="50" cy="50" r="50" fill="url(#disco-simbolo)"/><circle cx="50" cy="50" r="50" fill="url(#brilho-simbolo)"/>` +
     `<g filter="url(#sombra-simbolo)" fill="url(#pas-simbolo)"><path d="${pas}"/><circle cx="50" cy="50" r="6.5"/></g></svg>`;
 }
 
