@@ -7,10 +7,7 @@ import QRCode from "qrcode";
 
 const OUT = fileURLToPath(new URL("../cartao/", import.meta.url));
 const SITE = "https://www.sprad.com.br";
-// Endereço usado na prévia de compartilhamento (Open Graph) e no botão Compartilhar.
-// Por enquanto aponta para a Vercel, onde os cartões já estão no ar. Quando estiverem
-// publicados na HostGator (www.sprad.com.br), troque para PUBLICO = SITE e rode de novo.
-const PUBLICO = "https://sprad.vercel.app";
+// Endereço oficial: usado no Open Graph, no botão Compartilhar, no QR Code e no .vcf.
 const AZUL_QR = "#0b3a66";
 
 const COMERCIAL = ["(16) 98200-0886", "5516982000886"];
@@ -178,7 +175,6 @@ function vcard(c) {
 
 async function pagina(c) {
   const url = SITE + c.path;
-  const urlPublica = PUBLICO + c.path;
   const t = escape(c.titulo), d = escape(c.descricao);
   const waNum = c.whatsapp[1];
   const item = (ico, rotulo, href, exibe) =>
@@ -222,9 +218,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:site_name" content="SP Rad">
     <meta property="og:title" content="${t}">
     <meta property="og:description" content="${d}">
-    <meta property="og:url" content="${urlPublica}">
-    <meta property="og:image" content="${PUBLICO}/miniaturas/cartao-digital.jpeg">
-    <meta property="og:image:secure_url" content="${PUBLICO}/miniaturas/cartao-digital.jpeg">
+    <meta property="og:url" content="${url}">
+    <meta property="og:image" content="${SITE}/miniaturas/cartao-digital.jpeg">
+    <meta property="og:image:secure_url" content="${SITE}/miniaturas/cartao-digital.jpeg">
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="1200">
@@ -232,7 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${t}">
     <meta name="twitter:description" content="${d}">
-    <meta name="twitter:image" content="${PUBLICO}/miniaturas/cartao-digital.jpeg">
+    <meta name="twitter:image" content="${SITE}/miniaturas/cartao-digital.jpeg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap">
@@ -265,7 +261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="acoes">
             <a class="btn btn-whats" href="https://wa.me/${waNum}" target="_blank" rel="noopener">${icone("whatsapp")}WhatsApp</a>
             <a class="btn btn-salvar" href="/cartao/${c.slug}.vcf" type="text/vcard">${icone("salvar")}Salvar contato</a>
-            <button class="btn btn-compartilhar" type="button" data-compartilhar data-titulo="${t}" data-texto="${d}" data-url="${urlPublica}">${icone("compartilhar")}Compartilhar cartão</button>
+            <button class="btn btn-compartilhar" type="button" data-compartilhar data-titulo="${t}" data-texto="${d}" data-url="${url}">${icone("compartilhar")}Compartilhar cartão</button>
         </div>
 
         <ul class="contatos">${contatos}</ul>
