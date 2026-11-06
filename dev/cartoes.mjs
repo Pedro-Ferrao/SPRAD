@@ -143,11 +143,11 @@ function simboloRadiacao() {
   }).join("");
   return `<svg class="foto simbolo" viewBox="0 0 100 100" role="img" aria-label="Símbolo de proteção radiológica">` +
     `<defs><radialGradient id="disco-simbolo" cx="50%" cy="42%" r="62%">` +
-    `<stop offset="0" stop-color="#5b8fc4"/><stop offset=".55" stop-color="#2f5f95"/><stop offset="1" stop-color="#173f6c"/></radialGradient>` +
+    `<stop offset="0" stop-color="#14588f"/><stop offset=".6" stop-color="#0e4c84"/><stop offset="1" stop-color="#0a4074"/></radialGradient>` +
     `<linearGradient id="pas-simbolo" x1="0" y1="0" x2="1" y2="1">` +
-    `<stop offset="0" stop-color="#d9f0ff"/><stop offset=".5" stop-color="#9fd4f4"/><stop offset="1" stop-color="#6aa9d8"/></linearGradient>` +
+    `<stop offset="0" stop-color="#cfe4f3"/><stop offset=".45" stop-color="#9cc4e0"/><stop offset="1" stop-color="#5a8cb5"/></linearGradient>` +
     `<filter id="sombra-simbolo" x="-25%" y="-25%" width="150%" height="150%">` +
-    `<feDropShadow dx="2.5" dy="3.5" stdDeviation="1.6" flood-color="#04182e" flood-opacity=".75"/></filter></defs>` +
+    `<feDropShadow dx="3" dy="4" stdDeviation="1.2" flood-color="#021a38" flood-opacity=".9"/></filter></defs>` +
     `<circle cx="50" cy="50" r="50" fill="url(#disco-simbolo)"/>` +
     `<g filter="url(#sombra-simbolo)" fill="url(#pas-simbolo)"><path d="${pas}"/><circle cx="50" cy="50" r="6.5"/></g></svg>`;
 }

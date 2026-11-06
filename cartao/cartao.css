@@ -76,7 +76,7 @@ a { color: inherit; text-decoration: none; }
 }
 /* Cartão da empresa: símbolo de radiação num anel branco no lugar da foto. */
 .foto.simbolo {
-    background: #2f5f95;
+    background: #0e4c84;
     box-shadow: 0 6px 18px rgba(0, 0, 0, .4);
 }
 .com-foto .sobre { font-size: 10px; letter-spacing: .16em; }
