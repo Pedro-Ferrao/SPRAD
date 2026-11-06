@@ -26,9 +26,6 @@ RewriteRule ^(.*/)?index(\.html)?$ /$1 [R=301,L]
 RewriteCond %{THE_REQUEST} \s/+([^.]+)\.html[\s?] [NC]
 RewriteRule ^([^.]+)\.html$ /$1 [R=301,L]
 
-# /cartao (link do QR Code) abre o cartão da empresa sem redirecionar para /cartao/
-RewriteRule ^cartao/?$ cartao/index.html [L,NC]
-
 # Permite URLs sem .html pras outras páginas
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

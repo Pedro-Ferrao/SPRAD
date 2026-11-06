@@ -17,7 +17,7 @@ const CARTOES = [
   {
     slug: "sprad",
     arquivo: "index.html",
-    path: "/cartao",
+    path: "/cartao/",
     titulo: "Cartão Digital | SP Rad",
     descricao: "Acesse o cartão digital da SP Rad e entre em contato com nossa equipe de proteção radiológica.",
     nome: "SP Rad",
